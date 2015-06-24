@@ -1,0 +1,34 @@
+extends ../layout
+
+block content
+    include ../common/banner/main
+
+    .zWrap.pt30
+        .zCol3
+            include ../common/sidebar/css
+        .zCol9.pl20
+            h3(data-active="样式统一") Normalize 
+            p 在统一浏览器默认样式上，Reset 一度非常流行，更有简单粗暴的通配符 reset ：
+            .zCode
+                code.language-jade.
+                    *{
+                       margin: 0;
+                       padding: 0;
+                       border: 0;
+                    }
+
+            p 时过境迁，Reset 逐渐淡出的前沿前端的视野，reset 统一样式，完全没有可读性，分不清是男人、女人，或者是不男不女，看着都一样。
+            div Tiny UI 使用了自己的统一风格，尽量避免与其他CSS框架的相冲突：
+                ul.lh200.mt10.pl20
+                    li 
+                        span.tRed img 
+                        | 设置最大宽度为 
+                        span.tRed 100%
+                    li 
+                        span.tRed figure 
+                        | 设置外边距为 
+                        span.tRed 0
+                    li 
+                        span.tRed textarea 
+                        | 添加 
+                        span.tRed vertical-align: top; resize: vertical;

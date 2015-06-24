@@ -1,0 +1,62 @@
+extends ../layout
+
+block content
+    include ../common/banner/main
+
+    .zWrap.pt30
+        .zCol3
+            include ../common/sidebar/css
+        .zCol9.pl20
+            h3(data-active="输入框组") Input Group 
+            
+            p 在容器上添加 <font class="zRed">.zIptGroup</font>，对应的标签上添加<font class="zRed">.zIptPrefix</font>。
+
+            .zExample.mt20
+                p.zIptGroup
+                    i.zIptPrefix.icon-user4
+                    input.zIpt(type="text", placeholder="Username")
+                p.zIptGroup
+                    i.zIptPrefix.icon-lock2
+                    input.zIpt(type="password", placeholder="Password")
+                p.zIptGroup
+                    input.zIpt(type="text")
+                    i.zIptPrefix %
+                p.zIptGroup
+                    input.zIpt(type="text")
+                    i.zIptPrefix $
+                p.zIptGroup
+                    i.zIptPrefix.icon-user4(style="background-color: #f37b1d; color: #fff")
+                    input.zIpt(type="text", placeholder="Username")
+                p.zIptGroup
+                    input.zIpt(type="text")
+                    button.zBtnPrimary.zIptPrefix Search
+                p.zIptGroup
+                    input.zIpt(type="text")
+                    button.zBtnDanger.zIptPrefix Delete
+
+                .zCode.mt20
+                    code.language-jade.
+                        p.zIptGroup
+                            i.zIptPrefix.icon-user4
+                            input.zIpt(type="text", placeholder="Username")
+                        p.zIptGroup
+                            i.zIptPrefix.icon-lock2
+                            input.zIpt(type="password", placeholder="Password")
+                        p.zIptGroup
+                            input.zIpt(type="text")
+                            i.zIptPrefix %
+                        p.zIptGroup
+                            input.zIpt(type="text")
+                            i.zIptPrefix $
+                        p.zIptGroup
+                            i.zIptPrefix.icon-user4(style="background-color: #f37b1d; color: #fff")
+                            input.zIpt(type="text", placeholder="Username")
+                        p.zIptGroup
+                            input.zIpt(type="text")
+                            button.zBtnPrimary.zIptPrefix Search
+                        p.zIptGroup
+                            input.zIpt(type="text")
+                            button.zBtnDanger.zIptPrefix Delete
+
+            
+            .cb.h50

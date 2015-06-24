@@ -1,0 +1,96 @@
+extends ../layout
+
+block content
+    include ../common/banner/main
+
+    .zWrap.pt30
+        .zCol3
+            include ../common/sidebar/css
+        .zCol9.pl20
+            h3(data-active="面板") 面板 Panel
+            
+            p 面板组件带有轮廓、常用来放置带标题和文字的内容块。
+
+            h4 1. 基本样式
+            p 默认的 <font class="tRed">.zPanel</font> 提供基本的阴影和边距，标题在 <font class="tRed">.zPanelHd</font>，内容放在 <font class="tRed">.zPanelBd</font> 里面。
+            
+            .zExample.mt20
+                div.zPanel.mt15
+                    .zPanelHd 我是老大我怕谁
+                    .zPanelBd 面板组件带有轮廓、常用来放置带标题和文字的内容块, 默认的 .zPanel 提供基本的阴影和边距，标题在 .zPanelHd，内容放在 .zPanelBd 里面。
+
+                .zCode.mt20
+                    code.language-jade.
+                        div.zPanel
+                            .zPanelHd 我是老大我怕谁
+                            .zPanelBd 面板组件带有轮廓、常用来放置带标题和文字的内容块 ...
+
+            .zExample.mt20
+                div.zPanel.mt15
+                    h4.zPanelHd 我是老大我怕谁
+                    .zPanelBd 面板组件带有轮廓、常用来放置带标题和文字的内容块, 默认的 .zPanel 提供基本的阴影和边距，标题在 .zPanelHd，内容放在 .zPanelBd 里面。
+
+                .zCode.mt20
+                    code.language-jade.
+                        div.zPanel
+                            h4.zPanelHd 我是老大我怕谁
+                            .zPanelBd 面板组件带有轮廓、常用来放置带标题和文字的内容块 ...
+
+
+            .zExample.mt20
+                div.zPanelPrimary.mt15
+                    b.zPanelHd 我是老大我怕谁
+                    .zPanelBd 面板组件带有轮廓、常用来放置带标题和文字的内容块, 默认的 .zPanel 提供基本的阴影和边距，标题在 .zPanelHd，内容放在 .zPanelBd 里面。
+
+                .zCode.mt20
+                    code.language-jade.
+                        div.zPanelPrimary
+                            b.zPanelHd 我是老大我怕谁
+                            .zPanelBd 面板组件带有轮廓、常用来放置带标题和文字的内容块 ...
+
+            .zExample.mt20
+                div.zPanelInfo.mt15
+                    .zPanelHd 我是老大我怕谁
+                    .zPanelBd 面板组件带有轮廓、常用来放置带标题和文字的内容块, 默认的 .zPanel 提供基本的阴影和边距，标题在 .zPanelHd，内容放在 .zPanelBd 里面。
+
+                .zCode.mt20
+                    code.language-jade.
+                        div.zPanelInfo
+                            .zPanelHd 我是老大我怕谁
+                            .zPanelBd 面板组件带有轮廓、常用来放置带标题和文字的内容块 ...
+
+            .zExample.mt20
+                div.zPanelSuccess.mt15
+                    b.zPanelHd 我是老大我怕谁
+                    .zPanelBd 面板组件带有轮廓、常用来放置带标题和文字的内容块, 默认的 .zPanel 提供基本的阴影和边距，标题在 .zPanelHd，内容放在 .zPanelBd 里面。
+
+                .zCode.mt20
+                    code.language-jade.
+                        div.zPanelSuccess
+                            b.zPanelHd 我是老大我怕谁
+                            .zPanelBd 面板组件带有轮廓、常用来放置带标题和文字的内容块 ...
+
+
+            .zExample.mt20
+                div.zPanelWarning.mt15
+                    b.zPanelHd 我是老大我怕谁
+                    .zPanelBd 面板组件带有轮廓、常用来放置带标题和文字的内容块, 默认的 .zPanel 提供基本的阴影和边距，标题在 .zPanelHd，内容放在 .zPanelBd 里面。
+
+                .zCode.mt20
+                    code.language-jade.
+                        div.zPanelWarning
+                            b.zPanelHd 我是老大我怕谁
+                            .zPanelBd 面板组件带有轮廓、常用来放置带标题和文字的内容块 ...
+
+            .zExample.mt20
+                div.zPanelDanger.mt15
+                    b.zPanelHd 我是老大我怕谁
+                    .zPanelBd 面板组件带有轮廓、常用来放置带标题和文字的内容块, 默认的 .zPanel 提供基本的阴影和边距，标题在 .zPanelHd，内容放在 .zPanelBd 里面。
+
+                .zCode.mt20
+                    code.language-jade.
+                        div.zPanelDanger
+                            b.zPanelHd 我是老大我怕谁
+                            .zPanelBd 面板组件带有轮廓、常用来放置带标题和文字的内容块 ...
+            
+            .cb.h50

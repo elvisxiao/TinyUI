@@ -1,0 +1,133 @@
+extends ../layout
+
+block content
+    include ../common/banner/main
+
+    .zWrap.pt30
+        .zCol3
+            include ../common/sidebar/css
+        .zCol9.pl20
+            h3(data-active="按钮 Button") 按钮 Button 
+
+            h4 1. 基本使用
+            p 在应用样式的元素上加上 <font class="tRed">zBtn*</font> 即可，不同颜色Button对应如下：
+
+            ul
+                li 
+                    font.tRed .zBtn
+                    |  - 默认，灰色按钮
+                li 
+                    font.tRed .zBtnPrimary
+                    |  - 深蓝色按钮
+                li 
+                    font.tRed .zBtnInfo
+                    |  - 亮蓝色按钮
+                li 
+                    font.tRed .zBtnSuccess
+                    |  - 绿色按钮
+                li 
+                    font.tRed .zBtnWarning
+                    |  - 橘色按钮
+                li 
+                    font.tRed .zBtnDanger
+                    |  - 红色按钮
+            
+            .zExample.mt20
+                p.mt20
+                    button.zBtn.mr15(type="button") 普通按钮
+                    button.zBtnPrimary.mr15(type="button") 深蓝色按钮
+                    button.zBtnInfo.mr15(type="button") 亮蓝色按钮
+                    button.zBtnSuccess.mr15(type="button") 绿色按钮
+                    button.zBtnWarning.mr15(type="button") 橘色按钮
+                    button.zBtnDanger.mr15(type="button") 红色按钮
+                p
+                    button.zBtnGray.mr15(type="button") 深色按钮
+                    a.zBtnDanger(href="#") 我是连接
+            .zCode
+                code.language-jade.
+                    button.zBtn.mr15(type="button") 普通按钮
+                    button.zBtnPrimary.mr15(type="button") 深蓝色按钮
+                    button.zBtnInfo.mr15(type="button") 亮蓝色按钮
+                    button.zBtnSuccess.mr15(type="button") 绿色按钮
+                    button.zBtnWarning.mr15(type="button") 橘色按钮
+                    button.zBtnDanger.mr15(type="button") 红色按钮
+                    button.zBtnGray(type="button") 深色按钮
+                    a.zBtnDanger(href="#") 我是连接
+
+            h4.mt30 2. 圆角按钮
+            p 在默认样式的基础上添加 .zRadius class.
+                .zExample
+                    p.mt20
+                        button.zBtn.mr15.zRadius(type="button") 普通按钮
+                        button.zBtnPrimary.mr15.zRadius(type="button") 深蓝色按钮
+                        button.zBtnInfo.mr15.zRadius(type="button") 亮蓝色按钮
+                        button.zBtnSuccess.mr15.zRadius(type="button") 绿色按钮
+                        button.zBtnWarning.mr15.zRadius(type="button") 橘色按钮
+                        button.zBtnDanger.mr15.zRadius(type="button") 红色按钮
+                    p
+                        button.zBtnGray.mr15.zRadius(type="button") 深色按钮
+                        a.zBtnDanger.zRadius(href="#") 我是连接
+                    .zCode
+                        code.language-jade.
+                            button.zBtn.mr15.zRadius(type="button") 普通按钮
+                            button.zBtnPrimary.mr15.zRadius(type="button") 深蓝色按钮
+                            button.zBtnInfo.mr15.zRadius(type="button") 亮蓝色按钮
+                            button.zBtnSuccess.mr15.zRadius(type="button") 绿色按钮
+                            button.zBtnWarning.mr15.zRadius(type="button") 橘色按钮
+                            button.zBtnDanger.mr15.zRadius(type="button") 红色按钮
+                            button.zBtnGray.mr15.zRadius(type="button") 深色按钮
+                            a.zBtnDanger.zRadius(href="#") 我是连接
+
+            h4.mt30 3. 椭圆按钮
+            p 在默认样式的基础上添加 .zCircle class.
+                .zExample
+                    p.mt20
+                        button.zBtn.mr15.zCircle(type="button") 普通按钮
+                        button.zBtnPrimary.mr15.zCircle(type="button") 深蓝色按钮
+                        button.zBtnInfo.mr15.zCircle(type="button") 亮蓝色按钮
+                        button.zBtnSuccess.mr15.zCircle(type="button") 绿色按钮
+                        button.zBtnWarning.mr15.zCircle(type="button") 橘色按钮
+                        button.zBtnDanger.mr15.zCircle(type="button") 红色按钮
+                    p
+                        button.zBtnGray.mr15.zCircle(type="button") 深色按钮
+                        a.zBtnDanger.zCircle(href="#") 我是连接
+                    .zCode
+                        code.language-jade.
+                            button.zBtn.mr15.zCircle(type="button") 普通按钮
+                            button.zBtnPrimary.mr15.zCircle(type="button") 深蓝色按钮
+                            button.zBtnInfo.mr15.zCircle(type="button") 亮蓝色按钮
+                            button.zBtnSuccess.mr15.zCircle(type="button") 绿色按钮
+                            button.zBtnWarning.mr15.zCircle(type="button") 橘色按钮
+                            button.zBtnDanger.mr15.zCircle(type="button") 红色按钮
+                            button.zBtnGray.mr15.zCircle(type="button") 深色按钮
+                            a.zBtnDanger.zCircle(href="#") 我是连接
+
+            h4.mt30 4. 禁用状态
+            p 使用button本身disabled属性即可
+            .zExample
+                p.mt20
+                    button.zBtnPrimary.mr15(type="button", disabled) 禁用按钮
+                    button.zBtn(type="button", disabled) 禁用按钮
+                .zCode
+                    code.language-jade.
+                        button.zBtnPrimary(type="button", disabled) 禁用按钮
+                        button.zBtn(type="button", disabled) 禁用按钮
+
+            h4.mt30 5. 大小
+            p 由大到小分别为.xl、.lg、.sm、xs
+            .zExample
+                p.mt20
+                    button.zBtnPrimary.xs.mr15(type="button") 最小的
+                    button.zBtnInfo.sm.mr15(type="button") 比较小的
+                    button.zBtnSuccess.mr15(type="button") 正常的
+                    button.zBtnWarning.lg.mr15(type="button") 大点的
+                    button.zBtnDanger.xl(type="button") 好大哦
+                .zCode
+                    code.language-jade.
+                        button.zBtnPrimary.xs.mr15(type="button") 最小的
+                        button.zBtnInfo.sm.mr15(type="button") 比较小的
+                        button.zBtnSuccess.mr15(type="button") 正常的
+                        button.zBtnWarning.lg.mr15(type="button") 大点的
+                        button.zBtnDanger.xl(type="button") 好大哦
+
+            .cb.h50

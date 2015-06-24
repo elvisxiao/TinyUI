@@ -1,0 +1,132 @@
+extends ../layout
+
+block content
+    include ../common/banner/main
+
+    .zWrap.pt30
+        .zCol3
+            include ../common/sidebar/css
+        .zCol9.pl20
+            h3(data-active="CSS动画") CSS动画 Animation
+
+            h4 使用方法
+            p 在display: <font class="tRed">block</font> 或者 <font class="tRed">inline-block</font> 的元素上使用js添加上面的各种动画class即可。
+            .zExample.mt20
+                div.mt20.tc.pb50.pt50
+                    span#jsAnimate.f30.tRed(style="display: inline-block") Animate me
+                    br
+                    select#slc.zIpt.mr10.mt30
+                        option zBounce
+                        option zFlash
+                        option zPulse
+                        option zRubberBand
+                        option zShake
+                        option zSwing
+                        option zHinge
+                        option zRollIn
+                        option zRollOut
+                        optgroup(label="Bounce")
+                            option zBounceIn
+                            option zBounceInDown
+                            option zBounceInLeft
+                            option zBounceInRight
+                            option zBounceInUp
+                            option zBounceOut
+                            option zBounceOutDown
+                            option zBounceOutLeft
+                            option zBounceOutRight
+                            option zBounceOutUp
+                        optgroup(label="Fade")
+                            option zFadeIn
+                            option zFadeInDown
+                            option zFadeInLeft
+                            option zFadeInRight
+                            option zFadeInUp
+                            option zFadeOut
+                            option zFadeOutDown
+                            option zFadeOutLeft
+                            option zFadeOutRight
+                            option zFadeOutUp
+                        optgroup(label="Flip")
+                            option zFlip
+                            option zFlipInX
+                            option zFlipInY
+                            option zFlipOutX
+                            option zFlipOutY
+                        optgroup(label="Rotate")
+                            option zRotateIn
+                            option zRotateInDownLeft
+                            option zRotateInDownRight
+                            option zRotateInUpLeft
+                            option zRotateInUpRight
+                            option zRotateOut
+                            option zRotateOutDownLeft
+                            option zRotateOutDownRight
+                            option zRotateOutUpLeft
+                            option zRotateOutUpRight
+                        optgroup(label="Zoom")
+                            option zZoomIn
+                            option zZoomInDown
+                            option zZoomInLeft
+                            option zZoomInRight
+                            option zZoomInUp
+                            option zZoomOut
+                            option zZoomOutDown
+                            option zZoomOutLeft
+                            option zZoomOutRight
+                            option zZoomOutUp
+
+
+                    button.zBtnInfo Animate it
+
+                .zCode.mt20
+                    code.language-jade.
+                        div.mt20.tc.pb50.pt50
+                            span#jsAnimate.f30.tRed(style="display: inline-block") Animate me
+                            br
+                            select#slc.zIpt.mr10.mt30
+                                option zBounce
+                                option zFlash
+                                option zPulse
+                                ...
+
+                            button.zBtnInfo Animate it
+                        
+                        script.
+                            var eleAnimate = $('#jsAnimate');
+                            var btn = $('.zBtnInfo');
+                            var slc = $('#slc');
+
+                            var animate = function(){
+                                btn.attr('disabled', true);
+                                slc.attr('disabled', true);
+                                var animateName =  slc.val();
+                                eleAnimate.addClass(animateName);
+                                setTimeout(function(){
+                                    eleAnimate.removeClass(animateName);
+                                    btn.removeAttr('disabled');
+                                    slc.removeAttr('disabled');
+                                }, 1000);
+                            }
+                            $('.zBtnInfo').on('click', animate);
+                            $('#slc').on('change', animate)
+
+            .cb.h50
+    script.
+        var eleAnimate = $('#jsAnimate');
+        var btn = $('.zBtnInfo');
+        var slc = $('#slc');
+
+        var animate = function(){
+            btn.attr('disabled', true);
+            slc.attr('disabled', true);
+            var animateName =  slc.val();
+            eleAnimate.addClass(animateName);
+            setTimeout(function(){
+                eleAnimate.removeClass(animateName);
+                btn.removeAttr('disabled');
+                slc.removeAttr('disabled');
+            }, 1000);
+        }
+        $('.zBtnInfo').on('click', animate);
+        $('#slc').on('change', animate)

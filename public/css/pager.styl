@@ -1,0 +1,24 @@
+.zPager
+	>a
+		display inline-block
+		border 1px solid #ddd
+		color #0e90d2
+		height 32px
+		line-height 30px
+		text-align center
+		min-width 38px
+		padding-left 15px 
+		padding-right 15px
+		margin-right 5px
+	>a:not(.disabled):not(.active)
+		&:hover 
+			background-color #eee
+	>a.active
+		background-color #0e90d2
+		color #fff
+		border-color #0e90d2
+	>a.disabled
+		color #aaa
+		cursor not-allowed
+		
+	

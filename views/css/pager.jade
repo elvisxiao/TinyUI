@@ -1,0 +1,61 @@
+extends ../layout
+
+block content
+    include ../common/banner/main
+
+    .zWrap.pt30
+        .zCol3
+            include ../common/sidebar/css
+        .zCol9.pl20
+            h3(data-active="分页") 分页 Pagination
+            
+            h4 1. 基本使用
+            p 在div上添加 <font class="zRed">.zPager</font>。
+
+            .zExample.mt20
+                div.zPager
+                    a.disabled(href="#") &laquo;
+                    a.active(href="#") 1
+                    a(href="#") 2
+                    a(href="#") 3
+                    a(href="#") 4
+                    a(href="#") 5
+                    a.disabled(href="#") ...
+                    a(href="#") 10
+                    a(href="#") &raquo;
+
+                div.zPager.mt20
+                    a(href="#") &laquo; Prev
+                    a(href="#") Next &raquo;
+
+                .zCode.mt20
+                    code.language-jade.
+                        div.zPager
+                            a.disabled(href="#") &laquo;
+                            a.active(href="#") 1
+                            a(href="#") 2
+                            a(href="#") 3
+                            a(href="#") 4
+                            a(href="#") 5
+                            a.disabled(href="#") ...
+                            a(href="#") 10
+                            a(href="#") &raquo;
+
+                        div.zPager.mt20
+                            a(href="#") &laquo; Prev
+                            a(href="#") Next &raquo;
+
+            h4.mt50 2. 左右分布
+            .zExample.mt20
+                div.zPager.mt20.of
+                    a(href="#").fl &laquo; Prev
+                    a(href="#").fr Next &raquo;
+
+                .zCode.mt20
+                    code.language-jade.
+                        div.zPager.mt20.of
+                            a(href="#").fl &laquo; Prev
+                            a(href="#").fr Next &raquo;
+
+            
+            .cb.h50

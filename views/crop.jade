@@ -1,0 +1,19 @@
+extends layout
+
+block content
+    .wrap
+        div#container
+
+        div.tc
+            button#btnOpen.btn(type="button") 新窗口打开当前图片
+    script.
+        var imageCrop = new oc.ImageCrop({
+            container: '#container'
+        });
+        
+        $('#btnOpen').click(function(){
+
+            if(imageCrop.img){
+                window.open(imageCrop.img.src);
+            }
+        })

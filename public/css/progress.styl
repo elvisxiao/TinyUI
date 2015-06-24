@@ -1,0 +1,44 @@
+.zProgress, .zProgressInfo, .zProgressSuccess, .zProgressWarning, .zProgressDanger
+	padding 0
+	height 24px
+	line-height 24px
+	background-color #f5f5f5
+	box-shadow inset 0 1px 2px rgba(0, 0, 0, .1)
+	position relative
+	.zProgressInner
+		display block
+		background-color #0e90d2
+		color #fff 
+		text-align center
+		position absolute
+		left 0
+		height 100%
+		top 0
+		line-height inherit
+		font-size 1em
+		border-radius inherit
+		background-image inherit
+		background-size inherit
+
+.zProgressInfo .zProgressInner
+	background-color #5bc0de
+.zProgressSuccess .zProgressInner
+	background-color #5eb95e
+.zProgressWarning .zProgressInner
+	background-color #f37b1d
+.zProgressDanger .zProgressInner
+	background-color #dd514c
+.zProgressSm
+	height 14px
+	line-height 14px
+.zProgressXs
+	height 7px
+	line-height 7px
+
+.zProgressStriped
+	background-size 36px 36px
+	background-image linear-gradient(45deg,rgba(255,255,255,.15) 25%,transparent 25%,transparent 50%,rgba(255,255,255,.15) 50%,rgba(255,255,255,.15) 75%,transparent 75%,transparent)
+
+.zProgressStriped.zActive .zProgressInner
+	animation progressStriped 1.2s linear infinite
+	

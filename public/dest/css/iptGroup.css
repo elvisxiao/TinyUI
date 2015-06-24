@@ -1,0 +1,45 @@
+
+/* line 1 : /Users/elvis/bitbucket/tinyUI/node_modules/grunt-contrib-stylus/node_modules/stylus/lib/functions/index.styl */
+
+/* line 1 : /Users/elvis/bitbucket/tinyUI/public/css/iptGroup.styl */
+.zIptGroup {
+  padding: 0;
+  position: relative;
+}
+
+/* line 4 : /Users/elvis/bitbucket/tinyUI/public/css/iptGroup.styl */
+.zIptGroup .zIptPrefix {
+  position: absolute;
+  vertical-align: middle;
+  display: inline-block;
+  left: 0;
+  top: 0;
+  height: 100%;
+  border: 1px solid #ddd;
+  border-right: 0;
+  min-width: 45px;
+  z-index: 2;
+  text-align: center;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+/* line 18 : /Users/elvis/bitbucket/tinyUI/public/css/iptGroup.styl */
+.zIptGroup .zIptPrefix:not(.zBtnPrimary):not(.zBtn):not(.zBtnInfo):not(.zBtnSuccess):not(.zBtnWarning):not(.zBtnDanger) {
+  background: #eee;
+  color: #666;
+  line-height: 2.4em;
+}
+
+/* line 22 : /Users/elvis/bitbucket/tinyUI/public/css/iptGroup.styl */
+.zIptGroup .zIptPrefix + input {
+  margin-left: 45px;
+}
+
+/* line 24 : /Users/elvis/bitbucket/tinyUI/public/css/iptGroup.styl */
+.zIptGroup input + .zIptPrefix {
+  left: auto;
+  rigth: 0;
+  border-right: 1px solid #ddd;
+  border-left: 0;
+}

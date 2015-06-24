@@ -1,0 +1,200 @@
+extends ../layout
+
+block content
+    include ../common/banner/main
+
+    .zWrap.pt30
+        .zCol3
+            include ../common/sidebar/css
+        .zCol9.pl20
+            h3(data-active="按钮组") Button Group
+
+            h4 基本使用
+            p 把一系列的 <font class="tRed">.zBtn</font> 放入 <font class="tRed">.zBtnGroup</font> 中。
+            
+            .zExample.mt20
+                p.mt20.zBtnGroup
+                    button.zBtn(type="button") 左边
+                    button.zBtn(type="button") 中间
+                    button.zBtn(type="button") 右边
+
+                    span.ml50.zBtnGroup
+                        button.zBtnInfo(type="button") 左边
+                        button.zBtnInfo(type="button") 中间
+                        button.zBtnInfo(type="button") 右边
+
+                    span.ml50.zBtnGroup
+                        button.zBtnInfo(type="button") 左边
+                        button.zBtnWarning(type="button") 中间
+                        button.zBtnDanger(type="button") 右边
+
+            .zCode
+                code.language-jade.
+                    p.mt20.zBtnGroup
+                        button.zBtn(type="button") 左边
+                        button.zBtn(type="button") 中间
+                        button.zBtn(type="button") 右边
+
+                        span.ml50.zBtnGroup
+                            button.zBtnInfo(type="button") 左边
+                            button.zBtnInfo(type="button") 中间
+                            button.zBtnInfo(type="button") 右边
+
+                        span.ml50.zBtnGroup
+                            button.zBtnInfo(type="button") 左边
+                            button.zBtnWarning(type="button") 中间
+                            button.zBtnDanger(type="button") 右边
+
+
+            h4.mt30 2. 椭角按钮 / 椭圆按钮
+
+            .zExample.mt20
+                p.mt20
+                    span.zBtnGroup
+                        button.zBtn(type="button") 左边
+                        button.zBtn(type="button") 中间
+                        button.zBtn(type="button") 右边
+
+                    span.ml50.zBtnGroup
+                        button.zBtnInfo.zRadius(type="button") 左边
+                        button.zBtnInfo.zRadius(type="button") 中间
+                        button.zBtnInfo.zRadius(type="button") 右边
+
+                    span.ml50.zBtnGroup
+                        button.zBtnInfo.zCircle(type="button") 左边
+                        button.zBtnWarning.zCircle(type="button") 中间
+                        button.zBtnDanger.zCircle(type="button") 右边
+                .zCode
+                    code.language-jade.
+                        p.mt20
+                            span.zBtnGroup
+                                button.zBtn.zCircle(type="button") 左边
+                                button.zBtn.zCircle(type="button") 中间
+                                button.zBtn.zCircle(type="button") 右边
+
+                            span.ml50.zBtnGroup
+                                button.zBtnInfo.zRadius(type="button") 左边
+                                button.zBtnInfo.zRadius(type="button") 中间
+                                button.zBtnInfo.zRadius(type="button") 右边
+
+                            span.ml50.zBtnGroup
+                                button.zBtnInfo.zCircle(type="button") 左边
+                                button.zBtnWarning.zCircle(type="button") 中间
+                                button.zBtnDanger.zCircle(type="button") 右边
+
+
+            h4.mt30 3. 纵向排列
+            .zExample.mt20
+                p.mt20
+                    span.zBtnGroupVertical
+                        button.zBtn(type="button") 我在上面
+                        button.zBtn(type="button") 我在中间
+                        button.zBtn(type="button") 我在底部
+                .zCode
+                    code.language-jade.
+                        p.mt20
+                            span.zBtnGroupVertical
+                                button.zBtn(type="button") 我在上面
+                                button.zBtn(type="button") 我在中间
+                                button.zBtn(type="button") 我在底部
+
+            h4.mt30 4. 下拉按钮
+            .zExample.mt20
+                p.mt20
+                    span.zBtnGroup
+                        button.zBtnInfo(type="button") 下拉按钮
+                        button.zBtnInfo.zBtnDrop
+                            span.zIconUp
+                            ul.zDropdown
+                                li
+                                    a(href="#") 今天天气好像还不错
+                                li
+                                    a.active(href="#", style="color:#fff; font-size:12px") 那你想怎样？
+                                li.borderBottom 
+                                    a(href="#") 去吃个牛排怎样？
+                                li
+                                    a(href="#") 好呀，走吧
+                    
+                .zCode
+                    code.language-jade.
+                        span.zBtnGroup
+                            button.zBtnInfo(type="button") 下拉按钮
+                            button.zBtnInfo.zBtnDrop
+                                span.zIconUp
+                                ul.zDropdown
+                                    li
+                                        a(href="#") 今天天气好像还不错
+                                    li
+                                        a.active(href="#", style="color:#fff; font-size:12px") 那你想怎样？
+                                    li.borderBottom 
+                                        a(href="#") 去吃个牛排怎样？
+                                    li
+                                        a(href="#") 好呀，走吧
+
+            .zExample.mt20
+                p.mt20
+                    span.zBtnGroup
+                        button.zBtnInfo(type="button") 下拉按钮
+                        button.zBtnInfo.zBtnDrop
+                            span.zIconDown
+                            ul.zDropdown
+                                li
+                                    a(href="#") 今天天气好像还不错
+                                li
+                                    a.active(href="#", style="color:#fff; font-size:12px") 那你想怎样？
+                                li.borderBottom 
+                                    a(href="#") 去吃个牛排怎样？
+                                li
+                                    a(href="#") 好呀，走吧
+                    
+                .zCode
+                    code.language-jade.
+                        span.zBtnGroup
+                            button.zBtnInfo(type="button") 下拉按钮
+                            button.zBtnInfo.zBtnDrop
+                                span.zIconUp
+                                ul.zDropdown
+                                    li
+                                        a(href="#") 今天天气好像还不错
+                                    li
+                                        a.active(href="#", style="color:#fff; font-size:12px") 那你想怎样？
+                                    li.borderBottom 
+                                        a(href="#") 去吃个牛排怎样？
+                                    li
+                                        a(href="#") 好呀，走吧
+
+            .zExample.mt20
+                p.mt20
+                    span.zBtnGroup
+                        button.zBtnInfo(type="button") 下拉按钮
+                        button.zBtnInfo.zBtnDrop
+                            span.zIconRight
+                            ul.zDropdown
+                                li
+                                    a(href="#") 今天天气好像还不错
+                                li
+                                    a.active(href="#", style="color:#fff; font-size:12px") 那你想怎样？
+                                li.borderBottom 
+                                    a(href="#") 去吃个牛排怎样？
+                                li
+                                    a(href="#") 好呀，走吧
+                    
+                .zCode
+                    code.language-jade.
+                        span.zBtnGroup
+                            button.zBtnInfo(type="button") 下拉按钮
+                            button.zBtnInfo.zBtnDrop
+                                span.zIconUp
+                                ul.zDropdown
+                                    li
+                                        a(href="#") 今天天气好像还不错
+                                    li
+                                        a.active(href="#", style="color:#fff; font-size:12px") 那你想怎样？
+                                    li.borderBottom 
+                                        a(href="#") 去吃个牛排怎样？
+                                    li
+                                        a(href="#") 好呀，走吧
+
+           
+
+            .cb.h50

@@ -1,0 +1,71 @@
+extends ../layout
+
+block content
+    include ../common/banner/main
+
+    .zWrap.pt30
+        .zCol3
+            include ../common/sidebar/css
+        .zCol9.pl20
+            h3(data-active="辅助类") 辅助类 - Utility 
+            p 一些比较常用的class，直接加载html中的元素class上即可，可以同时使用多个。比如要对一个元素清除浮动，在元素上加上 <font class="tRed">cb</font> 即可。
+
+            h4 布局相关
+            p <font class="tRed">.pr</font> - position: relative，定义元素为相对定位
+            p <font class="tRed">.pa</font> - position: absolute，定义元素为绝对定位
+            p <font class="tRed">.of</font> - overflow: hidden，超出部分隐藏，不显示
+            p <font class="tRed">.bc</font> - margin-left: auto; margin-right: auto，元素水平方向居中（块级元素有效：display: block）
+
+            div.zExample
+                div
+                    button.zBtnPrimary.bc(type="button", style="display: block") 居中按钮
+
+                .zCode.mt20
+                    code.language-jade.
+                       div.border
+                            button.zBtnPrimary.bc(type="button", style="display: block") 居中按钮
+
+            h4 文本相关
+            p <font class="tRed">.tl</font> - text-align: left，元素中，文本水平靠左对齐
+            p <font class="tRed">.tr</font> - text-align: right，元素中，文本水平靠右对齐
+            p <font class="tRed">.tc</font> - text-align: center，元素中，文本水平居中对齐
+            div.zExample
+                div.lh100
+                    p.tl 文本在左边
+                    p.tc(style="border-top: 1px solid #eee;  border-bottom: 1px solid #eee") 文本中间
+                    p.tl 文本在右边
+                    
+                .zCode.mt20
+                    code.language-jade.
+                        div.lh100
+                            p.tl 文本在左边
+                            p.tc 文本中间
+                            p.tl 文本在右边
+
+            p <font class="tRed">.vt</font> - vertical-align: top， 让元素在父元素的顶部
+            p <font class="tRed">.vb</font> - vertical-align: bottom， 让元素在父元素的底部
+            p <font class="tRed">.vm</font> - vertical-align: middle， 让元素相对父元素垂直居中（父元素需要设置高度）
+            div.zExample
+                table.w
+                    tr(style="height: 80px")
+                        td.vt 我在顶部，我最高
+                        td.vm 我在中间
+                        td.vb 我好矮
+
+                .zCode.mt20
+                    code.language-jade.
+                        table.w
+                            tr(style="height: 80px")
+                                td.vt 我在顶部，我最高
+                                td.vm 我在中间
+                                td.vb 我好矮
+
+            h4 浮动相关
+            p <font class="tRed">.fr</font> - float: right，元素浮动在右边
+            p <font class="tRed">.fl</font> - float: left，元素浮动在左边
+            p <font class="tRed">.cb</font> - clear: both，清除元素四周的浮动
+            p <font class="tRed">.cr</font> - clear: right，清除右边的浮动
+            p <font class="tRed">.cl</font> - clear: left，清除左边的浮动
+
+
+

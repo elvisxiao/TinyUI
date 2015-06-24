@@ -1,0 +1,136 @@
+extends ../layout
+
+block content
+    include ../common/banner/main
+
+    .zWrap.pt30
+        .zCol3
+            include ../common/sidebar/css
+        .zCol9.pl20
+            h3(data-active="表格") Table 
+
+            h4 1. 一个完整的Table
+            p Table的标准HTML结构中，包含Caption、Thead、Tbody、Tfoot，为了保持语义化与更好的程序结构，应尽量对号入座。
+
+            .zExample.mt20
+                table.zTable.w
+                    caption.tl.lh300 在table元素上加上class <font class="tRed">.zTable</font>即可
+                    thead 
+                        tr 
+                            th 名称
+                            th 链接
+                            th 介绍
+                    tbody
+                        tr 
+                            td Facebook
+                            td www.facebook.com
+                            td 非死不可，全球最大的社交网站
+                        tr 
+                            td Twitter
+                            td www.twitter.com
+                            td 后期之秀，Facebook你害怕吗？
+                        tr.gray 
+                            td Google
+                            td www.google.com
+                            td 全球最大的搜索引擎
+                        tr 
+                            td Youtube
+                            td www.youtube.com
+                            td 好大一个视频网站
+                        tr 
+                            td(colspan="3") Ops, 国内上面的网站都访问不了，洗洗睡吧
+
+            h4 2. 带颜色的Table
+            .zExample.mt20
+                table.zTable.w
+                    caption.tl.lh300 在tr上添加对应的颜色状态class即可
+                    thead 
+                        tr 
+                            th Class
+                            th 说明
+                    tbody
+                        tr 
+                            td 无class时
+                            td 没有添加class时长这样
+                        tr.primary
+                            td .primary
+                            td 蓝色高亮
+                        tr 
+                            td 无class时
+                            td 没有添加class时长这样
+                        tr 
+                            td 无class时
+                            td 没有添加class时长这样
+                        tr.info 
+                            td .info
+                            td 亮蓝色
+                        tr.success 
+                            td .success
+                            td 绿色高亮
+                        tr.warning
+                            td .warning
+                            td 橙色警告
+                        tr.danger
+                            td .danger
+                            td 红色警告
+
+
+            h4 3. Hover效果的Tr
+            .zExample.mt20
+                table.zTable.w.zTableHover
+                    caption.tl.lh300 在table元素上加上class <font class="tRed">.zTableHover</font>即可
+                    thead 
+                        tr 
+                            th 名称
+                            th 链接
+                            th 介绍
+                    tbody
+                        tr 
+                            td Facebook
+                            td www.facebook.com
+                            td 非死不可，全球最大的社交网站
+                        tr 
+                            td Twitter
+                            td www.twitter.com
+                            td 后期之秀，Facebook你害怕吗？
+                        tr 
+                            td Google
+                            td www.google.com
+                            td 全球最大的搜索引擎
+                        tr 
+                            td Youtube
+                            td www.youtube.com
+                            td 好大一个视频网站
+                        tr 
+                            td(colspan="3") Ops, 国内上面的网站都访问不了，洗洗睡吧
+
+            h4 4. 斑马纹效果的Table
+            .zExample.mt20
+                table.zTable.w.zTableStrip
+                    caption.tl.lh300 在table元素上加上class <font class="tRed">.zTableStrip</font>即可
+                    thead 
+                        tr 
+                            th 名称
+                            th 链接
+                            th 介绍
+                    tbody
+                        tr 
+                            td Facebook
+                            td www.facebook.com
+                            td 非死不可，全球最大的社交网站
+                        tr 
+                            td Twitter
+                            td www.twitter.com
+                            td 后期之秀，Facebook你害怕吗？
+                        tr 
+                            td Google
+                            td www.google.com
+                            td 全球最大的搜索引擎
+                        tr 
+                            td Youtube
+                            td www.youtube.com
+                            td 好大一个视频网站
+                        tr 
+                            td(colspan="3") Ops, 国内上面的网站都访问不了，洗洗睡吧
+
+            .cb.h50

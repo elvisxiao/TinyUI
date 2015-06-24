@@ -1,0 +1,36 @@
+extends ../layout
+
+block content
+    include ../common/banner/main
+
+    .zWrap.pt30.of
+        .zCol3
+            include ../common/sidebar/css
+        .zCol9.pl20
+            h3(data-active="网格") Grid 
+            p Tiny UI参考了Bootstrap的网格系统，使用基于12列的布局。使用时只需要在对应元素上加上class="zCol*"即可。
+            
+            div.f16.fb 示例：一个基本的网格
+            p 下面的示例中，行包含两列，第一列占 4 份，第二列占 8 份，我们只设置了 .zCol* 这个 class，意味着无论视口多大，都保持这个比例的划分。
+            div.zExample
+                div.zCol.mt20(style="height: 40px;")
+                    div.zCol4(style="border: 1px solid red") 4
+                    div.zCol8(style="border: 1px solid red; background:#eee") 8
+                .zCode.mt20
+                    code.language-jade.
+                        div.zCol
+                            div.zCol4 4
+                            div.zCol8 8
+
+            p.mt50 下面的示例中，行包含三列，第一列占 2 份，第二列占 4 份，第二列占 6 份。
+            div.zExample
+                div.zCol.mt20(style="height: 40px;")
+                    div.zCol2(style="border: 1px solid red") 2
+                    div.zCol4(style="border: 1px solid red; background:#eee") 4
+                    div.zCol6(style="border: 1px solid red;") 6
+                .zCode.mt20
+                    code.language-jade.
+                        div.zCol
+                            div.zCol2 2
+                            div.zCol4 4
+                            div.zCol6 6

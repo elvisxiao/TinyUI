@@ -1,0 +1,22 @@
+
+/* line 1 : /Users/elvis/bitbucket/tinyUI/node_modules/grunt-contrib-stylus/node_modules/stylus/lib/functions/index.styl */
+
+/* line 1 : /Users/elvis/bitbucket/tinyUI/public/css/js/collapse.styl */
+.zCollapse {
+  max-height: 40px;
+  box-sizing: border-box;
+  overflow: hidden;
+  box-sizing: border-box;
+  transition: max-height 0.25s ease-out;
+}
+
+/* line 7 : /Users/elvis/bitbucket/tinyUI/public/css/js/collapse.styl */
+.zCollapse .zPanelHd {
+  cursor: pointer;
+}
+
+/* line 9 : /Users/elvis/bitbucket/tinyUI/public/css/js/collapse.styl */
+.zCollapse.active {
+  max-height: 2000px;
+  transition: max-height 0.2s ease-in;
+}

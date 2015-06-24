@@ -1,0 +1,53 @@
+extends ../layout
+
+block content
+    include ../common/banner/main
+
+    .zWrap.pt30
+        .zCol3
+            include ../common/sidebar/css
+        .zCol9.pl20
+            h3(data-active="面包屑") 面包屑 
+
+            h4 1. 默认分割 - 小箭头
+            
+            .zExample.mt20
+                ul.zBreadcrumb.mt20
+                    li 
+                        a(href="#") 首页 
+                    li 
+                        a(href="#") 列表 
+                    li.active 
+                        a(href="#") 详情
+                .zCode.mt20
+                    code.language-jade.
+                        ul.zBreadcrumb.mt20
+                            li 
+                                a(href="#") 首页 
+                            li 
+                                a(href="#") 列表 
+                            li.active 
+                                a(href="#") 详情
+
+            h4.mt30 2. 斜线分割
+
+            .zExample.mt20
+                ul.zBreadcrumbSlash.mt20
+                    li 
+                        a(href="#") 首页 
+                    li 
+                        a(href="#") 列表 
+                    li.active 
+                        a(href="#") 详情
+                .zCode.mt20
+                    code.language-jade.
+                        ul.zBreadcrumbSlash.mt20
+                            li 
+                                a(href="#") 首页 
+                            li 
+                                a(href="#") 列表 
+                            li.active 
+                                a(href="#") 详情
+
+
+            .cb.h50

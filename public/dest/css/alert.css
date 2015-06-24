@@ -1,0 +1,68 @@
+
+/* line 1 : /Users/elvis/bitbucket/tinyUI/node_modules/grunt-contrib-stylus/node_modules/stylus/lib/functions/index.styl */
+
+/* line 1 : /Users/elvis/bitbucket/tinyUI/public/css/alert.styl */
+.zAlertDanger,
+.zAlertInfo,
+.zAlertPrimary,
+.zAlertWarning,
+.zAlert,
+.zAlertSuccess {
+  display: block;
+  width: 100%;
+  color: #fff;
+  border: 1px solid #dfdfdf;
+  padding: 10px 15px;
+  box-sizing: border-box;
+}
+
+/* line 8 : /Users/elvis/bitbucket/tinyUI/public/css/alert.styl */
+.zAlertDanger .icon-close,
+.zAlertInfo .icon-close,
+.zAlertPrimary .icon-close,
+.zAlertWarning .icon-close,
+.zAlert .icon-close,
+.zAlertSuccess .icon-close {
+  float: right;
+  color: #dfdfdf;
+  font-weight: 100;
+  font-size: 12px;
+  margin-top: 2px;
+  text-shadow: 0 1px 0 #fff;
+  cursor: pointer;
+}
+
+/* line 17 : /Users/elvis/bitbucket/tinyUI/public/css/alert.styl */
+.zAlert {
+  background-color: #eee;
+}
+
+/* line 19 : /Users/elvis/bitbucket/tinyUI/public/css/alert.styl */
+.zAlertWarning {
+  background-color: #f37b1d;
+  border-color: #e56c0c;
+}
+
+/* line 22 : /Users/elvis/bitbucket/tinyUI/public/css/alert.styl */
+.zAlertPrimary {
+  background-color: #0e90d2;
+  border-color: #0c7cb5;
+}
+
+/* line 25 : /Users/elvis/bitbucket/tinyUI/public/css/alert.styl */
+.zAlertInfo {
+  background-color: #f37b1d;
+  border-color: #e56c0c;
+}
+
+/* line 28 : /Users/elvis/bitbucket/tinyUI/public/css/alert.styl */
+.zAlertDanger {
+  background-color: #f37b1d;
+  border-color: #e56c0c;
+}
+
+/* line 31 : /Users/elvis/bitbucket/tinyUI/public/css/alert.styl */
+.zAlertSuccess {
+  background-color: #dd514c;
+  border-color: #d83832;
+}

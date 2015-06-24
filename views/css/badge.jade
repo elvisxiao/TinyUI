@@ -1,0 +1,95 @@
+extends ../layout
+
+block content
+    include ../common/banner/main
+
+    .zWrap.pt30
+        .zCol3
+            include ../common/sidebar/css
+        .zCol9.pl20
+            h3(data-active="小徽章") Badge 
+
+            h4 1. 默认样式
+            p 添加 .zBadge class 到 label 或者 span 元素
+            
+            .zExample.mt20
+                p.mt20
+                    span.zBadge.mr15 1
+                    span.zBadgePrimary.mr15 2
+                    span.zBadgeInfo.mr15 3
+                    span.zBadgeSuccess.mr15 4
+                    span.zBadgeWarning.mr15 5
+                    span.zBadgeDanger.mr15 6
+                    span.zBadgeDanger.mr15 长点比较好
+
+            .zCode
+                code.language-jade.
+                    span.zBadge.mr15 1
+                    span.zBadgePrimary.mr15 2
+                    span.zBadgeInfo.mr15 3
+                    span.zBadgeSuccess.mr15 4
+                    span.zBadgeWarning.mr15 5
+                    span.zBadgeDanger.mr15 6
+                    span.zBadgeDanger.mr15 长点比较好
+
+            h4.mt30 2. 圆角Badge
+            p 在默认样式的基础上添加 .zRadius class.
+                .zExample
+                    p.mt20
+                        span.zBadge.mr15.zRadius 1
+                        span.zBadgePrimary.mr15.zRadius 2
+                        span.zBadgeInfo.mr15.zRadius 3
+                        span.zBadgeSuccess.mr15.zRadius 4
+                        span.zBadgeWarning.mr15.zRadius 5
+                        span.zBadgeDanger.mr15.zRadius 6
+                        span.zBadgeDanger.mr15.zRadius 长点比较好
+                    .zCode
+                        code.language-jade.
+                            span.zBadge.mr15.zRadius 1
+                            span.zBadgePrimary.mr15.zRadius 2
+                            span.zBadgeInfo.mr15.zRadius 3
+                            span.zBadgeSuccess.mr15.zRadius 4
+                            span.zBadgeWarning.mr15.zRadius 5
+                            span.zBadgeDanger.mr15.zRadius 6
+                            span.zBadgeDanger.mr15.zRadius 长点比较好
+
+            h4.mt30 3. 椭圆Badge
+            p 在默认样式的基础上添加 .zCircle class.
+                .zExample
+                    p.mt20
+                        span.zBadge.mr15.zCircle 1
+                        span.zBadgePrimary.mr15.zCircle 2
+                        span.zBadgeInfo.mr15.zCircle 3
+                        span.zBadgeSuccess.mr15.zCircle 4
+                        span.zBadgeWarning.mr15.zCircle 5
+                        span.zBadgeDanger.mr15.zCircle 6
+                        span.zBadgeDanger.mr15.zCircle 长点比较好
+                    .zCode
+                        code.language-jade.
+                            span.zBadge.mr15.zCircle 1
+                            span.zBadgePrimary.mr15.zCircle 2
+                            span.zBadgeInfo.mr15.zCircle 3
+                            span.zBadgeSuccess.mr15.zCircle 4
+                            span.zBadgeWarning.mr15.zCircle 5
+                            span.zBadgeDanger.mr15.zCircle 6
+                            span.zBadgeDanger.mr15 长点比较好
+
+            
+            h4.mt30 4. 大小
+            p 由大到小分别为.xl、.lg、.sm、xs
+            .zExample
+                p.mt20
+                    span.zBadgeInfo.mr15 正常的
+                    span.zBadge.xs.mr15 xs号的
+                    span.zBadgePrimary.sm.mr15 sm号的
+                    span.zBadgeSuccess.lg.mr15 lg号的
+                    span.zBadgeWarning.xl xl号的
+                .zCode
+                    code.language-jade.
+                        span.zBadgeInfo.mr15 正常的
+                        span.zBadge.xs.mr15 xs号的
+                        span.zBadgePrimary.sm.mr15 sm号的
+                        span.zBadgeSuccess.lg.mr15 lg号的
+                        span.zBadgeWarning.xl xl号的
+
+            .cb.h50

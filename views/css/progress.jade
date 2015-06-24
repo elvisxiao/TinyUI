@@ -1,0 +1,126 @@
+extends ../layout
+
+block content
+    include ../common/banner/main
+
+    .zWrap.pt30
+        .zCol3
+            include ../common/sidebar/css
+        .zCol9.pl20
+            h3(data-active="进度条") 进度条 Progress
+            
+            p 在元素上加上class <font class="zRed">.zProgress</font> 即可。
+
+            h4 1. 基本样式
+            .zExample.mt20
+                div.zProgress.mt20
+                    .zProgressInner(style="width: 30%")
+                div.zProgress.mt20
+                    .zProgressInner(style="width: 40%") 40%
+
+                .zCode.mt20
+                    code.language-jade.
+                        div.zProgress
+                            .zProgressInner(style="width: 30%") 30%
+
+            h4.mt50 2. 进度条颜色
+            p 进度条默认为全局主色，在进度条上添加相应的类可设置的颜色：
+            ul
+                li
+                    span.tRed .zProgressInfo
+                li
+                    span.tRed .zProgressSuccess
+                li
+                    span.tRed .zProgressWarning
+                li
+                    span.tRed .zProgressDanger
+
+            .zExample.mt20
+                div.zProgressInfo.mt20
+                    .zProgressInner(style="width: 30%")
+                div.zProgressSuccess.mt20
+                    .zProgressInner(style="width: 40%")
+                div.zProgressWarning.mt20
+                    .zProgressInner(style="width: 50%")
+                div.zProgressDanger.mt20
+                    .zProgressInner(style="width: 60%")
+
+                .zCode.mt20
+                    code.language-jade.
+                        div.zProgressInfo.mt20
+                            .zProgressInner(style="width: 30%")
+                        div.zProgressSuccess.mt20
+                            .zProgressInner(style="width: 40%")
+                        div.zProgressWarning.mt20
+                            .zProgressInner(style="width: 50%")
+                        div.zProgressDanger.mt20
+                            .zProgressInner(style="width: 60%")
+
+            h4.mt50 3. 进度条大小
+            p 进度条大小有两个可选项 <font class="zRed">.zProgressSm</font> 和 <font class="zRed">.zProgressXs</font> 
+            
+            .zExample.mt20
+                div.zProgressInfo.zProgressXs.mt20
+                    .zProgressInner(style="width: 40%")
+                div.zProgressInfo.zProgressSm.mt20
+                    .zProgressInner(style="width: 30%")
+                div.zProgressInfo.mt20
+                    .zProgressInner(style="width: 50%")
+
+                .zCode.mt20
+                    code.language-jade.
+                        div.zProgressInfo.zProgressXs.mt20
+                            .zProgressInner(style="width: 40%")
+                        div.zProgressInfo.zProgressSm.mt20
+                            .zProgressInner(style="width: 30%")
+                        div.zProgressInfo.mt20
+                            .zProgressInner(style="width: 50%")
+
+            h4.mt50 4. 圆角进度条
+            p 添加 <font class="zRed">.zRadius</font> 或者 <font class="zRed">.zCircle</font> 即可。
+            
+            .zExample.mt20
+                div.zProgress.mt20.zRadius
+                    .zProgressInner(style="width: 40%")
+                div.zProgress.mt20.zCircle
+                    .zProgressInner(style="width: 50%")
+
+                .zCode.mt20
+                    code.language-jade.
+                        div.zProgress.mt20.zRadius
+                            .zProgressInner(style="width: 40%")
+                        div.zProgress.mt20.zCircle
+                            .zProgressInner(style="width: 50%")
+
+            h4.mt50 5. 条纹进度条
+            p 添加 <font class="zRed">.zProgressStriped</font> 即可。
+            
+            .zExample.mt20
+                div.zProgressInfo.mt20.zProgressStriped
+                    .zProgressInner(style="width: 30%")
+                div.zProgressSuccess.mt20.zProgressStriped
+                    .zProgressInner(style="width: 40%")
+                div.zProgressWarning.mt20.zProgressStriped
+                    .zProgressInner(style="width: 50%")
+                div.zProgressDanger.mt20.zProgressStriped
+                    .zProgressInner(style="width: 60%")
+
+                .zCode.mt20
+                    code.language-jade.
+                        div.zProgressInfo.mt20.zProgressStriped
+                            .zProgressInner(style="width: 30%")
+                        div.zProgressSuccess.mt20.zProgressStriped
+                            .zProgressInner(style="width: 40%")
+                        div.zProgressWarning.mt20.zProgressStriped
+                            .zProgressInner(style="width: 50%")
+                        div.zProgressDanger.mt20.zProgressStriped
+                            .zProgressInner(style="width: 60%")
+
+            h4.mt50 6. 进度条动画
+            p 添加 <font class="zRed">.zActive</font> 即可。
+            .zExample.mt20
+                div.zProgressInfo.mt20.zProgressStriped.zActive
+                    .zProgressInner(style="width: 30%")
+                div.zProgressSuccess.mt20.zProgressStriped.zActive
+                    .zProgressInner(style="width: 40%")
+            .cb.h50

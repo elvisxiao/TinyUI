@@ -1,0 +1,80 @@
+
+/* line 1 : /Users/elvis/bitbucket/tinyUI/node_modules/grunt-contrib-stylus/node_modules/stylus/lib/functions/index.styl */
+
+/* line 1 : /Users/elvis/bitbucket/tinyUI/public/css/progress.styl */
+.zProgress,
+.zProgressInfo,
+.zProgressSuccess,
+.zProgressWarning,
+.zProgressDanger {
+  padding: 0;
+  height: 24px;
+  line-height: 24px;
+  background-color: #f5f5f5;
+  box-shadow: inset 0 1px 2px rgba(0,0,0,0.1);
+  position: relative;
+}
+
+/* line 8 : /Users/elvis/bitbucket/tinyUI/public/css/progress.styl */
+.zProgress .zProgressInner,
+.zProgressInfo .zProgressInner,
+.zProgressSuccess .zProgressInner,
+.zProgressWarning .zProgressInner,
+.zProgressDanger .zProgressInner {
+  display: block;
+  background-color: #0e90d2;
+  color: #fff;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  height: 100%;
+  top: 0;
+  line-height: inherit;
+  font-size: 1em;
+  border-radius: inherit;
+  background-image: inherit;
+  background-size: inherit;
+}
+
+/* line 23 : /Users/elvis/bitbucket/tinyUI/public/css/progress.styl */
+.zProgressInfo .zProgressInner {
+  background-color: #5bc0de;
+}
+
+/* line 25 : /Users/elvis/bitbucket/tinyUI/public/css/progress.styl */
+.zProgressSuccess .zProgressInner {
+  background-color: #5eb95e;
+}
+
+/* line 27 : /Users/elvis/bitbucket/tinyUI/public/css/progress.styl */
+.zProgressWarning .zProgressInner {
+  background-color: #f37b1d;
+}
+
+/* line 29 : /Users/elvis/bitbucket/tinyUI/public/css/progress.styl */
+.zProgressDanger .zProgressInner {
+  background-color: #dd514c;
+}
+
+/* line 31 : /Users/elvis/bitbucket/tinyUI/public/css/progress.styl */
+.zProgressSm {
+  height: 14px;
+  line-height: 14px;
+}
+
+/* line 34 : /Users/elvis/bitbucket/tinyUI/public/css/progress.styl */
+.zProgressXs {
+  height: 7px;
+  line-height: 7px;
+}
+
+/* line 38 : /Users/elvis/bitbucket/tinyUI/public/css/progress.styl */
+.zProgressStriped {
+  background-size: 36px 36px;
+  background-image: linear-gradient(45deg, rgba(255,255,255,0.15) 25%, transparent 25%, transparent 50%, rgba(255,255,255,0.15) 50%, rgba(255,255,255,0.15) 75%, transparent 75%, transparent);
+}
+
+/* line 42 : /Users/elvis/bitbucket/tinyUI/public/css/progress.styl */
+.zProgressStriped.zActive .zProgressInner {
+  animation: progressStriped 1.2s linear infinite;
+}

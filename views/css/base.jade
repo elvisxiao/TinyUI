@@ -1,0 +1,30 @@
+extends ../layout
+
+block content
+    include ../common/banner/main
+
+    .zWrap.pt30
+        .zCol3
+            include ../common/sidebar/css
+        .zCol9.pl20
+            h3(data-active="基础设置") Base 
+            p Tiny UI 定义的一些基础样式，我们有时也称之为原子类。
+            h4 1. CSS盒模型
+            p 曾几何时，IE 6 及更低版本的非标准盒模型被喷得体无完肤。IE 原来的盒模型真的不好么？最终，时间给了另外一个答案。 W3C 终认识到所谓标准盒模型在实际使用中的复杂性，于是在 CSS3 中增加 <font class="tRed">box-sizing</font> 这一属性，允许用户自定义盒模型。
+            
+            blockquote.fb You tell me I'm wrong, Then you better prove you're right.
+                p
+                    small.tMuted.fr King of Pop – Scream
+            p 这就是 W3C 的证明。
+            p 目前比较新的框架中都已使用此模型，如Bootstrap，Tiny UI也允许在任何元素上加上 <font class="tRed">class="zBoxSizing</font>，即可实现下面所有元素使用盒子模型。
+            .zCode
+                code.language-jade.
+                    .zBoxSizing *,
+                    .zBoxSizing *:before,
+                    .zBoxSizing *:after {
+                       -moz-box-sizing: border-box;
+                       -webkit-box-sizing: border-box;
+                       box-sizing: border-box;
+                    }
+
+            img.mt30(src="/img/box-sizing.jpg")

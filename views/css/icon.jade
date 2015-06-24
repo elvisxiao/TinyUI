@@ -1,0 +1,58 @@
+extends ../layout
+
+block content
+    include ../common/banner/main
+
+    .zWrap.pt30
+        .zCol3
+            include ../common/sidebar/css
+        .zCol9.pl20
+            h3(data-active="图标") Icons 
+
+            p 我们目前使用了开源图标字体库
+                a.tRed(href="https://icomoon.io/", target="_blank") “icomoon” 
+                |，涵盖了网站绝大部分常见图标。
+            
+            h4.mt30 1. 使用方法
+            p 在HTML元素上添加<font class="tRed"> .icon-*** </font> 即可，图标的颜色与大小分别由css的 <font class="tRed">color</font> 和 <font class="tRed">font-size</font> 控制
+                a.tRed.fr(href="/icons/demo.html", target="_blank") 查看列表
+
+            .zExample.mt20
+                p
+                    i.icon-switch.mr20 关闭
+                    i.icon-heart.mr20 爱心
+                    i.icon-info.tRed.mr20 提示信息
+                    span
+                        i.icon-image.f24.mr5.vm(style="color: #3bb4f2")
+                        |图片
+                .zCode.mt20
+                    code.language-jade.
+                        p
+                            i.icon-switch.mr20 关闭
+                            i.icon-heart.mr20 爱心
+                            i.icon-info.tRed.mr20 提示信息
+                            span
+                                i.icon-image.f24.mr5.vm(style="color: #3bb4f2")
+                                |图片
+
+            h4.mt30 2. 旋转动画
+            p 在icon图标上加上class <font class="tRed">.zSpin</font> 即可。
+
+            .zExample.mt20
+                p.pl20.f20(style="color:#aaa")
+                    i.icon-loop2.mr20.zSpin
+                    i.icon-spinner6.mr20.zSpinWarning
+                    i.icon-spinner9.mr20.zSpinPrimary
+                    i.icon-spinner2.mr20.zSpinInfo
+                    i.icon-spinner.mr20.zSpinDanger
+                    i.icon-spinner2.mr20.zSpinSuccess
+                .zCode.mt20
+                    code.language-jade.
+                        p.pl20.f20(style="color:#aaa")
+                            i.icon-loop2.mr20.zSpin
+                            i.icon-spinner6.mr20.zSpinWarning
+                            i.icon-spinner9.mr20.zSpinPrimary
+                            i.icon-spinner2.mr20.zSpinInfo
+                            i.icon-spinner.mr20.zSpinDanger
+                            i.icon-spinner2.mr20.zSpinSuccess
+            .cb.h50

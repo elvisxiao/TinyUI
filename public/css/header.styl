@@ -1,0 +1,45 @@
+$headerHeight = 50px
+$headerBgColor = #0e90d2
+.zHeader
+	color #f2f2f2
+	height $headerHeight
+	background $headerBgColor
+	h1, ul, li
+		display inline-block
+	h1 
+		line-height 30px
+		height 30px
+		margin 10px 0
+	a
+		color inherit
+		position relative
+		text-decoration none
+		padding 0 30px
+		line-height $headerHeight
+		display inline-block
+		transition background .2s
+		&:hover
+			background rgba(0, 0, 0, .1)
+	li.active a
+		background rgba(0, 0, 0, .15)
+		color #fff
+		&:after
+			content ''
+			display block 
+			width 0
+			height 0
+			position absolute
+			left 50%
+			bottom 0
+			margin-left -10px
+			border-bottom 8px solid #ddd 
+			border-left 10px solid transparent
+			border-right 10px solid transparent
+	.zWrap, zWrapLg, ul, li, a
+		height 100%
+		vertical-align top
+	ul, li, a
+		margin 0
+	ul 
+		float right
+	

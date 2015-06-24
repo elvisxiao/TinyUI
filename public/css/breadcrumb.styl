@@ -1,0 +1,29 @@
+.zBreadcrumb, .zBreadcrumbSlash
+	list-style-type none
+	overflow hidden
+	margin-left 0
+	padding-left 0
+	line-height 2em
+	li
+		display inline-block
+		float left
+		&:before
+			content '>'
+			color #888
+			font-size 12px
+			vertical-align middle
+			margin-left 3px 
+			margin-right 3px
+		a 
+			text-decoration none
+	li:first-child
+		&:before 
+			content ''
+	li.active
+		a 
+			color #888
+			
+.zBreadcrumbSlash
+	li 
+		&:before
+			content '/'

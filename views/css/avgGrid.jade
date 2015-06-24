@@ -1,0 +1,48 @@
+extends ../layout
+
+block content
+    include ../common/banner/main
+
+    .zWrap.pt30.of
+        .zCol3
+            include ../common/sidebar/css
+        .zCol9.pl20
+            h3(data-active="等分网格") AVG-Grid 
+            p Average Grid，即均分网格，使用ul、ol创建等分列，一般用于商品展示中比较多。
+            p 使用时，在父元素上加上 <font class="tRed">.zColAvg *</font>, 子元素上加上 <font class="tRed">.zColAvg</font> 即可，与布局网格不同的是，这里的数字 * 表示几等分（支持2-6的数字），而不是占 12 等分中的几列，比如 .zColAvg4 会将子元素的宽度设置为 25%。
+            div.f16.fb 示例：一个6等分的网格系统
+            p 下面的示例中，一行包括6个等分列，各个列均设置了默认的padding值为：5px。
+            div.zExample
+                div.zColAvg6.mt20
+                    div.zColAvg
+                        img(src="/img/pic1.jpg")
+                    div.zColAvg
+                        img(src="/img/pic2.jpg")
+                    div.zColAvg
+                        img(src="/img/pic1.jpg")
+                    div.zColAvg
+                        img(src="/img/pic2.jpg")
+                    div.zColAvg
+                        img(src="/img/pic1.jpg")
+                    div.zColAvg
+                        img(src="/img/pic2.jpg")
+
+                .zCode.mt20
+                    code.language-jade.
+                        div.zColAvg6
+                            div.zColAvg
+                                img(src="/img/pic1.jpg")
+                            div.zColAvg
+                                img(src="/img/pic2.jpg")
+                            div.zColAvg
+                                img(src="/img/pic1.jpg")
+                            div.zColAvg
+                                img(src="/img/pic2.jpg")
+                            div.zColAvg
+                                img(src="/img/pic1.jpg")
+                            div.zColAvg
+                                img(src="/img/pic2.jpg")
+
+            
+
+           

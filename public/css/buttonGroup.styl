@@ -1,0 +1,43 @@
+.zBtnGroup
+    button:focus, button.active
+        box-shadow inset 0 100px 25px rgba(0, 0, 0, .2)
+    >button:not(:first-child):not(:last-child)
+        border-radius 0
+
+    >button.zCircle:first-child, >button.zRadius:first-child
+        border-bottom-right-radius 0
+        border-top-right-radius 0
+    
+    >button.zCircle:last-child, >button.zRadius:last-child
+        border-bottom-left-radius 0
+        border-top-left-radius 0
+
+.zBtnGroupVertical
+    display inline-block
+    >button 
+        display block
+        
+.zBtnGroup
+    .zBtnDrop 
+        position relative
+        &:active, &:focus
+            .zDropdown
+                display block
+    .zBtnDrop.active
+        .zDropdown
+            display block
+
+    .zIconUp
+        border-bottom-color #fff
+    .zIconDown
+        border-top-color #fff
+    .zIconLeft 
+        border-right-color #fff
+    .zIconRight
+        border-left-color #fff
+    
+
+.borderBottom
+    border-bottom 1px solid #ddd
+            
+    

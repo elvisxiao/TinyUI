@@ -1,0 +1,61 @@
+
+/* line 1 : /Users/elvis/bitbucket/tinyUI/node_modules/grunt-contrib-stylus/node_modules/stylus/lib/functions/index.styl */
+
+/* line 1 : /Users/elvis/bitbucket/tinyUI/public/css/breadcrumb.styl */
+.zBreadcrumb,
+.zBreadcrumbSlash {
+  list-style-type: none;
+  overflow: hidden;
+  margin-left: 0;
+  padding-left: 0;
+  line-height: 2em;
+}
+
+/* line 7 : /Users/elvis/bitbucket/tinyUI/public/css/breadcrumb.styl */
+.zBreadcrumb li,
+.zBreadcrumbSlash li {
+  display: inline-block;
+  float: left;
+}
+
+/* line 10 : /Users/elvis/bitbucket/tinyUI/public/css/breadcrumb.styl */
+.zBreadcrumb li:before,
+.zBreadcrumbSlash li:before {
+  content: '>';
+  color: #888;
+  font-size: 12px;
+  vertical-align: middle;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+/* line 17 : /Users/elvis/bitbucket/tinyUI/public/css/breadcrumb.styl */
+.zBreadcrumb li a,
+.zBreadcrumbSlash li a {
+  text-decoration: none;
+}
+
+/* line 19 : /Users/elvis/bitbucket/tinyUI/public/css/breadcrumb.styl */
+
+/* line 20 : /Users/elvis/bitbucket/tinyUI/public/css/breadcrumb.styl */
+.zBreadcrumb li:first-child:before,
+.zBreadcrumbSlash li:first-child:before {
+  content: '';
+}
+
+/* line 22 : /Users/elvis/bitbucket/tinyUI/public/css/breadcrumb.styl */
+
+/* line 23 : /Users/elvis/bitbucket/tinyUI/public/css/breadcrumb.styl */
+.zBreadcrumb li.active a,
+.zBreadcrumbSlash li.active a {
+  color: #888;
+}
+
+/* line 26 : /Users/elvis/bitbucket/tinyUI/public/css/breadcrumb.styl */
+
+/* line 27 : /Users/elvis/bitbucket/tinyUI/public/css/breadcrumb.styl */
+
+/* line 28 : /Users/elvis/bitbucket/tinyUI/public/css/breadcrumb.styl */
+.zBreadcrumbSlash li:before {
+  content: '/';
+}

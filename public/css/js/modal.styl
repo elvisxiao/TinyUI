@@ -1,0 +1,74 @@
+.zModalCover
+    position fixed
+    top 0
+    left 0
+    height 100%
+    width 100%
+    z-index 1000
+    text-align center
+    overflow-y auto
+    transition opacity .15s linear
+    background-color rgba(0, 0, 0, .4)
+.zModal
+    position relative
+    background #F8F8F8
+    padding 0
+    top 50%
+    display none
+    min-width 300px
+    text-align left
+    .zModalHd
+        border-bottom 1px solid #ddd
+        line-height 40px 
+        padding 0 15px
+        margin 0
+        background-color inherit
+        position relative
+        white-space nowrap
+        .zModalClose
+            position absolute
+            right 0
+            top 0
+            display block
+            height 100%
+            width 40px 
+            font-size 24px
+            color #aaa
+            text-align center
+            cursor pointer
+            &:hover
+                color #222
+    .zModalBd
+        position relative
+        padding 15px
+        background-color inherit
+    .zModalFt
+        border-top 1px solid #ddd 
+        text-align center
+        .zModalAlertBtn, .zModalBtnLeft, .zModalBtnRight
+            background-color inherit
+            width 100%
+            height 100%
+            display block
+            border 0
+            color #0c80ba
+            line-height 34px
+            font-size 14px 
+            transition background-color .15s
+            cursor pointer
+            &:hover
+                background-color #f1f1f1
+            &:active 
+                background-color #ddd
+                outline 0
+            &:focus
+                outline 0
+        .zModalBtnLeft, .zModalBtnRight
+            width 50%
+            display inline-block
+        .zModalBtnLeft
+            border-right 1px solid #ddd
+            
+.zModalActive
+    overflow hidden !important
+         

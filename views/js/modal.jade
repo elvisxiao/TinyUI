@@ -1,0 +1,48 @@
+extends ../layout
+
+block content
+    include ../common/banner/main
+
+    .zWrap.pt30
+        .zCol3
+            include ../common/sidebar/js
+
+        .zCol9.pl20
+            h3(data-active="模态窗口") 模态窗口 Modal 
+
+            h4 1. 基本使用
+            .zExample.mt20
+                p.mt10
+                    button.zBtnPrimary(type="button", data-modal="#modal1") Modal
+
+                #modal1.zModal
+                    .zModalHd 标题写在这里
+                    .zModalBd 这里是内容区域，modal窗口默认不能通过点击遮罩关闭。
+                        p.mt10 这里是内容区域，modal窗口默认不能通过点击遮罩关闭。
+                .zCode.mt20
+                    code.language-jade.
+                        button.zBtn(type="button", data-modal="#modal1") Modal
+
+                        #modal1.zModal
+                            .zModalHd 标题写在这里
+                            .zModalBd 这里是内容区域，modal窗口默认不能通过点击遮罩关闭 ....
+
+            h4 2. Alert
+            p 考虑到使用场景，alert只能通过js调用，用于替代window.alert方法。
+            .zExample.mt20
+                p.mt10
+                    button.zBtnPrimary(type="button", onclick="oc.modal.alert('Alert可以点击遮罩关闭哦！')") Alert
+
+            h4 3. Confirm
+            p 考虑到使用场景，confirm只能通过js调用，用于替代window.confirm方法。
+            .zExample.mt20
+                p.mt10
+                    button.zBtnPrimary(type="button", onclick="oc.modal.confirm('Confirm可以点击遮罩关闭哦！', function(){alert('确认了，然后呢?')}, function(){alert('逗我玩的呀，取消了?')})") Confirm
+
+            h4 4. Prompt
+            p 考虑到使用场景，prompt只能通过js调用，用于替代window.prompt方法, 参数会传入cbOk。
+            .zExample.mt20
+                p.mt10
+                    button.zBtnPrimary(type="button", onclick="oc.modal.prompt('<p>TinyUI<br>最近有啥不爽不，来，吐槽下：</p>', function(msg){alert('确认了，输入信息：' + msg)}, function(){alert('逗我玩的呀，取消了?')}, true)") Prompt
+
+            .cb.h50
