@@ -28,13 +28,16 @@ module.exports = {
     	return modal;
     },
 
-    alert: function(title, content) {
-    	if(arguments.length < 2){
+    alert: function(title, content, cb) {
+    	if(arguments.length === 1){
     		content = arguments[0];
     		title = '';
     	}
     	var modal = this._generateModal(title, content);
     	modal.find('.zModal').append('<div class="zModalFt"><button class="zModalClose zModalAlertBtn">确定</button></div>');
+        
+        cb && cb();
+        typeof content === 'function' && content();
     },
 
     confirm: function(content, cbOk, cbNo){

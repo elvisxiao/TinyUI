@@ -1,4 +1,32 @@
-/**
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JSDoc: Source: ui.js</title>
+
+    <script src="scripts/prettify/prettify.js"> </script>
+    <script src="scripts/prettify/lang-css.js"> </script>
+    <!--[if lt IE 9]>
+      <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <link type="text/css" rel="stylesheet" href="styles/prettify-tomorrow.css">
+    <link type="text/css" rel="stylesheet" href="styles/jsdoc-default.css">
+</head>
+
+<body>
+
+<div id="main">
+
+    <h1 class="page-title">Source: ui.js</h1>
+
+    
+
+
+
+    
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>/**
 * @file 基本的、单个UI元素
 * @author Elvis
 * @version 0.1 
@@ -45,7 +73,7 @@ UI.toggleOneBtn = function(btn, on, off){
     if(isChecked){
         btnClass += ' active';
     }
-    var span = $('<span class="' + btnClass + '"><i class="zToggleBtnON">' + on + '</i><i class="zToggleBtnOFF">' + off + '</i>' +  btn[0].outerHTML + '</span>');
+    var span = $('&lt;span class="' + btnClass + '">&lt;i class="zToggleBtnON">' + on + '&lt;/i>&lt;i class="zToggleBtnOFF">' + off + '&lt;/i>' +  btn[0].outerHTML + '&lt;/span>');
     btn.replaceWith(span);
     span.find('input').prop('checked', isChecked);
 
@@ -80,7 +108,7 @@ UI.autoComplete = function(ele, array, cb, prefix){
     ele.on('keydown', function(e){
         var ipt = $(this);
         var ul = ipt.next('ul.zAutoComplete');
-        if(e.keyCode === 13 && ul.find('li.active').length > 0){
+        if(e.keyCode === 13 &amp;&amp; ul.find('li.active').length > 0){
             event.preventDefault();
             return false;
         }
@@ -128,7 +156,7 @@ UI.autoComplete = function(ele, array, cb, prefix){
                 if(prefix){
                     var mathedArray = text.match(/(.|,|\s)*(;|,|\s)/);
                     text = '';
-                    if(mathedArray && mathedArray.length > 0){
+                    if(mathedArray &amp;&amp; mathedArray.length > 0){
                         text = mathedArray[0];
                     }
                     ipt.val(text + slcVal);
@@ -138,7 +166,7 @@ UI.autoComplete = function(ele, array, cb, prefix){
                 }
                 
                 ul.remove();
-                cb && cb(slcVal, ipt);
+                cb &amp;&amp; cb(slcVal, ipt);
             }
             return;
         }
@@ -180,9 +208,9 @@ UI.autoComplete = function(ele, array, cb, prefix){
             len = 8;
         }
 
-        var ul = $('<ul class="zAutoComplete"></ul>');
-        for(var i = 0; i < len; i++){
-            ul.append('<li tabindex="0">' + matchedArray[i] + '</li>');
+        var ul = $('&lt;ul class="zAutoComplete">&lt;/ul>');
+        for(var i = 0; i &lt; len; i++){
+            ul.append('&lt;li tabindex="0">' + matchedArray[i] + '&lt;/li>');
         }
         var top = ipt.position().top + ipt.outerHeight();
         var left = ipt.position().left;
@@ -193,7 +221,7 @@ UI.autoComplete = function(ele, array, cb, prefix){
             if(prefix){
                 var mathedArray = text.match(/(.|,|\s)*(;|,|\s)/);
                 text = '';
-                if(mathedArray && mathedArray.length > 0){
+                if(mathedArray &amp;&amp; mathedArray.length > 0){
                     text = mathedArray[0];
                 }
                 // text = text.replace(text.replace(/.*;|.*,|.*\s/g, ''), '');
@@ -203,7 +231,7 @@ UI.autoComplete = function(ele, array, cb, prefix){
                 ipt.val(slc);
             }
             $('.zAutoComplete').remove();
-            cb && cb(slc, ipt);
+            cb &amp;&amp; cb(slc, ipt);
         })
         .on('mouseenter', 'li', function(){
             ul.find('.active').removeClass('active');
@@ -265,15 +293,15 @@ UI.multiSelect = function(cb){
         if(name === undefined){
             name = '';
         }
-        var zEle = $('<div class="zMultiSelect"><div class="zMultiSelectText"></div><div class="zMultiSelectMain"><ul></ul></div></div>');
+        var zEle = $('&lt;div class="zMultiSelect">&lt;div class="zMultiSelectText">&lt;/div>&lt;div class="zMultiSelectMain">&lt;ul>&lt;/ul>&lt;/div>&lt;/div>');
         zEle.css('width', width);
         zEle.find('.zMultiSelectText').css({'height': height, 'line-height': height}).html(ele.attr('data-slc'));
         
         var lis = '';
         ele.find('option').each(function(i, item){
-            lis += '<li><label class="zCbx"><input type="checkbox", name="' + name + '" value="' + item.value + '">' + item.innerHTML + '</label></li>';
+            lis += '&lt;li>&lt;label class="zCbx">&lt;input type="checkbox", name="' + name + '" value="' + item.value + '">' + item.innerHTML + '&lt;/label>&lt;/li>';
         });
-        lis += '<li><button class="btnPrimary btnXs" type="button">Confirm</button></li>';
+        lis += '&lt;li>&lt;button class="btnPrimary btnXs" type="button">Confirm&lt;/button>&lt;/li>';
         zEle.find('ul').html(lis);
 
         ele.replaceWith(zEle);
@@ -318,7 +346,7 @@ UI.multiSelect = function(cb){
             main.hide();
             e.stopPropagation();
             
-            cb && cb(select);
+            cb &amp;&amp; cb(select);
         }).click(function(e){
             e.stopPropagation();
         });
@@ -345,9 +373,9 @@ UI.popOver = function(btn, title, content, popPosition){
         return;
     }
 
-    var ele = $('<div class="zPopOver zPopOver' + popPosition + '"></div>');
-    ele.append('<div class="zPopOverTitle">' + title + '<i class="icon-close"></i></div>');
-    ele.append('<div class="zPopOverContent">' + content + '</div>');
+    var ele = $('&lt;div class="zPopOver zPopOver' + popPosition + '">&lt;/div>');
+    ele.append('&lt;div class="zPopOverTitle">' + title + '&lt;i class="icon-close">&lt;/i>&lt;/div>');
+    ele.append('&lt;div class="zPopOverContent">' + content + '&lt;/div>');
     btn = $(btn);
     var position = btn.position();
     btn.after(ele);
@@ -392,4 +420,26 @@ UI.popOverRemove = function(btn){
     }
 }
 
-module.exports = UI;
+module.exports = UI;</code></pre>
+        </article>
+    </section>
+
+
+
+
+</div>
+
+<nav>
+    <h2><a href="index.html">Home</a></h2><h3>Modules</h3><ul><li><a href="oc.module_ajax.html">ajax</a></li><li><a href="oc.module_date.html">date</a></li><li><a href="oc.module_ui.html">ui</a></li></ul>
+</nav>
+
+<br class="clear">
+
+<footer>
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.0</a> on Thu Jun 25 2015 14:45:54 GMT+0800 (CST)
+</footer>
+
+<script> prettyPrint(); </script>
+<script src="scripts/linenumber.js"> </script>
+</body>
+</html>
