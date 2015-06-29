@@ -6,23 +6,29 @@
   color: #f2f2f2;
   height: 50px;
   background: #0e90d2;
+  box-sizing: border-box;
 }
 
-/* line 7 : /Users/elvis/bitbucket/tinyUI/public/css/header.styl */
+/* line 8 : /Users/elvis/bitbucket/tinyUI/public/css/header.styl */
+.zHeader * {
+  box-sizing: border-box;
+}
+
+/* line 10 : /Users/elvis/bitbucket/tinyUI/public/css/header.styl */
 .zHeader h1,
 .zHeader ul,
 .zHeader li {
   display: inline-block;
 }
 
-/* line 9 : /Users/elvis/bitbucket/tinyUI/public/css/header.styl */
+/* line 12 : /Users/elvis/bitbucket/tinyUI/public/css/header.styl */
 .zHeader h1 {
   line-height: 30px;
   height: 30px;
   margin: 10px 0;
 }
 
-/* line 13 : /Users/elvis/bitbucket/tinyUI/public/css/header.styl */
+/* line 16 : /Users/elvis/bitbucket/tinyUI/public/css/header.styl */
 .zHeader a {
   color: inherit;
   position: relative;
@@ -33,18 +39,18 @@
   transition: background 0.2s;
 }
 
-/* line 21 : /Users/elvis/bitbucket/tinyUI/public/css/header.styl */
+/* line 24 : /Users/elvis/bitbucket/tinyUI/public/css/header.styl */
 .zHeader a:hover {
   background: rgba(0,0,0,0.1);
 }
 
-/* line 23 : /Users/elvis/bitbucket/tinyUI/public/css/header.styl */
+/* line 26 : /Users/elvis/bitbucket/tinyUI/public/css/header.styl */
 .zHeader li.active a {
   background: rgba(0,0,0,0.15);
   color: #fff;
 }
 
-/* line 26 : /Users/elvis/bitbucket/tinyUI/public/css/header.styl */
+/* line 29 : /Users/elvis/bitbucket/tinyUI/public/css/header.styl */
 .zHeader li.active a:after {
   content: '';
   display: block;
@@ -59,7 +65,7 @@
   border-right: 10px solid transparent;
 }
 
-/* line 38 : /Users/elvis/bitbucket/tinyUI/public/css/header.styl */
+/* line 41 : /Users/elvis/bitbucket/tinyUI/public/css/header.styl */
 .zHeader .zWrap,
 .zHeader zWrapLg,
 .zHeader ul,
@@ -69,14 +75,14 @@
   vertical-align: top;
 }
 
-/* line 41 : /Users/elvis/bitbucket/tinyUI/public/css/header.styl */
+/* line 44 : /Users/elvis/bitbucket/tinyUI/public/css/header.styl */
 .zHeader ul,
 .zHeader li,
 .zHeader a {
   margin: 0;
 }
 
-/* line 43 : /Users/elvis/bitbucket/tinyUI/public/css/header.styl */
+/* line 46 : /Users/elvis/bitbucket/tinyUI/public/css/header.styl */
 .zHeader ul {
   float: right;
 }

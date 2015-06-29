@@ -11,15 +11,21 @@
     >button.zCircle:last-child, >button.zRadius:last-child
         border-bottom-left-radius 0
         border-top-left-radius 0
-
+    box-sizing border-box 
+    *
+        box-sizing border-box 
 .zBtnGroupVertical
     display inline-block
     >button 
         display block
         
 .zBtnGroup
+    position relative
+    display inline-block
     .zBtnDrop 
-        position relative
+        position absolute
+        top 0
+        bottom 0
         &:active, &:focus
             .zDropdown
                 display block

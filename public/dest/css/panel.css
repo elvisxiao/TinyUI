@@ -9,9 +9,20 @@
 .zPanelWarning,
 .zPanelDanger {
   border: 1px solid #ddd;
+  box-sizing: border-box;
 }
 
-/* line 3 : /Users/elvis/bitbucket/tinyUI/public/css/panel.styl */
+/* line 4 : /Users/elvis/bitbucket/tinyUI/public/css/panel.styl */
+.zPanel *,
+.zPanelPrimary *,
+.zPanelInfo *,
+.zPanelSuccess *,
+.zPanelWarning *,
+.zPanelDanger * {
+  box-sizing: border-box;
+}
+
+/* line 6 : /Users/elvis/bitbucket/tinyUI/public/css/panel.styl */
 .zPanel .zPanelHd,
 .zPanelPrimary .zPanelHd,
 .zPanelInfo .zPanelHd,
@@ -28,7 +39,7 @@
   display: block;
 }
 
-/* line 12 : /Users/elvis/bitbucket/tinyUI/public/css/panel.styl */
+/* line 15 : /Users/elvis/bitbucket/tinyUI/public/css/panel.styl */
 .zPanel .zPanelBd,
 .zPanelPrimary .zPanelBd,
 .zPanelInfo .zPanelBd,
@@ -39,56 +50,56 @@
   border-top: 1px solid #ddd;
 }
 
-/* line 16 : /Users/elvis/bitbucket/tinyUI/public/css/panel.styl */
+/* line 19 : /Users/elvis/bitbucket/tinyUI/public/css/panel.styl */
 .zPanelPrimary {
   border: 1px solid #10a0ea;
 }
 
-/* line 18 : /Users/elvis/bitbucket/tinyUI/public/css/panel.styl */
+/* line 21 : /Users/elvis/bitbucket/tinyUI/public/css/panel.styl */
 .zPanelPrimary .zPanelHd {
   background-color: #0e90d2;
   color: #fff;
 }
 
-/* line 21 : /Users/elvis/bitbucket/tinyUI/public/css/panel.styl */
+/* line 24 : /Users/elvis/bitbucket/tinyUI/public/css/panel.styl */
 .zPanelInfo {
   border: 1px solid #46b8da;
 }
 
-/* line 23 : /Users/elvis/bitbucket/tinyUI/public/css/panel.styl */
+/* line 26 : /Users/elvis/bitbucket/tinyUI/public/css/panel.styl */
 .zPanelInfo .zPanelHd {
   background-color: #5bc0de;
   color: #fff;
 }
 
-/* line 26 : /Users/elvis/bitbucket/tinyUI/public/css/panel.styl */
+/* line 29 : /Users/elvis/bitbucket/tinyUI/public/css/panel.styl */
 .zPanelSuccess {
   border: 1px solid #c9e7c9;
 }
 
-/* line 28 : /Users/elvis/bitbucket/tinyUI/public/css/panel.styl */
+/* line 31 : /Users/elvis/bitbucket/tinyUI/public/css/panel.styl */
 .zPanelSuccess .zPanelHd {
   background-color: rgba(94,185,94,0.2);
   color: #5eb95e;
 }
 
-/* line 31 : /Users/elvis/bitbucket/tinyUI/public/css/panel.styl */
+/* line 34 : /Users/elvis/bitbucket/tinyUI/public/css/panel.styl */
 .zPanelWarning {
   border: 1px solid #fbd0ae;
 }
 
-/* line 33 : /Users/elvis/bitbucket/tinyUI/public/css/panel.styl */
+/* line 36 : /Users/elvis/bitbucket/tinyUI/public/css/panel.styl */
 .zPanelWarning .zPanelHd {
   background-color: rgba(243,123,29,0.2);
   color: #f37b1d;
 }
 
-/* line 36 : /Users/elvis/bitbucket/tinyUI/public/css/panel.styl */
+/* line 39 : /Users/elvis/bitbucket/tinyUI/public/css/panel.styl */
 .zPanelDanger {
   border: 1px solid #f5cecd;
 }
 
-/* line 38 : /Users/elvis/bitbucket/tinyUI/public/css/panel.styl */
+/* line 41 : /Users/elvis/bitbucket/tinyUI/public/css/panel.styl */
 .zPanelDanger .zPanelHd {
   background-color: rgba(221,81,76,0.2);
   color: #dd514c;

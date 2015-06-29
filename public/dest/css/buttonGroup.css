@@ -2,6 +2,9 @@
 /* line 1 : /Users/elvis/bitbucket/tinyUI/node_modules/grunt-contrib-stylus/node_modules/stylus/lib/functions/index.styl */
 
 /* line 1 : /Users/elvis/bitbucket/tinyUI/public/css/buttonGroup.styl */
+.zBtnGroup {
+  box-sizing: border-box;
+}
 
 /* line 2 : /Users/elvis/bitbucket/tinyUI/public/css/buttonGroup.styl */
 .zBtnGroup button:focus,
@@ -29,58 +32,69 @@
 }
 
 /* line 15 : /Users/elvis/bitbucket/tinyUI/public/css/buttonGroup.styl */
+.zBtnGroup * {
+  box-sizing: border-box;
+}
+
+/* line 17 : /Users/elvis/bitbucket/tinyUI/public/css/buttonGroup.styl */
 .zBtnGroupVertical {
   display: inline-block;
 }
 
-/* line 17 : /Users/elvis/bitbucket/tinyUI/public/css/buttonGroup.styl */
+/* line 19 : /Users/elvis/bitbucket/tinyUI/public/css/buttonGroup.styl */
 .zBtnGroupVertical >button {
   display: block;
 }
 
-/* line 20 : /Users/elvis/bitbucket/tinyUI/public/css/buttonGroup.styl */
-
-/* line 21 : /Users/elvis/bitbucket/tinyUI/public/css/buttonGroup.styl */
-.zBtnGroup .zBtnDrop {
+/* line 22 : /Users/elvis/bitbucket/tinyUI/public/css/buttonGroup.styl */
+.zBtnGroup {
   position: relative;
+  display: inline-block;
 }
 
-/* line 23 : /Users/elvis/bitbucket/tinyUI/public/css/buttonGroup.styl */
+/* line 25 : /Users/elvis/bitbucket/tinyUI/public/css/buttonGroup.styl */
+.zBtnGroup .zBtnDrop {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+}
 
-/* line 24 : /Users/elvis/bitbucket/tinyUI/public/css/buttonGroup.styl */
+/* line 29 : /Users/elvis/bitbucket/tinyUI/public/css/buttonGroup.styl */
+
+/* line 30 : /Users/elvis/bitbucket/tinyUI/public/css/buttonGroup.styl */
 .zBtnGroup .zBtnDrop:active .zDropdown,
 .zBtnGroup .zBtnDrop:focus .zDropdown {
   display: block;
 }
 
-/* line 26 : /Users/elvis/bitbucket/tinyUI/public/css/buttonGroup.styl */
+/* line 32 : /Users/elvis/bitbucket/tinyUI/public/css/buttonGroup.styl */
 
-/* line 27 : /Users/elvis/bitbucket/tinyUI/public/css/buttonGroup.styl */
+/* line 33 : /Users/elvis/bitbucket/tinyUI/public/css/buttonGroup.styl */
 .zBtnGroup .zBtnDrop.active .zDropdown {
   display: block;
 }
 
-/* line 30 : /Users/elvis/bitbucket/tinyUI/public/css/buttonGroup.styl */
+/* line 36 : /Users/elvis/bitbucket/tinyUI/public/css/buttonGroup.styl */
 .zBtnGroup .zIconUp {
   border-bottom-color: #fff;
 }
 
-/* line 32 : /Users/elvis/bitbucket/tinyUI/public/css/buttonGroup.styl */
+/* line 38 : /Users/elvis/bitbucket/tinyUI/public/css/buttonGroup.styl */
 .zBtnGroup .zIconDown {
   border-top-color: #fff;
 }
 
-/* line 34 : /Users/elvis/bitbucket/tinyUI/public/css/buttonGroup.styl */
+/* line 40 : /Users/elvis/bitbucket/tinyUI/public/css/buttonGroup.styl */
 .zBtnGroup .zIconLeft {
   border-right-color: #fff;
 }
 
-/* line 36 : /Users/elvis/bitbucket/tinyUI/public/css/buttonGroup.styl */
+/* line 42 : /Users/elvis/bitbucket/tinyUI/public/css/buttonGroup.styl */
 .zBtnGroup .zIconRight {
   border-left-color: #fff;
 }
 
-/* line 40 : /Users/elvis/bitbucket/tinyUI/public/css/buttonGroup.styl */
+/* line 46 : /Users/elvis/bitbucket/tinyUI/public/css/buttonGroup.styl */
 .borderBottom {
   border-bottom: 1px solid #ddd;
 }

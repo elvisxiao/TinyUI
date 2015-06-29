@@ -17,27 +17,36 @@
   border-left-color: transparent;
   border-right-color: transparent;
   overflow: visible;
+  box-sizing: border-box;
 }
 
-/* line 13 : /Users/elvis/bitbucket/tinyUI/public/css/zIcon.styl */
+/* line 14 : /Users/elvis/bitbucket/tinyUI/public/css/zIcon.styl */
+.zIconUp *,
+.zIconDown *,
+.zIconLeft *,
+.zIconRight * {
+  box-sizing: border-box;
+}
+
+/* line 16 : /Users/elvis/bitbucket/tinyUI/public/css/zIcon.styl */
 .zIconUp {
   border-bottom-color: #aaa;
   border-top-width: 0;
 }
 
-/* line 16 : /Users/elvis/bitbucket/tinyUI/public/css/zIcon.styl */
+/* line 19 : /Users/elvis/bitbucket/tinyUI/public/css/zIcon.styl */
 .zIconDown {
   border-top-color: #aaa;
   border-bottom-width: 0;
 }
 
-/* line 19 : /Users/elvis/bitbucket/tinyUI/public/css/zIcon.styl */
+/* line 22 : /Users/elvis/bitbucket/tinyUI/public/css/zIcon.styl */
 .zIconLeft {
   border-right-color: #aaa;
   border-left-width: 0;
 }
 
-/* line 23 : /Users/elvis/bitbucket/tinyUI/public/css/zIcon.styl */
+/* line 26 : /Users/elvis/bitbucket/tinyUI/public/css/zIcon.styl */
 .zIconRight {
   border-left-color: #aaa;
   border-right-width: 0;

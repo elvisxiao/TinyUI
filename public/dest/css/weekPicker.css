@@ -8,11 +8,17 @@
   background: #fff;
   border: 1px solid #ddd;
   box-shadow: 0 0 3px rgba(0,0,0,0.1);
+  box-sizing: border-box;
 }
 
-/* line 7 : /Users/elvis/bitbucket/tinyUI/public/css/weekPicker.styl */
-
 /* line 8 : /Users/elvis/bitbucket/tinyUI/public/css/weekPicker.styl */
+.zWeekPicker * {
+  box-sizing: border-box;
+}
+
+/* line 10 : /Users/elvis/bitbucket/tinyUI/public/css/weekPicker.styl */
+
+/* line 11 : /Users/elvis/bitbucket/tinyUI/public/css/weekPicker.styl */
 .zWeekPicker thead th {
   text-align: center;
   height: 36px;
@@ -20,7 +26,7 @@
   border-bottom: 2px solid #ededed;
 }
 
-/* line 13 : /Users/elvis/bitbucket/tinyUI/public/css/weekPicker.styl */
+/* line 16 : /Users/elvis/bitbucket/tinyUI/public/css/weekPicker.styl */
 .zWeekPicker thead .icon-arrow-left,
 .zWeekPicker thead .icon-arrow-right {
   color: #666;
@@ -32,23 +38,23 @@
   cursor: pointer;
 }
 
-/* line 21 : /Users/elvis/bitbucket/tinyUI/public/css/weekPicker.styl */
+/* line 24 : /Users/elvis/bitbucket/tinyUI/public/css/weekPicker.styl */
 .zWeekPicker thead .icon-arrow-left:hover,
 .zWeekPicker thead .icon-arrow-right:hover {
   color: #428bca;
 }
 
-/* line 23 : /Users/elvis/bitbucket/tinyUI/public/css/weekPicker.styl */
+/* line 26 : /Users/elvis/bitbucket/tinyUI/public/css/weekPicker.styl */
 .zWeekPicker thead .icon-arrow-left {
   float: left;
 }
 
-/* line 25 : /Users/elvis/bitbucket/tinyUI/public/css/weekPicker.styl */
+/* line 28 : /Users/elvis/bitbucket/tinyUI/public/css/weekPicker.styl */
 .zWeekPicker thead .icon-arrow-right {
   float: right;
 }
 
-/* line 27 : /Users/elvis/bitbucket/tinyUI/public/css/weekPicker.styl */
+/* line 30 : /Users/elvis/bitbucket/tinyUI/public/css/weekPicker.styl */
 .zWeekPicker td {
   border-right: 1px solid #eee;
   border-bottom: 1px solid #eee;
@@ -56,12 +62,12 @@
   cursor: pointer;
 }
 
-/* line 32 : /Users/elvis/bitbucket/tinyUI/public/css/weekPicker.styl */
+/* line 35 : /Users/elvis/bitbucket/tinyUI/public/css/weekPicker.styl */
 .zWeekPicker td:hover {
   background: rgba(66,139,202,0.3);
 }
 
-/* line 34 : /Users/elvis/bitbucket/tinyUI/public/css/weekPicker.styl */
+/* line 37 : /Users/elvis/bitbucket/tinyUI/public/css/weekPicker.styl */
 .zWeekPicker td.active {
   background: #428bca;
   color: #fff;

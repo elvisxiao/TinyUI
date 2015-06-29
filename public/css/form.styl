@@ -1,5 +1,8 @@
 .zRadio, .zRadioWarning, .zRadioDanger
     position relative
+    box-sizing border-box
+    *
+        box-sizing border-box
     input[type="radio"]
         margin-right 6px
         opacity 0
@@ -109,6 +112,7 @@
     color #555
     transition border-color ease-in-out .15s, box-shadow ease-in-out .15s
     display inline-block
+    box-sizing border-box
     &:focus
         outline none
         border 1px solid rgba(69, 153, 262, .8)
@@ -125,6 +129,9 @@ select.zIpt
 .zToggle
     position relative
     display inline-block
+    box-sizing border-box
+    *
+        box-sizing border-box
     input[type="checkbox"]
         opacity 0
         position absolute

@@ -5,9 +5,15 @@
 .zCol {
   overflow: hidden;
   clear: both;
+  box-sizing: border-box;
 }
 
-/* line 4 : /Users/elvis/bitbucket/tinyUI/public/css/grid.styl */
+/* line 5 : /Users/elvis/bitbucket/tinyUI/public/css/grid.styl */
+.zCol * {
+  box-sizing: border-box;
+}
+
+/* line 7 : /Users/elvis/bitbucket/tinyUI/public/css/grid.styl */
 .zCol1,
 .zCol2,
 .zCol3,
@@ -26,64 +32,80 @@
   white-space: pre-wrap;
   position: relative;
   height: 100%;
+  box-sizing: border-box;
 }
 
-/* line 12 : /Users/elvis/bitbucket/tinyUI/public/css/grid.styl */
+/* line 16 : /Users/elvis/bitbucket/tinyUI/public/css/grid.styl */
+.zCol1 *,
+.zCol2 *,
+.zCol3 *,
+.zCol4 *,
+.zCol5 *,
+.zCol6 *,
+.zCol7 *,
+.zCol8 *,
+.zCol9 *,
+.zCol10 *,
+.zCol11 * {
+  box-sizing: border-box;
+}
+
+/* line 18 : /Users/elvis/bitbucket/tinyUI/public/css/grid.styl */
 .zCol1 {
   width: 8.33333333%;
 }
 
-/* line 14 : /Users/elvis/bitbucket/tinyUI/public/css/grid.styl */
+/* line 20 : /Users/elvis/bitbucket/tinyUI/public/css/grid.styl */
 .zCol2 {
   width: 16.66666667%;
 }
 
-/* line 16 : /Users/elvis/bitbucket/tinyUI/public/css/grid.styl */
+/* line 22 : /Users/elvis/bitbucket/tinyUI/public/css/grid.styl */
 .zCol3 {
   width: 25%;
 }
 
-/* line 18 : /Users/elvis/bitbucket/tinyUI/public/css/grid.styl */
+/* line 24 : /Users/elvis/bitbucket/tinyUI/public/css/grid.styl */
 .zCol4 {
   width: 33.33333333%;
 }
 
-/* line 20 : /Users/elvis/bitbucket/tinyUI/public/css/grid.styl */
+/* line 26 : /Users/elvis/bitbucket/tinyUI/public/css/grid.styl */
 .zCol5 {
   width: 41.66666667%;
 }
 
-/* line 22 : /Users/elvis/bitbucket/tinyUI/public/css/grid.styl */
+/* line 28 : /Users/elvis/bitbucket/tinyUI/public/css/grid.styl */
 .zCol6 {
   width: 50%;
 }
 
-/* line 24 : /Users/elvis/bitbucket/tinyUI/public/css/grid.styl */
+/* line 30 : /Users/elvis/bitbucket/tinyUI/public/css/grid.styl */
 .zCol7 {
   width: 58.33333333%;
 }
 
-/* line 26 : /Users/elvis/bitbucket/tinyUI/public/css/grid.styl */
+/* line 32 : /Users/elvis/bitbucket/tinyUI/public/css/grid.styl */
 .zCol8 {
   width: 66.66666667%;
 }
 
-/* line 28 : /Users/elvis/bitbucket/tinyUI/public/css/grid.styl */
+/* line 34 : /Users/elvis/bitbucket/tinyUI/public/css/grid.styl */
 .zCol9 {
   width: 75%;
 }
 
-/* line 30 : /Users/elvis/bitbucket/tinyUI/public/css/grid.styl */
+/* line 36 : /Users/elvis/bitbucket/tinyUI/public/css/grid.styl */
 .zCol10 {
   width: 83.33333333%;
 }
 
-/* line 32 : /Users/elvis/bitbucket/tinyUI/public/css/grid.styl */
+/* line 38 : /Users/elvis/bitbucket/tinyUI/public/css/grid.styl */
 .zCol11 {
   width: 91.66666667%;
 }
 
-/* line 36 : /Users/elvis/bitbucket/tinyUI/public/css/grid.styl */
+/* line 42 : /Users/elvis/bitbucket/tinyUI/public/css/grid.styl */
 .zColAvg4,
 .zColAvg2,
 .zColAvg3,
@@ -92,9 +114,19 @@
   overflow: hidden;
   white-space: nowrap;
   position: relative;
+  box-sizing: border-box;
 }
 
-/* line 40 : /Users/elvis/bitbucket/tinyUI/public/css/grid.styl */
+/* line 47 : /Users/elvis/bitbucket/tinyUI/public/css/grid.styl */
+.zColAvg4 *,
+.zColAvg2 *,
+.zColAvg3 *,
+.zColAvg5 *,
+.zColAvg6 * {
+  box-sizing: border-box;
+}
+
+/* line 49 : /Users/elvis/bitbucket/tinyUI/public/css/grid.styl */
 .zColAvg4 .zColAvg,
 .zColAvg2 .zColAvg,
 .zColAvg3 .zColAvg,
@@ -107,27 +139,27 @@
   height: 100%;
 }
 
-/* line 46 : /Users/elvis/bitbucket/tinyUI/public/css/grid.styl */
+/* line 55 : /Users/elvis/bitbucket/tinyUI/public/css/grid.styl */
 .zColAvg2 .zColAvg {
   width: 50%;
 }
 
-/* line 48 : /Users/elvis/bitbucket/tinyUI/public/css/grid.styl */
+/* line 57 : /Users/elvis/bitbucket/tinyUI/public/css/grid.styl */
 .zColAvg3 .zColAvg {
   width: 33.3333333%;
 }
 
-/* line 50 : /Users/elvis/bitbucket/tinyUI/public/css/grid.styl */
+/* line 59 : /Users/elvis/bitbucket/tinyUI/public/css/grid.styl */
 .zColAvg4 .zColAvg {
   width: 25%;
 }
 
-/* line 52 : /Users/elvis/bitbucket/tinyUI/public/css/grid.styl */
+/* line 61 : /Users/elvis/bitbucket/tinyUI/public/css/grid.styl */
 .zColAvg5 .zColAvg {
   width: 20%;
 }
 
-/* line 54 : /Users/elvis/bitbucket/tinyUI/public/css/grid.styl */
+/* line 63 : /Users/elvis/bitbucket/tinyUI/public/css/grid.styl */
 .zColAvg6 .zColAvg {
   width: 16.6666667%;
 }

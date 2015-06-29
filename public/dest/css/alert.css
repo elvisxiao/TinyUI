@@ -8,6 +8,7 @@
 .zAlertWarning,
 .zAlert,
 .zAlertSuccess {
+  box-sizing: border-box;
   display: block;
   width: 100%;
   color: #fff;
@@ -16,7 +17,7 @@
   box-sizing: border-box;
 }
 
-/* line 8 : /Users/elvis/bitbucket/tinyUI/public/css/alert.styl */
+/* line 9 : /Users/elvis/bitbucket/tinyUI/public/css/alert.styl */
 .zAlertDanger .icon-close,
 .zAlertInfo .icon-close,
 .zAlertPrimary .icon-close,
@@ -33,35 +34,45 @@
 }
 
 /* line 17 : /Users/elvis/bitbucket/tinyUI/public/css/alert.styl */
+.zAlertDanger *,
+.zAlertInfo *,
+.zAlertPrimary *,
+.zAlertWarning *,
+.zAlert *,
+.zAlertSuccess * {
+  box-sizing: border-box;
+}
+
+/* line 20 : /Users/elvis/bitbucket/tinyUI/public/css/alert.styl */
 .zAlert {
   background-color: #eee;
 }
 
-/* line 19 : /Users/elvis/bitbucket/tinyUI/public/css/alert.styl */
+/* line 22 : /Users/elvis/bitbucket/tinyUI/public/css/alert.styl */
 .zAlertWarning {
   background-color: #f37b1d;
   border-color: #e56c0c;
 }
 
-/* line 22 : /Users/elvis/bitbucket/tinyUI/public/css/alert.styl */
+/* line 25 : /Users/elvis/bitbucket/tinyUI/public/css/alert.styl */
 .zAlertPrimary {
   background-color: #0e90d2;
   border-color: #0c7cb5;
 }
 
-/* line 25 : /Users/elvis/bitbucket/tinyUI/public/css/alert.styl */
+/* line 28 : /Users/elvis/bitbucket/tinyUI/public/css/alert.styl */
 .zAlertInfo {
   background-color: #f37b1d;
   border-color: #e56c0c;
 }
 
-/* line 28 : /Users/elvis/bitbucket/tinyUI/public/css/alert.styl */
+/* line 31 : /Users/elvis/bitbucket/tinyUI/public/css/alert.styl */
 .zAlertDanger {
   background-color: #f37b1d;
   border-color: #e56c0c;
 }
 
-/* line 31 : /Users/elvis/bitbucket/tinyUI/public/css/alert.styl */
+/* line 34 : /Users/elvis/bitbucket/tinyUI/public/css/alert.styl */
 .zAlertSuccess {
   background-color: #dd514c;
   border-color: #d83832;

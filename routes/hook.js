@@ -7,7 +7,7 @@ router.post('/', function(req, res) {
 		OCUI: 'ocui',
 		tinyp2p: 'tinyp2p',
 		DaoYang: 'daoyang',
-		// jijin:   'jijin'
+		tinyui: 'tinyui',
 	}
 
 	try{

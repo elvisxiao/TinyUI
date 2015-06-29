@@ -8,16 +8,22 @@
   font-size: 14px;
   min-width: 200px;
   border-right: 1px solid #dfdfdf;
+  box-sizing: border-box;
 }
 
-/* line 7 : /Users/elvis/bitbucket/tinyUI/public/css/sidebar.styl */
+/* line 8 : /Users/elvis/bitbucket/tinyUI/public/css/sidebar.styl */
+.zSidebar * {
+  box-sizing: border-box;
+}
+
+/* line 10 : /Users/elvis/bitbucket/tinyUI/public/css/sidebar.styl */
 .zSidebar dt {
   margin-left: 0;
   padding-left: 15px;
   margin-bottom: 5px;
 }
 
-/* line 11 : /Users/elvis/bitbucket/tinyUI/public/css/sidebar.styl */
+/* line 14 : /Users/elvis/bitbucket/tinyUI/public/css/sidebar.styl */
 .zSidebar dt {
   border-left: 3px solid #3bb4f2;
   color: #555;
@@ -25,7 +31,7 @@
   font-size: 16px;
 }
 
-/* line 16 : /Users/elvis/bitbucket/tinyUI/public/css/sidebar.styl */
+/* line 19 : /Users/elvis/bitbucket/tinyUI/public/css/sidebar.styl */
 .zSidebar dd {
   color: #888;
   cursor: pointer;
@@ -34,7 +40,7 @@
   white-space: nowrap;
 }
 
-/* line 22 : /Users/elvis/bitbucket/tinyUI/public/css/sidebar.styl */
+/* line 25 : /Users/elvis/bitbucket/tinyUI/public/css/sidebar.styl */
 .zSidebar dd a {
   padding-left: 17px;
   text-decoration: none;
@@ -45,12 +51,12 @@
   width: 100%;
 }
 
-/* line 30 : /Users/elvis/bitbucket/tinyUI/public/css/sidebar.styl */
+/* line 33 : /Users/elvis/bitbucket/tinyUI/public/css/sidebar.styl */
 .zSidebar dd a:hover {
   background: #eee;
 }
 
-/* line 32 : /Users/elvis/bitbucket/tinyUI/public/css/sidebar.styl */
+/* line 35 : /Users/elvis/bitbucket/tinyUI/public/css/sidebar.styl */
 .zSidebar dd a.active {
   background: #d9edf7;
   color: #31708f;

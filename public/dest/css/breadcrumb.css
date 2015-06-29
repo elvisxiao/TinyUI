@@ -9,16 +9,17 @@
   margin-left: 0;
   padding-left: 0;
   line-height: 2em;
+  box-sizing: border-box;
 }
 
-/* line 7 : /Users/elvis/bitbucket/tinyUI/public/css/breadcrumb.styl */
+/* line 8 : /Users/elvis/bitbucket/tinyUI/public/css/breadcrumb.styl */
 .zBreadcrumb li,
 .zBreadcrumbSlash li {
   display: inline-block;
   float: left;
 }
 
-/* line 10 : /Users/elvis/bitbucket/tinyUI/public/css/breadcrumb.styl */
+/* line 11 : /Users/elvis/bitbucket/tinyUI/public/css/breadcrumb.styl */
 .zBreadcrumb li:before,
 .zBreadcrumbSlash li:before {
   content: '>';
@@ -29,33 +30,39 @@
   margin-right: 3px;
 }
 
-/* line 17 : /Users/elvis/bitbucket/tinyUI/public/css/breadcrumb.styl */
+/* line 18 : /Users/elvis/bitbucket/tinyUI/public/css/breadcrumb.styl */
 .zBreadcrumb li a,
 .zBreadcrumbSlash li a {
   text-decoration: none;
 }
 
-/* line 19 : /Users/elvis/bitbucket/tinyUI/public/css/breadcrumb.styl */
-
 /* line 20 : /Users/elvis/bitbucket/tinyUI/public/css/breadcrumb.styl */
+
+/* line 21 : /Users/elvis/bitbucket/tinyUI/public/css/breadcrumb.styl */
 .zBreadcrumb li:first-child:before,
 .zBreadcrumbSlash li:first-child:before {
   content: '';
 }
 
-/* line 22 : /Users/elvis/bitbucket/tinyUI/public/css/breadcrumb.styl */
-
 /* line 23 : /Users/elvis/bitbucket/tinyUI/public/css/breadcrumb.styl */
+
+/* line 24 : /Users/elvis/bitbucket/tinyUI/public/css/breadcrumb.styl */
 .zBreadcrumb li.active a,
 .zBreadcrumbSlash li.active a {
   color: #888;
 }
 
 /* line 26 : /Users/elvis/bitbucket/tinyUI/public/css/breadcrumb.styl */
-
-/* line 27 : /Users/elvis/bitbucket/tinyUI/public/css/breadcrumb.styl */
+.zBreadcrumb *,
+.zBreadcrumbSlash * {
+  box-sizing: border-box;
+}
 
 /* line 28 : /Users/elvis/bitbucket/tinyUI/public/css/breadcrumb.styl */
+
+/* line 29 : /Users/elvis/bitbucket/tinyUI/public/css/breadcrumb.styl */
+
+/* line 30 : /Users/elvis/bitbucket/tinyUI/public/css/breadcrumb.styl */
 .zBreadcrumbSlash li:before {
   content: '/';
 }

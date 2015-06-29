@@ -13,12 +13,7 @@ body {
   font-size: 14px;
 }
 
-/* line 7 : /Users/elvis/bitbucket/tinyUI/public/css/tiny.styl */
-* {
-  box-sizing: border-box;
-}
-
-/* line 9 : /Users/elvis/bitbucket/tinyUI/public/css/tiny.styl */
+/* line 8 : /Users/elvis/bitbucket/tinyUI/public/css/tiny.styl */
 .banner {
   height: 180px;
   padding: 10px 0;
@@ -28,66 +23,66 @@ body {
   background-image: linear-gradient(0, #eaeaef 1px, transparent 1px, transparent), linear-gradient(90deg, #eaeaef 1px, transparent 1px, transparent);
 }
 
-/* line 16 : /Users/elvis/bitbucket/tinyUI/public/css/tiny.styl */
+/* line 15 : /Users/elvis/bitbucket/tinyUI/public/css/tiny.styl */
 .banner h2 {
   font-size: 36px;
   font-weight: 100;
   color: #444;
 }
 
-/* line 21 : /Users/elvis/bitbucket/tinyUI/public/css/tiny.styl */
+/* line 20 : /Users/elvis/bitbucket/tinyUI/public/css/tiny.styl */
 h3 {
   padding-bottom: 20px;
   border-bottom: 1px solid #dfdfdf;
   font-size: 20px;
 }
 
-/* line 25 : /Users/elvis/bitbucket/tinyUI/public/css/tiny.styl */
+/* line 24 : /Users/elvis/bitbucket/tinyUI/public/css/tiny.styl */
 h4 {
   font-size: 18px;
 }
 
-/* line 27 : /Users/elvis/bitbucket/tinyUI/public/css/tiny.styl */
+/* line 26 : /Users/elvis/bitbucket/tinyUI/public/css/tiny.styl */
 p,
 div {
   line-height: 1.5em;
 }
 
-/* line 29 : /Users/elvis/bitbucket/tinyUI/public/css/tiny.styl */
+/* line 28 : /Users/elvis/bitbucket/tinyUI/public/css/tiny.styl */
 img {
   max-width: 100%;
 }
 
-/* line 31 : /Users/elvis/bitbucket/tinyUI/public/css/tiny.styl */
+/* line 30 : /Users/elvis/bitbucket/tinyUI/public/css/tiny.styl */
 figure {
   margin: 0;
 }
 
-/* line 33 : /Users/elvis/bitbucket/tinyUI/public/css/tiny.styl */
+/* line 32 : /Users/elvis/bitbucket/tinyUI/public/css/tiny.styl */
 textarea {
   vertical-align: top;
   resize: vertical;
 }
 
-/* line 37 : /Users/elvis/bitbucket/tinyUI/public/css/tiny.styl */
+/* line 36 : /Users/elvis/bitbucket/tinyUI/public/css/tiny.styl */
 blockquote {
   border-left: 3px solid #dfdfdf;
   margin: 0;
   padding: 1em 0 1em 3em;
 }
 
-/* line 41 : /Users/elvis/bitbucket/tinyUI/public/css/tiny.styl */
+/* line 40 : /Users/elvis/bitbucket/tinyUI/public/css/tiny.styl */
 ul {
   margin: 0;
   padding-top: 0;
 }
 
-/* line 44 : /Users/elvis/bitbucket/tinyUI/public/css/tiny.styl */
+/* line 43 : /Users/elvis/bitbucket/tinyUI/public/css/tiny.styl */
 ul li {
   margin: 0;
 }
 
-/* line 47 : /Users/elvis/bitbucket/tinyUI/public/css/tiny.styl */
+/* line 46 : /Users/elvis/bitbucket/tinyUI/public/css/tiny.styl */
 code,
 pre {
   font-family: monospace;

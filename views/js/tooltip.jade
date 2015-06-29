@@ -1,0 +1,38 @@
+extends ../layout
+
+block content
+    include ../common/banner/main
+
+    .zWrap.pt30
+        .zCol3
+            include ../common/sidebar/js
+
+        .zCol9.pl20
+            h3(data-active="提示框") 提示框 Tooltip 
+            
+            h4 1. 模拟Title的弹出框提示信息
+            p 在元素上添加class <font class="tRed">.zTooltip</font> 即可, 内容写在属性title里面。
+            .zExample.mt20
+                p.mt20
+                    span.zTooltip(title="我就是啦，看看吧，没那么神秘 ...")
+                        i.icon-info.mr5(style="color: #f37b1d")
+                        | 这里有个提示，把鼠标放上去试试
+
+                .zCode.mt20
+                    code.language-jade.
+                        p.mt20
+                            span.zTooltip(title="我就是啦，看看吧，没那么神秘 ...")
+                                i.icon-info.mr5(style="color: #f37b1d")
+                                | 这里有个提示，把鼠标放上去试试
+            
+            h4 2. JS API
+            p 元素失去焦点时，tooltip将自行消失
+            .zExample.mt20
+                p.mt10
+                    button.zBtnPrimary(type="button", onclick="oc.tooltip(this, '我是一个JS弹出来的tooltip ...')") Tooltip
+            .zCode.mt20
+                    code.language-jade.
+                        p.mt10
+                            button.zBtnPrimary(type="button", onclick="oc.tooltip('我是一个JS弹出来的tooltip ...')") Tooltip
+
+            .cb.h50

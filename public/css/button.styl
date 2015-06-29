@@ -1,6 +1,6 @@
 .zBtn, .zBtnPrimary, .zBtnInfo, .zBtnSuccess, .zBtnWarning, .zBtnDanger, .zBtnGray
-    padding 6px 12px
-    height 34px
+    padding .5em 1em
+    line-height 1.2
     box-sizing border-box
     margin-bottom 0
     font-size 14px
@@ -10,6 +10,8 @@
     white-space nowrap
     vertical-align middle
     -ms-touch-action manipulation
+    appearance none
+    user-select none
     touch-action manipulation
     cursor pointer
     user-select none
@@ -20,16 +22,25 @@
     text-decoration none
     display inline-block
     transition box-shadow .2s
+    box-sizing border-box
     &:focus
         outline none
     &:hover
         box-shadow inset 0 100px 25px rgba(0, 0, 0, .2)
+        text-decoration none
+        color #fff
     &:active
         box-shadow inset 0 10px 25px rgba(0, 0, 0, .1)
+        text-decoration none
+        color #fff
 .zBtn
     background-color #e2e2e2
     border-color #d9d9d9
     color #444
+    &:hover
+        color #444
+    &:active
+        color #444
 .zBtnPrimary
     background-color #0e90d2
     border-color #0c80ba
@@ -71,11 +82,11 @@
     box-sizing border-box
     color #fff
     min-width 24px
-    line-height 18px 
+    line-height 1.4 
     font-size 12px
     display inline-block
     text-align center
-    padding 0 4px
+    padding .1em .6em
 .zBadgePrimary
     background-color #0e90d2
 .zBadgeInfo
@@ -86,29 +97,22 @@
     background-color #f37b1d
 .zBadgeDanger
     background-color #dd514c
-    
+
 .xs
-    padding 2px 6px
-    font-size 12px
+    font-size 10px
+    padding .2em .6em
 .sm
-    padding 4px 8px
-    font-size 13px
+    font-size 12px
 .lg 
-    padding 8px 14px
-    font-size 15px
-.xl
-    padding 10px 22px
     font-size 16px
+.xl
+    font-size 18px
 
 .zBadge.xs, .zBadgePrimary.xs, .zBadgeInfo.xs, .zBadgeSuccess.xs, .zBadgeWarning.xs, .zBadgeDanger.xs
-    padding 1px 6px 
-    font-size 12px
+    padding .2em .7em
 .zBadge.sm, .zBadgePrimary.sm, .zBadgeInfo.sm, .zBadgeSuccess.sm, .zBadgeWarning.sm, .zBadgeDanger.sm
-    padding 2px 8px 
-    font-size 13px
+    padding .3em .6em
 .zBadge.lg, .zBadgePrimary.lg, .zBadgeInfo.lg, .zBadgeSuccess.lg, .zBadgeWarning.lg, .zBadgeDanger.lg
-    padding 4px 13px 
-    font-size 14px
+    padding .2em .6em
 .zBadge.xl, .zBadgePrimary.xl, .zBadgeInfo.xl, .zBadgeSuccess.xl, .zBadgeWarning.xl, .zBadgeDanger.xl
-    padding 6px 15px 
-    font-size 15px
+    padding .2em .6em
