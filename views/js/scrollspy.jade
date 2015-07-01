@@ -1,0 +1,114 @@
+extends ../layout
+
+block content
+    include ../common/banner/main
+
+    .zWrap.pt30
+        .zCol3
+            include ../common/sidebar/js
+
+        .zCol9.pl20
+            h3(data-active="滚动监听") ScrollSpy 
+            p 窗口滚动时为根据设置页面元素添加动画效果（仅在支持 CSS3 动画的浏览器上有效）。
+
+            h4 1. 基本使用
+            p 在元素上添加class <font class="tRed">.zScrollSpy</font>，再把需要添加的动画类加在属性 <font class="tRed">data-scrollspy</font> 中。
+                a.zHref.fr.f12(href="/css/animation") 动画列表
+            .zExample.mt20
+                p.mt20
+
+                    .zScrollSpy.zPanel.w200(data-scrollspy = "zPulse")
+                        .zPanelHd Test title
+                        .zPanelBd ScrollSpy 的实现需要判断元素是否在当前屏幕中可见，监听滚动事件，会不会影响性能呢
+
+                    .zScrollSpy.zPanelWarning.mt50.w200.bc(data-scrollspy = "zPulse")
+                        .zPanelHd Test title
+                        .zPanelBd ScrollSpy 的实现需要判断元素是否在当前屏幕中可见，监听滚动事件，会不会影响性能呢
+
+                    .zScrollSpy.zPanelWarning.mt50.w200.fr(data-scrollspy = "zRubberBand")
+                        .zPanelHd Test title
+                        .zPanelBd ScrollSpy 的实现需要判断元素是否在当前屏幕中可见，监听滚动事件，会不会影响性能呢
+                    .cb
+                    .zScrollSpy.zPanelWarning.mt50.w200.fr(data-scrollspy = "zFadeInDown")
+                        .zPanelHd Test title
+                        .zPanelBd ScrollSpy 的实现需要判断元素是否在当前屏幕中可见，监听滚动事件，会不会影响性能呢
+                    .cb
+                    .zScrollSpy.zPanelWarning.mt50.w200.bc(data-scrollspy = "zFadeInUp")
+                        .zPanelHd Test title
+                        .zPanelBd ScrollSpy 的实现需要判断元素是否在当前屏幕中可见，监听滚动事件，会不会影响性能呢
+
+                    .cb
+                    .zScrollSpy.zPanelWarning.mt50.w200(data-scrollspy = "zBounceInDown")
+                        .zPanelHd Test title
+                        .zPanelBd ScrollSpy 的实现需要判断元素是否在当前屏幕中可见，监听滚动事件，会不会影响性能呢
+
+                .zCode.mt20
+                    code.language-jade.
+                        p.mt20
+                            .zScrollSpy.zPanel.w200(data-scrollspy = "zFadeIn")
+                                .zPanelHd Test title
+                                .zPanelBd ScrollSpy 的实现需要判断元素是否在当前屏幕中可见，监听滚动事件，会不会影响性能呢
+
+                            .zScrollSpy.zPanelWarning.mt50.w200.bc(data-scrollspy = "zFadeIn")
+                                .zPanelHd Test title
+                                .zPanelBd ScrollSpy 的实现需要判断元素是否在当前屏幕中可见，监听滚动事件，会不会影响性能呢
+
+                            .zScrollSpy.zPanelWarning.mt50.w200.fr(data-scrollspy = "zFadeIn")
+                                .zPanelHd Test title
+                                .zPanelBd ScrollSpy 的实现需要判断元素是否在当前屏幕中可见，监听滚动事件，会不会影响性能呢
+                            .cb
+                            .zScrollSpy.zPanelWarning.mt50.w200.fr(data-scrollspy = "zFadeInDown")
+                                .zPanelHd Test title
+                                .zPanelBd ScrollSpy 的实现需要判断元素是否在当前屏幕中可见，监听滚动事件，会不会影响性能呢
+                            .cb
+                            .zScrollSpy.zPanelWarning.mt50.w200.bc(data-scrollspy = "zFadeInUp")
+                                .zPanelHd Test title
+                                .zPanelBd ScrollSpy 的实现需要判断元素是否在当前屏幕中可见，监听滚动事件，会不会影响性能呢
+
+                            .cb
+                            .zScrollSpy.zPanelWarning.mt50.w200(data-scrollspy = "zHinge")
+                                .zPanelHd Test title
+                                .zPanelBd ScrollSpy 的实现需要判断元素是否在当前屏幕中可见，监听滚动事件，会不会影响性能呢
+            
+
+            h4 2. 针对导航的监听
+            p 在元素上添加class <font class="tRed">.zScrollSpyNav</font>，<font class="tRed">zScrollSpyNavItem</font> 出现时，会在有属性 href值为该id的元素上添加class <font class="tRed">zScrollSpyNavActive</font>，请自定义该class的样式值。
+
+            .zExample.mt20
+                style.
+                    .zScrollSpyNavActive{color: #905; font-weight: bold}
+                .zPanel
+                    .zPanelHd
+                        a.mr20(href="#p1") Position1
+                        a.mr20(href="#p2") Position2
+                        a(href="#p3") Position3
+                    .zScrollSpyNav.zPanelBd.pr(style="max-height:200px; overflow-y: auto")
+                        h3#p1.zScrollSpyNavItem Position1
+                        p Ad leggings keytar, brunch id art party dolor labore. Pitchfork yr enim lo-fi before they sold out qui. Tumblr farm-to-table bicycle rights whatever. Anim keffiyeh carles cardigan. Velit seitan mcsweeney's photo booth 3 wolf moon irure. Cosby sweater lomo jean shorts, williamsburg hoodie minim qui you probably haven't heard of them et cardigan trust fund culpa biodiesel wes anderson aesthetic. Nihil tattooed accusamus, cred irony biodiesel keffiyeh artisan ullamco consequat.
+                    
+                        h3#p2.zScrollSpyNavItem.mt50 Position2
+                        p Ad leggings keytar, brunch id art party dolor labore. Pitchfork yr enim lo-fi before they sold out qui. Tumblr farm-to-table bicycle rights whatever. Anim keffiyeh carles cardigan. Velit seitan mcsweeney's photo booth 3 wolf moon irure. Cosby sweater lomo jean shorts, williamsburg hoodie minim qui you probably haven't heard of them et cardigan trust fund culpa biodiesel wes anderson aesthetic. Nihil tattooed accusamus, cred irony biodiesel keffiyeh artisan ullamco consequat.
+                        
+                        h3#p3.zScrollSpyNavItem.mt50 Position3
+                        p Ad leggings keytar, brunch id art party dolor labore. Pitchfork yr enim lo-fi before they sold out qui. Tumblr farm-to-table bicycle rights whatever. Anim keffiyeh carles cardigan. Velit seitan mcsweeney's photo booth 3 wolf moon irure. Cosby sweater lomo jean shorts, williamsburg hoodie minim qui you probably haven't heard of them et cardigan trust fund culpa biodiesel wes anderson aesthetic. Nihil tattooed accusamus, cred irony biodiesel keffiyeh artisan ullamco consequat.
+                
+                .zCode.mt20
+                    code.language-jade.
+                        style.
+                            .zScrollSpyNavActive{color: #905; font-weight: bold}
+                        .zPanel
+                            .zPanelHd
+                                a.mr20(href="#p1") Position1
+                                a.mr20(href="#p2") Position2
+                                a(href="#p3") Position3
+                            .zScrollSpyNav.zPanelBd.pr(style="max-height:200px; overflow-y: auto")
+                                h3#p1.zScrollSpyNavItem Position1
+                                p Ad leggings keytar, brunch id art party dolor labore.
+                            
+                                h3#p2.zScrollSpyNavItem.mt50 Position2
+                                p Ad leggings keytar, brunch id art party dolor labore.
+                                
+                                h3#p3.zScrollSpyNavItem.mt50 Position3
+                                p Ad leggings keytar, brun
+            
+            .cb.h50

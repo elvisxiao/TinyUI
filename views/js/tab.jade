@@ -1,0 +1,64 @@
+extends ../layout
+
+block content
+    include ../common/banner/main
+
+    .zWrap.pt30
+        .zCol3
+            include ../common/sidebar/js
+
+        .zCol9.pl20
+            h3(data-active="选项卡") Tab 
+            
+            h4 1. 基本使用
+            
+            .zExample.mt20
+                .zTab
+                    .zTabHd
+                        a(href="#tab1") Tab 1
+                        a(href="#tab2") Tab 2
+                        a(href="#tab3") Tab 3
+                        a(href="#tab4") Tab 4
+                    #tab1.zTabItem tab1是被.zTabHd中a元素的href属性控制的，如果没有设置活动选项卡，系统会设置默认第一个为激活的状态。
+                    #tab2.zTabItem tab2是被.zTabHd中a元素的href属性控制的，如果没有设置活动选项卡，系统会设置默认第一个为激活的状态。
+                    #tab3.zTabItem tab3是被.zTabHd中a元素的href属性控制的，如果没有设置活动选项卡，系统会设置默认第一个为激活的状态。
+                    #tab4.zTabItem tab4是被.zTabHd中a元素的href属性控制的，如果没有设置活动选项卡，系统会设置默认第一个为激活的状态。
+                .zCode.mt20
+                    code.language-jade.
+                        .zTab
+                            .zTabHd
+                                a(href="#tab1") Tab 1
+                                a(href="#tab2") Tab 2
+                                a(href="#tab3") Tab 3
+                                a(href="#tab4") Tab 4
+                            #tab1.zTabItem tab1是被.zTabHd中a元素的href属性控制的，如果没有设置活动选项卡，系统会设置默认第一个为激活的状态。
+                            #tab2.zTabItem tab2是被.zTabHd中a元素的href属性控制的，如果没有设置活动选项卡，系统会设置默认第一个为激活的状态。
+                            #tab3.zTabItem tab3是被.zTabHd中a元素的href属性控制的，如果没有设置活动选项卡，系统会设置默认第一个为激活的状态。
+                            #tab4.zTabItem tab4是被.zTabHd中a元素的href属性控制的，如果没有设置活动选项卡，系统会设置默认第一个为激活的状态。
+            
+            h4 2. 结合等分网格
+            .zExample.mt20
+                .zTab
+                    .zTabHd.zColAvg4
+                        a.active.zColAvg.tc(href="#tab1") Tab 1
+                        a.zColAvg.tc(href="#tab2") Tab 2
+                        a.zColAvg.tc(href="#tab3") Tab 3
+                        a.zColAvg.tc(href="#tab4") Tab 4
+                    #tab1.zTabItem.active tab1是被.zTabHd中a元素的href属性控制的，如果没有设置活动选项卡，系统会设置默认第一个为激活的状态。
+                    #tab2.zTabItem tab2是被.zTabHd中a元素的href属性控制的，如果没有设置活动选项卡，系统会设置默认第一个为激活的状态。
+                    #tab3.zTabItem tab3是被.zTabHd中a元素的href属性控制的，如果没有设置活动选项卡，系统会设置默认第一个为激活的状态。
+                    #tab4.zTabItem tab4是被.zTabHd中a元素的href属性控制的，如果没有设置活动选项卡，系统会设置默认第一个为激活的状态。
+                .zCode.mt20
+                    code.language-jade.
+                        .zTab
+                            .zTabHd.zColAvg4
+                                a.active.zColAvg.tc(href="#tab1") Tab 1
+                                a.zColAvg.tc(href="#tab2") Tab 2
+                                a.zColAvg.tc(href="#tab3") Tab 3
+                                a.zColAvg.tc(href="#tab4") Tab 4
+                            #tab1.zTabItem.active tab1是被.zTabHd中a元素的href属性控制的，如果没有设置活动选项卡，系统会设置默认第一个为激活的状态。
+                            #tab2.zTabItem tab2是被.zTabHd中a元素的href属性控制的，如果没有设置活动选项卡，系统会设置默认第一个为激活的状态。
+                            #tab3.zTabItem tab3是被.zTabHd中a元素的href属性控制的，如果没有设置活动选项卡，系统会设置默认第一个为激活的状态。
+                            #tab4.zTabItem tab4是被.zTabHd中a元素的href属性控制的，如果没有设置活动选项卡，系统会设置默认第一个为激活的状态。
+
+            .cb.h50

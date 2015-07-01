@@ -1,0 +1,12 @@
+
+/* line 1 : /Users/elvis/bitbucket/tinyUI/node_modules/grunt-contrib-stylus/node_modules/stylus/lib/functions/index.styl */
+
+/* line 1 : /Users/elvis/bitbucket/tinyUI/public/css/js/scrollspy.styl */
+.zScrollSpyNav {
+  box-sizing: border-box;
+}
+
+/* line 3 : /Users/elvis/bitbucket/tinyUI/public/css/js/scrollspy.styl */
+.zScrollSpyNav * {
+  box-sizing: border-box;
+}

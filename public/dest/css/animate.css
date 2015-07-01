@@ -32,55 +32,55 @@
 
 /* line 86 : /Users/elvis/bitbucket/tinyUI/public/css/animate.styl */
 .zSpin:before {
-  -webkit-animation: spin 1.2s linear infinite normal;
-  -moz-animation: spin 1.2s linear infinite normal;
-  -o-animation: spin 1.2s linear infinite normal;
-  animation: spin 1.2s linear infinite normal;
+  -webkit-animation: spin 0.8s linear infinite normal;
+  -moz-animation: spin 0.8s linear infinite normal;
+  -o-animation: spin 0.8s linear infinite normal;
+  animation: spin 0.8s linear infinite normal;
   display: inline-block;
 }
 
 /* line 89 : /Users/elvis/bitbucket/tinyUI/public/css/animate.styl */
 .zSpinPrimary:before {
-  -webkit-animation: spinPrimary 1.2s linear infinite normal;
-  -moz-animation: spinPrimary 1.2s linear infinite normal;
-  -o-animation: spinPrimary 1.2s linear infinite normal;
-  animation: spinPrimary 1.2s linear infinite normal;
+  -webkit-animation: spinPrimary 0.8s linear infinite normal;
+  -moz-animation: spinPrimary 0.8s linear infinite normal;
+  -o-animation: spinPrimary 0.8s linear infinite normal;
+  animation: spinPrimary 0.8s linear infinite normal;
   display: inline-block;
 }
 
 /* line 92 : /Users/elvis/bitbucket/tinyUI/public/css/animate.styl */
 .zSpinInfo:before {
-  -webkit-animation: spinInfo 1.2s linear infinite normal;
-  -moz-animation: spinInfo 1.2s linear infinite normal;
-  -o-animation: spinInfo 1.2s linear infinite normal;
-  animation: spinInfo 1.2s linear infinite normal;
+  -webkit-animation: spinInfo 0.8s linear infinite normal;
+  -moz-animation: spinInfo 0.8s linear infinite normal;
+  -o-animation: spinInfo 0.8s linear infinite normal;
+  animation: spinInfo 0.8s linear infinite normal;
   display: inline-block;
 }
 
 /* line 95 : /Users/elvis/bitbucket/tinyUI/public/css/animate.styl */
 .zSpinSuccess:before {
-  -webkit-animation: spinSuccess 1.2s linear infinite normal;
-  -moz-animation: spinSuccess 1.2s linear infinite normal;
-  -o-animation: spinSuccess 1.2s linear infinite normal;
-  animation: spinSuccess 1.2s linear infinite normal;
+  -webkit-animation: spinSuccess 0.8s linear infinite normal;
+  -moz-animation: spinSuccess 0.8s linear infinite normal;
+  -o-animation: spinSuccess 0.8s linear infinite normal;
+  animation: spinSuccess 0.8s linear infinite normal;
   display: inline-block;
 }
 
 /* line 98 : /Users/elvis/bitbucket/tinyUI/public/css/animate.styl */
 .zSpinWarning:before {
-  -webkit-animation: spinWarning 1.2s linear infinite normal;
-  -moz-animation: spinWarning 1.2s linear infinite normal;
-  -o-animation: spinWarning 1.2s linear infinite normal;
-  animation: spinWarning 1.2s linear infinite normal;
+  -webkit-animation: spinWarning 0.8s linear infinite normal;
+  -moz-animation: spinWarning 0.8s linear infinite normal;
+  -o-animation: spinWarning 0.8s linear infinite normal;
+  animation: spinWarning 0.8s linear infinite normal;
   display: inline-block;
 }
 
 /* line 101 : /Users/elvis/bitbucket/tinyUI/public/css/animate.styl */
 .zSpinDanger:before {
-  -webkit-animation: spinDanger 1.2s linear infinite normal;
-  -moz-animation: spinDanger 1.2s linear infinite normal;
-  -o-animation: spinDanger 1.2s linear infinite normal;
-  animation: spinDanger 1.2s linear infinite normal;
+  -webkit-animation: spinDanger 0.8s linear infinite normal;
+  -moz-animation: spinDanger 0.8s linear infinite normal;
+  -o-animation: spinDanger 0.8s linear infinite normal;
+  animation: spinDanger 0.8s linear infinite normal;
   display: inline-block;
 }
 

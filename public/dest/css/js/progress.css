@@ -1,0 +1,254 @@
+
+/* line 1 : /Users/elvis/bitbucket/tinyUI/node_modules/grunt-contrib-stylus/node_modules/stylus/lib/functions/index.styl */
+
+/* line 23 : /Users/elvis/bitbucket/tinyUI/public/css/js/progress.styl */
+.zProgressTop {
+  position: fixed;
+  width: 98%;
+  top: 0;
+  height: 2px;
+  background-color: #5eb95e;
+  box-shadow: 0 0 10px rgba(94,185,94,0.3);
+  animation-name: progress;
+  animation-duration: 100s;
+  animation-timing-function: cubic-bezier(0, 0.1, 0.3, 1);
+}
+
+/* line 33 : /Users/elvis/bitbucket/tinyUI/public/css/js/progress.styl */
+.zProgressTop:before {
+  font-family: "icomoon";
+  content: "";
+}
+
+/* line 36 : /Users/elvis/bitbucket/tinyUI/public/css/js/progress.styl */
+.zProgressTop i {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  font-size: 20px;
+  color: #5eb95e;
+  box-shadow: 0 0 3px rgba(94,185,94,0.3);
+}
+
+/* line 43 : /Users/elvis/bitbucket/tinyUI/public/css/js/progress.styl */
+.zProgressTop.zProgressTopDone {
+  width: 100%;
+  opacity: 0;
+  animation-duration: 0.8s;
+  animation-name: progressDone;
+}
+
+/* line 1 : /Users/elvis/bitbucket/tinyUI/node_modules/grunt-contrib-stylus/node_modules/stylus/lib/functions/index.styl */
+@-moz-keyframes progress {
+  0% {
+    width: 0%;
+  }
+
+  5% {
+    width: 30%;
+  }
+
+  10% {
+    width: 40%;
+  }
+
+  15% {
+    width: 45%;
+  }
+
+  25% {
+    width: 60%;
+  }
+
+  35% {
+    width: 65%;
+  }
+
+  100% {
+    width: 98%;
+  }
+}
+
+/* line 1 : /Users/elvis/bitbucket/tinyUI/node_modules/grunt-contrib-stylus/node_modules/stylus/lib/functions/index.styl */
+@-webkit-keyframes progress {
+  0% {
+    width: 0%;
+  }
+
+  5% {
+    width: 30%;
+  }
+
+  10% {
+    width: 40%;
+  }
+
+  15% {
+    width: 45%;
+  }
+
+  25% {
+    width: 60%;
+  }
+
+  35% {
+    width: 65%;
+  }
+
+  100% {
+    width: 98%;
+  }
+}
+
+/* line 1 : /Users/elvis/bitbucket/tinyUI/node_modules/grunt-contrib-stylus/node_modules/stylus/lib/functions/index.styl */
+@-o-keyframes progress {
+  0% {
+    width: 0%;
+  }
+
+  5% {
+    width: 30%;
+  }
+
+  10% {
+    width: 40%;
+  }
+
+  15% {
+    width: 45%;
+  }
+
+  25% {
+    width: 60%;
+  }
+
+  35% {
+    width: 65%;
+  }
+
+  100% {
+    width: 98%;
+  }
+}
+
+/* line 1 : /Users/elvis/bitbucket/tinyUI/node_modules/grunt-contrib-stylus/node_modules/stylus/lib/functions/index.styl */
+@-ms-keyframes progress {
+  0% {
+    width: 0%;
+  }
+
+  5% {
+    width: 30%;
+  }
+
+  10% {
+    width: 40%;
+  }
+
+  15% {
+    width: 45%;
+  }
+
+  25% {
+    width: 60%;
+  }
+
+  35% {
+    width: 65%;
+  }
+
+  100% {
+    width: 98%;
+  }
+}
+
+/* line 1 : /Users/elvis/bitbucket/tinyUI/node_modules/grunt-contrib-stylus/node_modules/stylus/lib/functions/index.styl */
+@keyframes progress {
+  0% {
+    width: 0%;
+  }
+
+  5% {
+    width: 30%;
+  }
+
+  10% {
+    width: 40%;
+  }
+
+  15% {
+    width: 45%;
+  }
+
+  25% {
+    width: 60%;
+  }
+
+  35% {
+    width: 65%;
+  }
+
+  100% {
+    width: 98%;
+  }
+}
+
+/* line 16 : /Users/elvis/bitbucket/tinyUI/node_modules/grunt-contrib-stylus/node_modules/stylus/lib/functions/index.styl */
+@-moz-keyframes progressDone {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    box-shadow: 0 0 4px #5eb95e;
+  }
+}
+
+/* line 16 : /Users/elvis/bitbucket/tinyUI/node_modules/grunt-contrib-stylus/node_modules/stylus/lib/functions/index.styl */
+@-webkit-keyframes progressDone {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    box-shadow: 0 0 4px #5eb95e;
+  }
+}
+
+/* line 16 : /Users/elvis/bitbucket/tinyUI/node_modules/grunt-contrib-stylus/node_modules/stylus/lib/functions/index.styl */
+@-o-keyframes progressDone {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    box-shadow: 0 0 4px #5eb95e;
+  }
+}
+
+/* line 16 : /Users/elvis/bitbucket/tinyUI/node_modules/grunt-contrib-stylus/node_modules/stylus/lib/functions/index.styl */
+@-ms-keyframes progressDone {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    box-shadow: 0 0 4px #5eb95e;
+  }
+}
+
+/* line 16 : /Users/elvis/bitbucket/tinyUI/node_modules/grunt-contrib-stylus/node_modules/stylus/lib/functions/index.styl */
+@keyframes progressDone {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    box-shadow: 0 0 4px #5eb95e;
+  }
+}

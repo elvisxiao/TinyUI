@@ -11,6 +11,30 @@
 var UI = {};
 
 /**
+* 判断元素是否在当前屏幕的可见范围内
+* @param {object} ele - 元素的选择器或者Jquery对象
+* @return {boolean} true / false
+**/
+UI.isOnScreen = function(ele){
+    var win = $(window);
+    var viewport = {
+        top: win.scrollTop(),
+        left: win.scrollLeft()
+    }
+    viewport.right = viewport.left + win.width();
+    viewport.bottom = viewport.top + win.height();
+
+    var ele = $(ele);
+
+    var bounds = ele.offset();
+    bounds.right = bounds.left + ele.outerWidth();
+    bounds.bottom = bounds.top + ele.outerHeight();
+    
+    return (! (viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
+}
+
+
+/**
 * 开关Toggle button, 此方法会影响页面中所有.zToggleBtn, .zToggleBtnSm元素
 * @param {string} on - 开关打开时显示的文字，默认值为“ON”
 * @param {string} off - 开关关闭时显示的文字，默认值为“OFF”

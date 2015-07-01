@@ -1,0 +1,24 @@
+extends ../layout
+
+block content
+    include ../common/banner/main
+
+    .zWrap.pt30
+        .zCol3
+            include ../common/sidebar/js
+
+        .zCol9.pl20
+            h3(data-active="周选择组件") Weekpicker
+            
+            h4 1. 基本使用
+            .zExample.mt20
+                p.mt20
+                    input.zWeekpicker.zIpt(type="text")
+
+                .zCode.mt20
+                    code.language-jade.
+                        p.mt20
+                            button.zBtnPrimary.w100.mr20(type="button", onclick="oc.progress.start()") 开始
+                            button.zBtnInfo.w100(type="button", onclick="oc.progress.done()") 结束
+           
+            .cb.h50

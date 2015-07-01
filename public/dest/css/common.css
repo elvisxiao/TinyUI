@@ -43,76 +43,86 @@ a {
   padding: 0;
 }
 
-/* line 27 : /Users/elvis/bitbucket/tinyUI/public/css/common.styl */
+/* line 26 : /Users/elvis/bitbucket/tinyUI/public/css/common.styl */
+.zHref {
+  color: #0e90d2;
+}
+
+/* line 28 : /Users/elvis/bitbucket/tinyUI/public/css/common.styl */
+.zHref:hover {
+  color: #10a0ea;
+}
+
+/* line 31 : /Users/elvis/bitbucket/tinyUI/public/css/common.styl */
 .borderRight {
   border-right: 1px solid #ddd;
 }
 
-/* line 30 : /Users/elvis/bitbucket/tinyUI/public/css/common.styl */
+/* line 34 : /Users/elvis/bitbucket/tinyUI/public/css/common.styl */
 .tRed {
   color: #c7254e;
 }
 
-/* line 32 : /Users/elvis/bitbucket/tinyUI/public/css/common.styl */
+/* line 36 : /Users/elvis/bitbucket/tinyUI/public/css/common.styl */
 .tMuted {
   color: #888;
 }
 
-/* line 34 : /Users/elvis/bitbucket/tinyUI/public/css/common.styl */
+/* line 38 : /Users/elvis/bitbucket/tinyUI/public/css/common.styl */
 .bgGray {
   background-color: #babfcd;
 }
 
-/* line 37 : /Users/elvis/bitbucket/tinyUI/public/css/common.styl */
+/* line 41 : /Users/elvis/bitbucket/tinyUI/public/css/common.styl */
 .primary {
   background-color: rgba(51,122,180,0.35);
   color: #0b76ac;
 }
 
-/* line 40 : /Users/elvis/bitbucket/tinyUI/public/css/common.styl */
+/* line 44 : /Users/elvis/bitbucket/tinyUI/public/css/common.styl */
 .info {
   background-color: #d9edf7;
   color: #31708f;
 }
 
-/* line 43 : /Users/elvis/bitbucket/tinyUI/public/css/common.styl */
+/* line 47 : /Users/elvis/bitbucket/tinyUI/public/css/common.styl */
 .success {
   color: #5eb95e;
   background-color: rgba(94,185,94,0.115);
 }
 
-/* line 46 : /Users/elvis/bitbucket/tinyUI/public/css/common.styl */
+/* line 50 : /Users/elvis/bitbucket/tinyUI/public/css/common.styl */
 .warning {
   color: #f37b1d;
   background-color: rgba(243,123,29,0.115);
 }
 
-/* line 49 : /Users/elvis/bitbucket/tinyUI/public/css/common.styl */
+/* line 53 : /Users/elvis/bitbucket/tinyUI/public/css/common.styl */
 .danger {
   color: #dd514c;
   background-color: #f2dede;
 }
 
-/* line 52 : /Users/elvis/bitbucket/tinyUI/public/css/common.styl */
+/* line 56 : /Users/elvis/bitbucket/tinyUI/public/css/common.styl */
 .gray {
   background-color: #babfcd;
   color: #fff;
 }
 
-/* line 57 : /Users/elvis/bitbucket/tinyUI/public/css/common.styl */
+/* line 61 : /Users/elvis/bitbucket/tinyUI/public/css/common.styl */
 .zExample {
   border: 1px solid #dfdfdf;
   padding: 3px 10px 0 10px;
 }
 
-/* line 60 : /Users/elvis/bitbucket/tinyUI/public/css/common.styl */
+/* line 64 : /Users/elvis/bitbucket/tinyUI/public/css/common.styl */
 .zExample:before {
   content: 'DEMO';
   font-size: 12px;
   color: #888;
 }
 
-/* line 64 : /Users/elvis/bitbucket/tinyUI/public/css/common.styl */
+/* line 68 : /Users/elvis/bitbucket/tinyUI/public/css/common.styl */
 .zExample .zCode {
   margin-left: -10px;
   margin-right: -10px;

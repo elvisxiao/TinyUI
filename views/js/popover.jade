@@ -1,0 +1,34 @@
+extends ../layout
+
+block content
+    include ../common/banner/main
+
+    .zWrap.pt30
+        .zCol3
+            include ../common/sidebar/js
+
+        .zCol9.pl20
+            h3(data-active="弹出框") 弹出框 Popover 
+            
+            h4 1. 元素上直接添加
+            p 在元素上添加class <font class="tRed">.zPopover</font> 后, 标题写在属性data-title，内容写在data-content。
+            .zExample.mt20
+                p.mt20
+                    button.zPopover.zBtnPrimary(data-title="Title here", data-content="Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum.") 弹出框
+
+                .zCode.mt20
+                    code.language-jade.
+                        p.mt20
+                            button.zPopover.zBtnPrimary(data-title="Title here", data-content="Sed posuere ...") 弹出框
+            
+            h4 2. JS API
+            p 元素失去焦点时，tooltip将自行消失
+            .zExample.mt20
+                p.mt10
+                    button.zBtnPrimary(type="button", onclick="oc.popover(this, 'Title here', 'Sed posuere consectetur est at lobortis. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenati')") Popover
+            .zCode.mt20
+                    code.language-jade.
+                        p.mt10
+                            button.zBtnPrimary(type="button", onclick="oc.popover(this, 'Title here', 'Sed posuere consect ...'") Popover
+
+            .cb.h50

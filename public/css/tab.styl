@@ -1,0 +1,39 @@
+.zTab
+	background-color #fff
+	padding 0
+	box-sizing border-box
+	*
+		box-sizing border-box
+	.zTabHd
+		margin 0
+		overflow visible
+		>a 
+			display inline-block
+			padding 6px 16px 
+			margin 0
+			color #0e90d2
+			background-color transparent
+			position relative
+			z-index 1
+			border 1px solid transparent
+			&:hover
+				background-color #f0f0f0
+		>a.active
+			background-color #fff
+			border 1px solid #ddd
+			border-bottom 0
+			top 1px
+			color #666
+			padding 7px 16px
+			border-top-right-radius 2px 
+			border-top-left-radius 2px
+	.zTabItem
+		clear both
+		margin 0 
+		padding 8px 15px
+		display none
+		border 1px solid #ddd
+		// border-top 0
+		background-color inherit
+	.zTabItem.active
+		display block

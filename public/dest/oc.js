@@ -484,13 +484,16 @@ module.exports = ZDate;
 var ui = {};
 
 ui.collapse = require('./collapse');
+ui.scrollSpy = require('./scrollSpy');
 ui.tooltip = require('./tooltip');
 ui.popover = require('./popover');
+ui.progress = require('./progress');
+ui.tab = require('./tab');
 ui.modal = require('./modal');
 ui.ui = require('./ui');
 ui.ajax = require('./ajax');
 ui.date = require('./date');
-
+ui.weekpicker= require('./weekpicker');
 
 window && (window.oc = ui);
 
@@ -498,7 +501,7 @@ if(module && module.exports){
     module.exports = ui;
 }
 
-},{"./ajax":1,"./collapse":2,"./date":3,"./modal":5,"./popover":6,"./tooltip":7,"./ui":8}],5:[function(require,module,exports){
+},{"./ajax":1,"./collapse":2,"./date":3,"./modal":5,"./popover":6,"./progress":7,"./scrollSpy":8,"./tab":9,"./tooltip":10,"./ui":11,"./weekpicker":12}],5:[function(require,module,exports){
 module.exports = {
 	modalTemplate: '<div class="zModalCover"><div class="zModal"><div class="zModalHd"><i class="zModalClose">×</i></div><div class="zModalBd"></div></div></div>',
 
@@ -645,9 +648,23 @@ module.exports = {
 }
 
 },{}],6:[function(require,module,exports){
-instance = function(options){
-	var target = $(options.target);
-	
+var instance = function(ele, title, content, direct){
+	var ele = $(ele);
+	if(arguments.length == 2){
+		content = arguments[1];
+		title = '';
+	}
+
+    if(!content){
+        return;
+    }
+    if(ele.data('zTarget')){
+        return;
+    }
+    _setPopEle(ele, title, content, direct);
+    ele.on('blur', function(){
+        _removePopEle(this);
+    })
 }
 
 var _removePopEle = function(target){
@@ -656,19 +673,25 @@ var _removePopEle = function(target){
 	ele.data('zTarget', null);
 }
 
-var _setPopEle = function(target, content){
-	console.log('我被调用了');
-	console.log(target)
+var _setPopEle = function(target, title, content, direct){
 	var ele = $(target);
-	var elePop = $('<div class="zTooltipTitle">' + content + '</div>').appendTo('body');
+	var elePop = $('<div class="zPopoverWrap"><div class="zPopoverContent">' + content + '</div></div>');
+	if(title){
+		elePop.prepend('<div class="zPopoverTitle">' + title + '</div>');
+	}
+	elePop.appendTo('body');
 	var position = ele.offset();
 	var left = position.left;
 	var top = position.top;
-	left = left + ele.outerWidth() / 2 - elePop.outerWidth() / 2;
+	// left = left + ele.outerWidth() / 2 - elePop.outerWidth() / 2;
 	top = top - elePop.outerHeight() - 8;
-	if(top < $(document).scrollTop()){
-		elePop.removeClass('zTooltipTitle').addClass('zTooltipTitleBottom');
+	if(top < $(document).scrollTop() || direct === 'down'){
+		elePop.removeClass('zPopoverWrap').addClass('zPopoverWrapBottom');
 		top = ele.offset().top + ele.outerHeight() + 8;
+	}
+	if(left + elePop.outerWidth() > $(document).scrollLeft() + $('body').width()){
+		left = left - elePop.outerWidth() + ele.outerWidth();
+		elePop.removeClass('zPopoverWrap').addClass('zPopoverWrapRight');
 	}
 	elePop.css({
 		left: left,
@@ -677,12 +700,168 @@ var _setPopEle = function(target, content){
 	ele.data('zTarget', elePop);
 }
 
-// initEvent();
+var initEvent = function(){
+    $(function(){
+        $('body')
+        .off('click', '.zPopover')
+        .on('click', '.zPopover', function(e){
+            var ele = $(this);
+            title = ele.attr('data-title');
+            content = ele.attr('data-content');
 
-module.exports = Tooltip;
+        	console.log(content);
+            if(!content){
+                return;
+            }
+
+            _setPopEle(ele, title, content);
+        })
+        .off('blur', 'zPopover')
+        .on('blur', '.zPopover', function(){
+            _removePopEle(this);
+        })
+    })  
+}
+
+initEvent();
+
+module.exports = instance;
 
 },{}],7:[function(require,module,exports){
-Tooltip = function(ele, content){
+var instance = {}
+instance.start = function(){
+	var progress = $('body>.zProgressTop');
+	if(progress.length === 0){
+		$('<div class="zProgressTop"><i class="icon-spinner2 zSpin"></i></div>').appendTo('body');
+	}
+	else{
+		progress.removeClass('zProgressTopDone');
+	}
+}
+instance.done = function(){
+	$('body>.zProgressTop').addClass('zProgressTopDone');
+}
+
+module.exports = instance;
+
+},{}],8:[function(require,module,exports){
+var ui = require('./ui');
+
+var instance = function(ele, animateClass){
+	var ele = $(ele);
+	ele.addClass('zScrollSpy').attr('data-scrollspy', animateClass);
+}
+
+var initEvent = function(){
+    $(function(){
+    	var currentTop = $(window).scrollTop();
+        $(window).on('scroll', function(e){
+    		var scrollTop = $(window).scrollTop();
+        	var moveDown = scrollTop > currentTop;
+    		currentTop = scrollTop;
+        	if(!moveDown){
+        		return;
+        	}
+        	$('.zScrollSpy[data-scrollspy]').each(function(){
+        		var ele = $(this);
+        		var isOn = ui.isOnScreen(ele);
+        		var animateClass = ele.attr('data-scrollspy');
+
+        		isOn && ele.addClass(animateClass);
+        		!isOn && ele.removeClass(animateClass);
+        	})
+        })
+
+		//导航部分的滚动监听
+    	$('.zScrollSpyNav').each(function(){
+    		var firstItem = $(this).find('.zScrollSpyNavItem:eq(0)');
+    		var activeId = firstItem.attr('id');
+    		$('[href="#' + activeId + '"]').addClass('zScrollSpyNavActive');
+    	})
+
+		$('.zScrollSpyNav').scroll(function(e){
+			e.preventDefault();
+			var scrollDiv = $(this);
+		
+			var siblingsItems = scrollDiv.find('.zScrollSpyNavItem');
+
+			for(var i = 0; i < siblingsItems.length; i ++){
+				var item = $(siblingsItems[i]);
+				var id = item.attr('id');
+				$('[href="#' + id + '"]').removeClass('zScrollSpyNavActive');
+				var top = item.position().top;
+				var height = item.outerHeight();
+				console.log(top + ': ' + height);
+				if(top < 15 && top > -1.0 * height){
+    				$('[href="#' + id + '"]').addClass('zScrollSpyNavActive');
+					break;
+				}
+				else if(top > 15){
+					item = $(siblingsItems[i - 1]);
+					var activeId = item.attr('id');
+    				$('[href="#' + activeId + '"]').addClass('zScrollSpyNavActive');
+					break;
+				}
+			}
+			if(i === siblingsItems.length){
+				var item = $(siblingsItems[siblingsItems.length - 1]);
+				var id = item.attr('id');
+				$('[href="#' + id + '"]').addClass('zScrollSpyNavActive');
+			}
+			else{
+				for(i = i + 1; i < siblingsItems.length; i ++){
+					var item = $(siblingsItems[i]);
+					var id = item.attr('id');
+					$('[href="#' + id + '"]').removeClass('zScrollSpyNavActive');
+				}
+			}
+		})
+    })  
+}
+
+initEvent();
+
+module.exports = instance;
+
+},{"./ui":11}],9:[function(require,module,exports){
+var instance = function(){
+
+}
+
+var initEvent = function(){
+    $(function(){
+    	$('.zTab').each(function(){
+    		var tab = $(this);
+    		if(tab.find('.zTabHd>a.active').length === 0){
+    			var a = tab.find('.zTabHd>a:eq(0)').addClass('active');
+    			tab.find(a.attr('href')).addClass('active');
+    		}
+    	})
+        $('body')
+        .off('click', '.zTab')
+        .on('click', '.zTab .zTabHd>a', function(e){
+        	e.preventDefault();
+            var ele = $(this);
+            if(ele.hasClass('.active')){
+            	return;
+            }
+
+            tab = ele.parents('.zTab');
+            tab.find('.zTabHd>a, .zTabItem').removeClass('active');
+            ele.addClass('active');
+            
+            var id = ele.attr('href');
+            tab.find(id).addClass('active');
+        })
+    })  
+}
+
+initEvent();
+
+module.exports = instance;
+
+},{}],10:[function(require,module,exports){
+var Tooltip = function(ele, content){
     var ele = $(ele);
     if(!content){
         return;
@@ -756,7 +935,7 @@ initEvent();
 
 module.exports = Tooltip;
 
-},{}],8:[function(require,module,exports){
+},{}],11:[function(require,module,exports){
 /**
 * @file 基本的、单个UI元素
 * @author Elvis
@@ -768,6 +947,30 @@ module.exports = Tooltip;
 * @exports oc.ui
 */
 var UI = {};
+
+/**
+* 判断元素是否在当前屏幕的可见范围内
+* @param {object} ele - 元素的选择器或者Jquery对象
+* @return {boolean} true / false
+**/
+UI.isOnScreen = function(ele){
+    var win = $(window);
+    var viewport = {
+        top: win.scrollTop(),
+        left: win.scrollLeft()
+    }
+    viewport.right = viewport.left + win.width();
+    viewport.bottom = viewport.top + win.height();
+
+    var ele = $(ele);
+
+    var bounds = ele.offset();
+    bounds.right = bounds.left + ele.outerWidth();
+    bounds.bottom = bounds.top + ele.outerHeight();
+    
+    return (! (viewport.right < bounds.left || viewport.left > bounds.right || viewport.bottom < bounds.top || viewport.top > bounds.bottom));
+}
+
 
 /**
 * 开关Toggle button, 此方法会影响页面中所有.zToggleBtn, .zToggleBtnSm元素
@@ -1152,4 +1355,145 @@ UI.popOverRemove = function(btn){
 }
 
 module.exports = UI;
-},{}]},{},[4]);
+},{}],12:[function(require,module,exports){
+var ZDate = require('./date');
+
+var instance = function(ele){
+	var ele = $(ele);
+	ele.on('click', function(){
+		_setPopEle(ele);
+	})
+    
+    ele.on('blur', function(){
+        _removePopEle(this);
+    })
+}
+
+var _removePopEle = function(target){
+	// var ele = $(target);
+	// ele.data('zTarget') && ele.data('zTarget').remove && ele.data('zTarget').remove();
+	// ele.data('zTarget', null);
+}
+
+var _setPopEle = function(target){
+	var ele = $(target);
+
+	var elePop = $('<div class="zWeekpickerWrapBottom"><div class="zWeekpickerHd"><i class="iPrev">&lt;</i><span class="zWeekpickerHdContent">2015</span><i class="iNext">&gt;</i></div><div class="zWeekpickerBd"></div></div>');
+	
+	_showViewWeek(null, elePop.find('.zWeekpickerBd'));
+	elePop.appendTo('body');
+	var position = ele.offset();
+	var left = position.left;
+	var top = position.top;
+	top = ele.offset().top + ele.outerHeight() + 8;
+	if(top + elePop.height() > $(document).height()){
+		elePop.removeClass('zWeekpickerWrapBottom').addClass('zWeekpickerWrap');
+		top = top - elePop.outerHeight() - 8;
+	}
+	if(left + elePop.outerWidth() > $(document).scrollLeft() + $('body').width()){
+		left = left - elePop.outerWidth() + ele.outerWidth();
+		elePop.removeClass('zWeekpickerWrap').addClass('zWeekpickerWrapRight');
+	}
+	elePop.css({
+		left: left,
+		top: top
+	})
+	.on('click', '.zWeekpickerHdContent', function(){
+    	_showViewYear(this.innerHTML, this.parentNode);
+    })
+    .on('click', '.zWeekpickerBd>span', function(){
+    	var weekpickerBody = $(this).parent();
+    	if(weekpickerBody.hasClass('zWeekViewYear')){
+    		_showViewWeek(this.innerHTML, this.parentNode);
+    	}
+    }).
+    on('click', '.zWeekpickerHd>i', function(){
+    	var i = $(this);
+    	var hd = i.parent();
+    	var hdContentEle = hd.find('.zWeekpickerHdContent');
+    	var year = hdContentEle.html();
+    	if(year.length === 4){
+    		year = parseInt(year);
+    		i.hasClass('.iPrev')? year -- : year ++;
+    		hdContentEle.html(year);
+    	}
+    	else{
+    		year = parseInt(year.slice(0, 4)) + 5;
+    		i.hasClass('.iPrev')? (year -= 10) : (year += 10);
+    		
+    	}
+    });
+
+	ele.data('zTarget', elePop);
+}
+
+var _showViewWeek = function(year, bd){
+	bd = $(bd);
+	var content = '';
+	var currWeek = ZDate.getWeekString(new Date()).toString();
+
+	if(!year){
+		year = currWeek.slice(0, 4);
+	}
+
+	bd.prev('.zWeekpickerHd').find('.zWeekpickerHdContent').html(year);
+	for(var i = 1; i < 53; i++){
+		var val = i.toString();
+		if(val < 10){
+			val = '0' + val;
+		}
+		content += '<span>' + val + '</span>';
+	}
+	bd.html(content).removeClass('zWeekViewYear');
+	
+	bd.find('>span:contains(' + currWeek.slice(4) + ')').addClass('active');
+}
+
+var _showViewYear = function(year, hd){
+	if(year.length > 4){
+		return;
+	}
+
+	hd = $(hd);
+	year = parseInt(year);
+	var spanYear = (year - 5) +  ' - ' + (year + 5);
+	hd.find('.zWeekpickerHdContent').html(spanYear);
+
+	var content = '';
+	for(var i = year -6; i < year + 6; i++){
+		content += '<span>' + i + '</span>';
+	}
+
+	var bd = hd.next('.zWeekpickerBd').html(content).addClass('zWeekViewYear');
+	bd.find('>span:first-child, >span:last-child').addClass('weekOld');
+	bd.find('>span:contains(' + year + ')').addClass('active');
+}
+
+var initEvent = function(){
+    $(function(){
+        $('body')
+        .off('click', '.zWeekpicker')
+        .on('click', '.zWeekpicker', function(e){
+            _setPopEle(this);
+        })
+        // .off('blur', 'zWeekpicker')
+        // .on('blur', '.zWeekpicker', function(){
+        //     _removePopEle(this);
+        // })
+        // .on('click', '.zWeekpickerHdContent', function(){
+        // 	_showViewYear(this.innerHTML, this.parentNode);
+        // })
+        // .on('click', '.zWeekpickerBd>span', function(){
+        // 	var weekpickerBody = $(this).parent();
+        // 	if(weekpickerBody.hasClass('zWeekViewYear')){
+        // 		_showViewWeek(this.innerHTML, this.parentNode);
+        // 	}
+        // })
+    })  
+}
+
+initEvent();
+
+module.exports = instance;
+
+},{"./date":3}]},{},[4]);

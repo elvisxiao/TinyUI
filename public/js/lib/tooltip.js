@@ -1,4 +1,4 @@
-Tooltip = function(ele, content){
+var Tooltip = function(ele, content){
     var ele = $(ele);
     if(!content){
         return;
