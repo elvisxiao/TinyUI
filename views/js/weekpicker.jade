@@ -11,14 +11,47 @@ block content
             h3(data-active="周选择组件") Weekpicker
             
             h4 1. 基本使用
+            p 在Input上添加class <font class="tRed">.zWeekpicker</font> 即可使用。可以使用data-theme属性定义主题。可选的主题为：warning、success、danger
             .zExample.mt20
                 p.mt20
-                    input.zWeekpicker.zIpt(type="text")
+                    p 默认的配色
+                        input.zWeekpicker.zIpt.ml10(type="text")
+                    p 橙色的主题
+                        input.zWeekpicker.zIpt.ml10(type="text", data-theme="warning", readonly, value="201527")
+                    p 红色的主题
+                        input.zWeekpicker.zIpt.ml10(type="text", data-theme="danger")
+                    p 绿色的主题
+                        input.zWeekpicker.zIpt.ml10(type="text", data-theme="success")
 
                 .zCode.mt20
                     code.language-jade.
                         p.mt20
-                            button.zBtnPrimary.w100.mr20(type="button", onclick="oc.progress.start()") 开始
-                            button.zBtnInfo.w100(type="button", onclick="oc.progress.done()") 结束
-           
+                            p 默认的配色
+                                input.zWeekpicker.zIpt.ml10(type="text")
+                            p 橙色的主题
+                                input.zWeekpicker.zIpt.ml10(type="text", data-theme="warning")
+                            p 红色的主题
+                                input.zWeekpicker.zIpt.ml10(type="text", data-theme="danger")
+                            p 绿色的主题
+                                input.zWeekpicker.zIpt.ml10(type="text", data-theme="success")
+            h4 2. JS API
+            .zExample.mt20
+                p.mt20
+                    input#ipt.zIpt(type="text")
+                script.
+                    oc.weekpicker('#ipt', 'warning');
+                    $('#ipt').on('change', function(){
+                        console.log(this.value);
+                    })
+                .zCode.mt20
+                    code.language-jade.
+                        p.mt20
+                            input#ipt.zIpt(type="text")
+                        script.
+                            oc.weekpicker('#ipt');
+                            $('#ipt').on('change', function(){
+                                console.log(this.value);
+                            })
+            
+        
             .cb.h50

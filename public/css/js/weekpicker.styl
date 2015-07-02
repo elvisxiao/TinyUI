@@ -1,3 +1,5 @@
+@import '../params'
+
 .zWeekpickerWrap, .zWeekpickerWrapBottom, .zWeekpickerWrapRight
     box-shadow 0 5px 10px rgba(0,0,0,.2)
     position absolute
@@ -25,7 +27,7 @@
         border-left 6px solid transparent
         border-right 6px solid transparent
         border-top 6px solid transparent
-        border-top-color #3bb4f2
+        border-top-color #fff
     .zWeekpickerHd
         background-color #3bb4f2
         color #fff
@@ -49,8 +51,8 @@
             cursor pointer
             transparent all .3s
             &:hover 
-                background-color rgba(255, 255, 255, .2)
-                color rgba(0, 0, 0, .3)
+                background-color rgba(250, 250, 250, .15)
+                color rgba(0, 0, 0, .5)
         i.iNext
             left auto
             right 0
@@ -61,12 +63,13 @@
             height 32px 
             line-height 32px
             &:hover 
-                background-color rgba(255, 255, 255, .2)
-                color rgba(0, 0, 0, .3)
+                background-color rgba(250, 250, 250, .15)
+                color rgba(0, 0, 0, .5)
     .zWeekpickerBd
         width 360px
         white-space normal
         padding-bottom 6px
+        position relative
         >span 
             display inline-block
             width 45px 
@@ -79,8 +82,19 @@
         >span.active
             background-color #f0f0f0
             color #0084c7
+            font-weight 500
         >span.weekOld
-            color #89d7ff    
+            color #89d7ff
+        .timeInfo
+            color #89d7ff
+            position absolute
+            right 12px
+            bottom 9px
+            i 
+                color inherit
+                font-size 12px 
+                margin-right 4px
+
     .zWeekpickerBd.zWeekViewYear  
         >span
             width 120px 
@@ -100,3 +114,49 @@
     &:before
         left auto
         right 15px
+
+//红色主题
+.zWeekpickerWrap[data-theme="danger"], .zWeekpickerWrapBottom[data-theme="danger"], .zWeekpickerWrapRight[data-theme="danger"]
+    .zWeekpickerHd
+        background-color $danger 
+    .zWeekpickerBd
+        >span.active
+            color #c10802 
+        >span.weekOld
+            color #f59490
+        >.timeInfo
+            color #f59490
+.zWeekpickerWrapBottom[data-theme="danger"]
+    &:before
+        border-bottom-color $danger 
+
+//绿色主题
+.zWeekpickerWrap[data-theme="success"], .zWeekpickerWrapBottom[data-theme="success"], .zWeekpickerWrapRight[data-theme="success"]
+    .zWeekpickerHd
+        background-color $success 
+    .zWeekpickerBd
+        >span.active
+            color #1b961b 
+        >span.weekOld
+            color #94df94
+        >.timeInfo
+            color #94df94
+.zWeekpickerWrapBottom[data-theme="success"]
+    &:before
+        border-bottom-color $success 
+
+
+//橙色主题
+.zWeekpickerWrap[data-theme="warning"], .zWeekpickerWrapBottom[data-theme="warning"], .zWeekpickerWrapRight[data-theme="warning"]
+    .zWeekpickerHd
+        background-color $warning 
+    .zWeekpickerBd
+        >span.active
+            color #aa4b00 
+        >span.weekOld
+            color #ffad6d
+        >.timeInfo
+            color #ffad6d
+.zWeekpickerWrapBottom[data-theme="warning"]
+    &:before
+        border-bottom-color $warning 

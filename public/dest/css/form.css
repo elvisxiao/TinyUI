@@ -244,6 +244,18 @@
 }
 
 /* line 121 : /Users/elvis/bitbucket/tinyUI/public/css/form.styl */
+.zIpt[disabled],
+.zIpt[readonly] {
+  background-color: #eee;
+  border-color: #ccc;
+}
+
+/* line 124 : /Users/elvis/bitbucket/tinyUI/public/css/form.styl */
+.zIpt[disabled] {
+  cursor: not-allowed;
+}
+
+/* line 127 : /Users/elvis/bitbucket/tinyUI/public/css/form.styl */
 select.zIpt {
   appearance: none;
   -webkit-appearance: none;
@@ -251,21 +263,22 @@ select.zIpt {
   -ms-appearance: none;
   background: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZlcnNpb249IjEuMSIgeD0iMTJweCIgeT0iMHB4IiB3aWR0aD0iMjRweCIgaGVpZ2h0PSIzcHgiIHZpZXdCb3g9IjAgMCA2IDMiIGVuYWJsZS1iYWNrZ3JvdW5kPSJuZXcgMCAwIDYgMyIgeG1sOnNwYWNlPSJwcmVzZXJ2ZSI+PHBvbHlnb24gcG9pbnRzPSI1Ljk5MiwwIDIuOTkyLDMgLTAuMDA4LDAgIi8+PC9zdmc+") 100% center no-repeat;
   padding-right: 20px;
+  background-size: 38px;
 }
 
-/* line 129 : /Users/elvis/bitbucket/tinyUI/public/css/form.styl */
+/* line 136 : /Users/elvis/bitbucket/tinyUI/public/css/form.styl */
 .zToggle {
   position: relative;
   display: inline-block;
   box-sizing: border-box;
 }
 
-/* line 133 : /Users/elvis/bitbucket/tinyUI/public/css/form.styl */
+/* line 140 : /Users/elvis/bitbucket/tinyUI/public/css/form.styl */
 .zToggle * {
   box-sizing: border-box;
 }
 
-/* line 135 : /Users/elvis/bitbucket/tinyUI/public/css/form.styl */
+/* line 142 : /Users/elvis/bitbucket/tinyUI/public/css/form.styl */
 .zToggle input[type="checkbox"] {
   opacity: 0;
   position: absolute;
@@ -278,13 +291,13 @@ select.zIpt {
   cursor: pointer;
 }
 
-/* line 145 : /Users/elvis/bitbucket/tinyUI/public/css/form.styl */
+/* line 152 : /Users/elvis/bitbucket/tinyUI/public/css/form.styl */
 .zToggle span {
   float: left;
   padding-right: 6px;
 }
 
-/* line 148 : /Users/elvis/bitbucket/tinyUI/public/css/form.styl */
+/* line 155 : /Users/elvis/bitbucket/tinyUI/public/css/form.styl */
 .zToggle span:before {
   box-sizing: border-box;
   content: 'OFF';
@@ -306,7 +319,7 @@ select.zIpt {
   transition: all 0.2s;
 }
 
-/* line 167 : /Users/elvis/bitbucket/tinyUI/public/css/form.styl */
+/* line 174 : /Users/elvis/bitbucket/tinyUI/public/css/form.styl */
 .zToggle span:after {
   content: '';
   display: block;
@@ -321,16 +334,16 @@ select.zIpt {
   transition: all 0.2s;
 }
 
-/* line 180 : /Users/elvis/bitbucket/tinyUI/public/css/form.styl */
+/* line 187 : /Users/elvis/bitbucket/tinyUI/public/css/form.styl */
 
-/* line 181 : /Users/elvis/bitbucket/tinyUI/public/css/form.styl */
+/* line 188 : /Users/elvis/bitbucket/tinyUI/public/css/form.styl */
 .zToggle input[type="checkbox"]:checked + *:before {
   content: 'ON';
   color: #0e90d2;
   padding-left: 10px;
 }
 
-/* line 185 : /Users/elvis/bitbucket/tinyUI/public/css/form.styl */
+/* line 192 : /Users/elvis/bitbucket/tinyUI/public/css/form.styl */
 .zToggle input[type="checkbox"]:checked + *:after {
   background-color: #0e90d2;
   margin-left: 34px;
