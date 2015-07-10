@@ -5,12 +5,16 @@ module.exports = function(grunt) {
         
         //js 合并
         concat : {
-            options : {
-                separator : ';'
-            },
-            domop : {
+            // options : {
+            //     separator : ''
+            // },
+            js : {
                 src  : ['public/js/**/**.js'],
                 dest : 'public/dest/oc-1.0.js'
+            },
+            css: {
+                src  : ['public/dest/css/**/**.css'],
+                dest : 'public/dest/oc-1.0.css'
             }
         },
 
@@ -37,7 +41,7 @@ module.exports = function(grunt) {
         stylus: {
             build : {
                 options: {
-                    linenos: true,
+                    linenos: false,
                     compress: false
                 },
                 files: [
@@ -50,6 +54,12 @@ module.exports = function(grunt) {
                     }
                 ]
             }
+        },
+
+        autoprefixer : {
+           dist : {
+                files : { 'public/dest/oc-1.0.css' : 'public/dest/oc-1.0.css' } 
+            } 
         },
 
         //合并压缩css
@@ -94,7 +104,7 @@ module.exports = function(grunt) {
         watch: {
             css: {
                 files: 'public/css/**/**.styl',
-                tasks: ['clean:stylesheets', 'stylus', 'cssmin'],
+                tasks: ['clean:stylesheets', 'stylus', 'concat:css', 'autoprefixer'],
                 options: {
                     livereload: '<%= pkg.name %>1',
                 }
@@ -105,7 +115,7 @@ module.exports = function(grunt) {
                 // tasks: ['clean:scripts', 'browserify', 'uglify', 'jsdoc'],
             }
         },
-        
+
         //js文档
         jsdoc : {
             dist : {
@@ -126,7 +136,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-jade');
     grunt.loadNpmTasks('grunt-jsdoc');
-
+    grunt.loadNpmTasks('grunt-autoprefixer');
 
     //定义任务
     // grunt.registerTask(

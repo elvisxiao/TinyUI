@@ -1,13 +1,7 @@
-
-/* line 1 : /Users/elvis/bitbucket/tinyUI/node_modules/grunt-contrib-stylus/node_modules/stylus/lib/functions/index.styl */
-
-/* line 1 : /Users/elvis/bitbucket/tinyUI/public/css/js/modal.styl */
 .zModalCover,
 .zModalCover * {
   box-sizing: border-box;
 }
-
-/* line 3 : /Users/elvis/bitbucket/tinyUI/public/css/js/modal.styl */
 .zModalCover {
   position: fixed;
   top: 0;
@@ -20,8 +14,6 @@
   transition: opacity 0.15s linear;
   background-color: rgba(0,0,0,0.4);
 }
-
-/* line 14 : /Users/elvis/bitbucket/tinyUI/public/css/js/modal.styl */
 .zModal {
   position: relative;
   background: #f8f8f8;
@@ -31,8 +23,6 @@
   min-width: 300px;
   text-align: left;
 }
-
-/* line 22 : /Users/elvis/bitbucket/tinyUI/public/css/js/modal.styl */
 .zModal .zModalHd {
   border-bottom: 1px solid #ddd;
   line-height: 40px;
@@ -42,8 +32,6 @@
   position: relative;
   white-space: nowrap;
 }
-
-/* line 30 : /Users/elvis/bitbucket/tinyUI/public/css/js/modal.styl */
 .zModal .zModalHd .zModalClose {
   position: absolute;
   right: 0;
@@ -56,26 +44,18 @@
   text-align: center;
   cursor: pointer;
 }
-
-/* line 41 : /Users/elvis/bitbucket/tinyUI/public/css/js/modal.styl */
 .zModal .zModalHd .zModalClose:hover {
   color: #222;
 }
-
-/* line 43 : /Users/elvis/bitbucket/tinyUI/public/css/js/modal.styl */
 .zModal .zModalBd {
   position: relative;
   padding: 15px;
   background-color: inherit;
 }
-
-/* line 47 : /Users/elvis/bitbucket/tinyUI/public/css/js/modal.styl */
 .zModal .zModalFt {
   border-top: 1px solid #ddd;
   text-align: center;
 }
-
-/* line 50 : /Users/elvis/bitbucket/tinyUI/public/css/js/modal.styl */
 .zModal .zModalFt .zModalAlertBtn,
 .zModal .zModalFt .zModalBtnLeft,
 .zModal .zModalFt .zModalBtnRight {
@@ -90,42 +70,30 @@
   transition: background-color 0.15s;
   cursor: pointer;
 }
-
-/* line 61 : /Users/elvis/bitbucket/tinyUI/public/css/js/modal.styl */
 .zModal .zModalFt .zModalAlertBtn:hover,
 .zModal .zModalFt .zModalBtnLeft:hover,
 .zModal .zModalFt .zModalBtnRight:hover {
   background-color: #f1f1f1;
 }
-
-/* line 63 : /Users/elvis/bitbucket/tinyUI/public/css/js/modal.styl */
 .zModal .zModalFt .zModalAlertBtn:active,
 .zModal .zModalFt .zModalBtnLeft:active,
 .zModal .zModalFt .zModalBtnRight:active {
   background-color: #ddd;
   outline: 0;
 }
-
-/* line 66 : /Users/elvis/bitbucket/tinyUI/public/css/js/modal.styl */
 .zModal .zModalFt .zModalAlertBtn:focus,
 .zModal .zModalFt .zModalBtnLeft:focus,
 .zModal .zModalFt .zModalBtnRight:focus {
   outline: 0;
 }
-
-/* line 68 : /Users/elvis/bitbucket/tinyUI/public/css/js/modal.styl */
 .zModal .zModalFt .zModalBtnLeft,
 .zModal .zModalFt .zModalBtnRight {
   width: 50%;
   display: inline-block;
 }
-
-/* line 71 : /Users/elvis/bitbucket/tinyUI/public/css/js/modal.styl */
 .zModal .zModalFt .zModalBtnLeft {
   border-right: 1px solid #ddd;
 }
-
-/* line 74 : /Users/elvis/bitbucket/tinyUI/public/css/js/modal.styl */
 .zModalActive {
   overflow: hidden !important;
   padding-right: 15px;

@@ -1,7 +1,3 @@
-
-/* line 1 : /Users/elvis/bitbucket/tinyUI/node_modules/grunt-contrib-stylus/node_modules/stylus/lib/functions/index.styl */
-
-/* line 1 : /Users/elvis/bitbucket/tinyUI/public/css/breadcrumb.styl */
 .zBreadcrumb,
 .zBreadcrumbSlash {
   list-style-type: none;
@@ -11,15 +7,11 @@
   line-height: 2em;
   box-sizing: border-box;
 }
-
-/* line 8 : /Users/elvis/bitbucket/tinyUI/public/css/breadcrumb.styl */
 .zBreadcrumb li,
 .zBreadcrumbSlash li {
   display: inline-block;
   float: left;
 }
-
-/* line 11 : /Users/elvis/bitbucket/tinyUI/public/css/breadcrumb.styl */
 .zBreadcrumb li:before,
 .zBreadcrumbSlash li:before {
   content: '>';
@@ -29,40 +21,22 @@
   margin-left: 3px;
   margin-right: 3px;
 }
-
-/* line 18 : /Users/elvis/bitbucket/tinyUI/public/css/breadcrumb.styl */
 .zBreadcrumb li a,
 .zBreadcrumbSlash li a {
   text-decoration: none;
 }
-
-/* line 20 : /Users/elvis/bitbucket/tinyUI/public/css/breadcrumb.styl */
-
-/* line 21 : /Users/elvis/bitbucket/tinyUI/public/css/breadcrumb.styl */
 .zBreadcrumb li:first-child:before,
 .zBreadcrumbSlash li:first-child:before {
   content: '';
 }
-
-/* line 23 : /Users/elvis/bitbucket/tinyUI/public/css/breadcrumb.styl */
-
-/* line 24 : /Users/elvis/bitbucket/tinyUI/public/css/breadcrumb.styl */
 .zBreadcrumb li.active a,
 .zBreadcrumbSlash li.active a {
   color: #888;
 }
-
-/* line 26 : /Users/elvis/bitbucket/tinyUI/public/css/breadcrumb.styl */
 .zBreadcrumb *,
 .zBreadcrumbSlash * {
   box-sizing: border-box;
 }
-
-/* line 28 : /Users/elvis/bitbucket/tinyUI/public/css/breadcrumb.styl */
-
-/* line 29 : /Users/elvis/bitbucket/tinyUI/public/css/breadcrumb.styl */
-
-/* line 30 : /Users/elvis/bitbucket/tinyUI/public/css/breadcrumb.styl */
 .zBreadcrumbSlash li:before {
   content: '/';
 }

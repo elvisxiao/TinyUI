@@ -1,25 +1,15 @@
-
-/* line 1 : /Users/elvis/bitbucket/tinyUI/node_modules/grunt-contrib-stylus/node_modules/stylus/lib/functions/index.styl */
-
-/* line 1 : /Users/elvis/bitbucket/tinyUI/public/css/tab.styl */
 .zTab {
   background-color: #fff;
   padding: 0;
   box-sizing: border-box;
 }
-
-/* line 5 : /Users/elvis/bitbucket/tinyUI/public/css/tab.styl */
 .zTab * {
   box-sizing: border-box;
 }
-
-/* line 7 : /Users/elvis/bitbucket/tinyUI/public/css/tab.styl */
 .zTab .zTabHd {
   margin: 0;
   overflow: visible;
 }
-
-/* line 10 : /Users/elvis/bitbucket/tinyUI/public/css/tab.styl */
 .zTab .zTabHd >a {
   display: inline-block;
   padding: 6px 16px;
@@ -30,13 +20,9 @@
   z-index: 1;
   border: 1px solid transparent;
 }
-
-/* line 19 : /Users/elvis/bitbucket/tinyUI/public/css/tab.styl */
 .zTab .zTabHd >a:hover {
   background-color: #f0f0f0;
 }
-
-/* line 21 : /Users/elvis/bitbucket/tinyUI/public/css/tab.styl */
 .zTab .zTabHd >a.active {
   background-color: #fff;
   border: 1px solid #ddd;
@@ -47,8 +33,6 @@
   border-top-right-radius: 2px;
   border-top-left-radius: 2px;
 }
-
-/* line 30 : /Users/elvis/bitbucket/tinyUI/public/css/tab.styl */
 .zTab .zTabItem {
   clear: both;
   margin: 0;
@@ -57,8 +41,6 @@
   border: 1px solid #ddd;
   background-color: inherit;
 }
-
-/* line 38 : /Users/elvis/bitbucket/tinyUI/public/css/tab.styl */
 .zTab .zTabItem.active {
   display: block;
 }

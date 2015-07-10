@@ -1,15 +1,9 @@
-
-/* line 1 : /Users/elvis/bitbucket/tinyUI/node_modules/grunt-contrib-stylus/node_modules/stylus/lib/functions/index.styl */
-
-/* line 1 : /Users/elvis/bitbucket/tinyUI/public/css/js/tooltip.styl */
 .zTooltipWrap {
   background: #333;
   color: #fff;
   padding: 6px 10px;
   border-color: #333;
 }
-
-/* line 6 : /Users/elvis/bitbucket/tinyUI/public/css/js/tooltip.styl */
 .zTooltipWrap:before {
   display: block;
   position: absolute;
@@ -22,12 +16,6 @@
   border-bottom: 6px solid transparent;
   border-bottom-color: inherit;
 }
-
-/* line 18 : /Users/elvis/bitbucket/tinyUI/public/css/js/tooltip.styl */
-
-/* line 19 : /Users/elvis/bitbucket/tinyUI/public/css/js/tooltip.styl */
-
-/* line 20 : /Users/elvis/bitbucket/tinyUI/public/css/js/tooltip.styl */
 .zDropdownUp .zTooltipWrap:before {
   top: auto;
   bottom: -6px;
@@ -35,20 +23,14 @@
   border-top: 6px solid transparent;
   border-top-color: inherit;
 }
-
-/* line 27 : /Users/elvis/bitbucket/tinyUI/public/css/js/tooltip.styl */
 .zTooltipWrap.warning {
   background: #f37b1d;
   border-color: #f37b1d;
 }
-
-/* line 30 : /Users/elvis/bitbucket/tinyUI/public/css/js/tooltip.styl */
 .zTooltipWrap.danger {
   background: #dd514c;
   border-color: #dd514c;
 }
-
-/* line 33 : /Users/elvis/bitbucket/tinyUI/public/css/js/tooltip.styl */
 .zTooltipWrap.info {
   background: #5eb95e;
   border-color: #5eb95e;

@@ -1,64 +1,36 @@
-
-/* line 1 : /Users/elvis/bitbucket/tinyUI/node_modules/grunt-contrib-stylus/node_modules/stylus/lib/functions/index.styl */
-
-/* line 1 : /Users/elvis/bitbucket/tinyUI/public/css/table.styl */
 .zTable {
   border-spacing: 0;
   box-sizing: border-box;
 }
-
-/* line 3 : /Users/elvis/bitbucket/tinyUI/public/css/table.styl */
 .zTable tr {
   height: 35px;
 }
-
-/* line 5 : /Users/elvis/bitbucket/tinyUI/public/css/table.styl */
 .zTable td,
 .zTable th {
   padding-left: 10px;
   text-align: left;
   border-bottom: 1px solid #ddd;
 }
-
-/* line 9 : /Users/elvis/bitbucket/tinyUI/public/css/table.styl */
 .zTable th {
   border-bottom: 2px solid #ddd;
 }
-
-/* line 11 : /Users/elvis/bitbucket/tinyUI/public/css/table.styl */
 .zTable thead {
   background: #428bca;
   color: #fff;
   box-shadow: 0 2px 3px rgba(100,100,100,0.2);
 }
-
-/* line 15 : /Users/elvis/bitbucket/tinyUI/public/css/table.styl */
 .zTable tbody tr:last-child td {
   border-bottom: 0;
 }
-
-/* line 18 : /Users/elvis/bitbucket/tinyUI/public/css/table.styl */
 .zTable * {
   box-sizing: border-box;
 }
-
-/* line 20 : /Users/elvis/bitbucket/tinyUI/public/css/table.styl */
-
-/* line 21 : /Users/elvis/bitbucket/tinyUI/public/css/table.styl */
 .zTableHover tbody tr:hover {
   background: #f0f0f0;
 }
-
-/* line 23 : /Users/elvis/bitbucket/tinyUI/public/css/table.styl */
 .zTableHover tr.gray:hover {
   background: #babfcd;
 }
-
-/* line 26 : /Users/elvis/bitbucket/tinyUI/public/css/table.styl */
-
-/* line 27 : /Users/elvis/bitbucket/tinyUI/public/css/table.styl */
-
-/* line 28 : /Users/elvis/bitbucket/tinyUI/public/css/table.styl */
 .zTableStrip tbody tr:nth-child(2n) {
   background: #f3f3f3;
 }

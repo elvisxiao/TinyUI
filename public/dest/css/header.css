@@ -1,34 +1,22 @@
-
-/* line 1 : /Users/elvis/bitbucket/tinyUI/node_modules/grunt-contrib-stylus/node_modules/stylus/lib/functions/index.styl */
-
-/* line 3 : /Users/elvis/bitbucket/tinyUI/public/css/header.styl */
 .zHeader {
   color: #f2f2f2;
   height: 50px;
   background: #0e90d2;
   box-sizing: border-box;
 }
-
-/* line 8 : /Users/elvis/bitbucket/tinyUI/public/css/header.styl */
 .zHeader * {
   box-sizing: border-box;
 }
-
-/* line 10 : /Users/elvis/bitbucket/tinyUI/public/css/header.styl */
 .zHeader h1,
 .zHeader ul,
 .zHeader li {
   display: inline-block;
 }
-
-/* line 12 : /Users/elvis/bitbucket/tinyUI/public/css/header.styl */
 .zHeader h1 {
   line-height: 30px;
   height: 30px;
   margin: 10px 0;
 }
-
-/* line 16 : /Users/elvis/bitbucket/tinyUI/public/css/header.styl */
 .zHeader a {
   color: inherit;
   position: relative;
@@ -38,19 +26,13 @@
   display: inline-block;
   transition: background 0.2s;
 }
-
-/* line 24 : /Users/elvis/bitbucket/tinyUI/public/css/header.styl */
 .zHeader a:hover {
   background: rgba(0,0,0,0.1);
 }
-
-/* line 26 : /Users/elvis/bitbucket/tinyUI/public/css/header.styl */
 .zHeader li.active a {
   background: rgba(0,0,0,0.15);
   color: #fff;
 }
-
-/* line 29 : /Users/elvis/bitbucket/tinyUI/public/css/header.styl */
 .zHeader li.active a:after {
   content: '';
   display: block;
@@ -64,8 +46,6 @@
   border-left: 10px solid transparent;
   border-right: 10px solid transparent;
 }
-
-/* line 41 : /Users/elvis/bitbucket/tinyUI/public/css/header.styl */
 .zHeader .zWrap,
 .zHeader zWrapLg,
 .zHeader ul,
@@ -74,15 +54,11 @@
   height: 100%;
   vertical-align: top;
 }
-
-/* line 44 : /Users/elvis/bitbucket/tinyUI/public/css/header.styl */
 .zHeader ul,
 .zHeader li,
 .zHeader a {
   margin: 0;
 }
-
-/* line 46 : /Users/elvis/bitbucket/tinyUI/public/css/header.styl */
 .zHeader ul {
   float: right;
 }

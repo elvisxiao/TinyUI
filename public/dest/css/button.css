@@ -1,7 +1,3 @@
-
-/* line 1 : /Users/elvis/bitbucket/tinyUI/node_modules/grunt-contrib-stylus/node_modules/stylus/lib/functions/index.styl */
-
-/* line 1 : /Users/elvis/bitbucket/tinyUI/public/css/button.styl */
 .zBtn,
 .zBtnPrimary,
 .zBtnInfo,
@@ -34,8 +30,6 @@
   transition: box-shadow 0.2s;
   box-sizing: border-box;
 }
-
-/* line 26 : /Users/elvis/bitbucket/tinyUI/public/css/button.styl */
 .zBtn:focus,
 .zBtnPrimary:focus,
 .zBtnInfo:focus,
@@ -45,8 +39,6 @@
 .zBtnGray:focus {
   outline: none;
 }
-
-/* line 28 : /Users/elvis/bitbucket/tinyUI/public/css/button.styl */
 .zBtn:hover,
 .zBtnPrimary:hover,
 .zBtnInfo:hover,
@@ -58,8 +50,6 @@
   text-decoration: none;
   color: #fff;
 }
-
-/* line 32 : /Users/elvis/bitbucket/tinyUI/public/css/button.styl */
 .zBtn:active,
 .zBtnPrimary:active,
 .zBtnInfo:active,
@@ -71,72 +61,48 @@
   text-decoration: none;
   color: #fff;
 }
-
-/* line 36 : /Users/elvis/bitbucket/tinyUI/public/css/button.styl */
 .zBtn {
   background-color: #e2e2e2;
   border-color: #d9d9d9;
   color: #444;
 }
-
-/* line 40 : /Users/elvis/bitbucket/tinyUI/public/css/button.styl */
 .zBtn:hover {
   color: #444;
 }
-
-/* line 42 : /Users/elvis/bitbucket/tinyUI/public/css/button.styl */
 .zBtn:active {
   color: #444;
 }
-
-/* line 44 : /Users/elvis/bitbucket/tinyUI/public/css/button.styl */
 .zBtnPrimary {
   background-color: #0e90d2;
   border-color: #0c80ba;
 }
-
-/* line 47 : /Users/elvis/bitbucket/tinyUI/public/css/button.styl */
 .zBtnInfo {
   background-color: #5bc0de;
   border-color: #46b8da;
 }
-
-/* line 50 : /Users/elvis/bitbucket/tinyUI/public/css/button.styl */
 .zBtnSuccess {
   background-color: #5eb95e;
   border-color: #4db14d;
 }
-
-/* line 53 : /Users/elvis/bitbucket/tinyUI/public/css/button.styl */
 .zBtnWarning {
   background-color: #f37b1d;
   border-color: #ea6e0c;
 }
-
-/* line 56 : /Users/elvis/bitbucket/tinyUI/public/css/button.styl */
 .zBtnDanger {
   background-color: #dd514c;
   border-color: #d93c37;
 }
-
-/* line 59 : /Users/elvis/bitbucket/tinyUI/public/css/button.styl */
 .zBtnGray {
   background-color: #50636f;
   border-color: #333;
 }
-
-/* line 63 : /Users/elvis/bitbucket/tinyUI/public/css/button.styl */
 .zRadius {
   border-radius: 4px;
 }
-
-/* line 65 : /Users/elvis/bitbucket/tinyUI/public/css/button.styl */
 .zCircle {
   padding: 6px 16px;
   border-radius: 200px;
 }
-
-/* line 69 : /Users/elvis/bitbucket/tinyUI/public/css/button.styl */
 .zBtn:disabled,
 .zBtnPrimary:disabled,
 .zBtnInfo:disabled,
@@ -148,8 +114,6 @@
   cursor: not-allowed;
   pointer-events: none;
 }
-
-/* line 73 : /Users/elvis/bitbucket/tinyUI/public/css/button.styl */
 .zBtn:disabled:hover,
 .zBtnPrimary:disabled:hover,
 .zBtnInfo:disabled:hover,
@@ -159,8 +123,6 @@
 .zBtnGray:disabled:hover {
   box-shadow: none;
 }
-
-/* line 75 : /Users/elvis/bitbucket/tinyUI/public/css/button.styl */
 .zBtn:disabled:active,
 .zBtnPrimary:disabled:active,
 .zBtnInfo:disabled:active,
@@ -170,13 +132,9 @@
 .zBtnGray:disabled:active {
   box-shadow: none;
 }
-
-/* line 77 : /Users/elvis/bitbucket/tinyUI/public/css/button.styl */
 .zBtn:disabled {
   opacity: 0.55;
 }
-
-/* line 80 : /Users/elvis/bitbucket/tinyUI/public/css/button.styl */
 .zBadge,
 .zBadgePrimary,
 .zBadgeInfo,
@@ -193,54 +151,34 @@
   text-align: center;
   padding: 0.1em 0.6em;
 }
-
-/* line 90 : /Users/elvis/bitbucket/tinyUI/public/css/button.styl */
 .zBadgePrimary {
   background-color: #0e90d2;
 }
-
-/* line 92 : /Users/elvis/bitbucket/tinyUI/public/css/button.styl */
 .zBadgeInfo {
   background-color: #5bc0de;
 }
-
-/* line 94 : /Users/elvis/bitbucket/tinyUI/public/css/button.styl */
 .zBadgeSuccess {
   background-color: #5eb95e;
 }
-
-/* line 96 : /Users/elvis/bitbucket/tinyUI/public/css/button.styl */
 .zBadgeWarning {
   background-color: #f37b1d;
 }
-
-/* line 98 : /Users/elvis/bitbucket/tinyUI/public/css/button.styl */
 .zBadgeDanger {
   background-color: #dd514c;
 }
-
-/* line 101 : /Users/elvis/bitbucket/tinyUI/public/css/button.styl */
 .xs {
   font-size: 10px;
   padding: 0.2em 0.6em;
 }
-
-/* line 104 : /Users/elvis/bitbucket/tinyUI/public/css/button.styl */
 .sm {
   font-size: 12px;
 }
-
-/* line 106 : /Users/elvis/bitbucket/tinyUI/public/css/button.styl */
 .lg {
   font-size: 16px;
 }
-
-/* line 108 : /Users/elvis/bitbucket/tinyUI/public/css/button.styl */
 .xl {
   font-size: 18px;
 }
-
-/* line 111 : /Users/elvis/bitbucket/tinyUI/public/css/button.styl */
 .zBadge.xs,
 .zBadgePrimary.xs,
 .zBadgeInfo.xs,
@@ -249,8 +187,6 @@
 .zBadgeDanger.xs {
   padding: 0.2em 0.7em;
 }
-
-/* line 113 : /Users/elvis/bitbucket/tinyUI/public/css/button.styl */
 .zBadge.sm,
 .zBadgePrimary.sm,
 .zBadgeInfo.sm,
@@ -259,8 +195,6 @@
 .zBadgeDanger.sm {
   padding: 0.3em 0.6em;
 }
-
-/* line 115 : /Users/elvis/bitbucket/tinyUI/public/css/button.styl */
 .zBadge.lg,
 .zBadgePrimary.lg,
 .zBadgeInfo.lg,
@@ -269,8 +203,6 @@
 .zBadgeDanger.lg {
   padding: 0.2em 0.6em;
 }
-
-/* line 117 : /Users/elvis/bitbucket/tinyUI/public/css/button.styl */
 .zBadge.xl,
 .zBadgePrimary.xl,
 .zBadgeInfo.xl,
