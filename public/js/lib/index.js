@@ -5,6 +5,7 @@ ui.scrollSpy = require('./scrollSpy');
 ui.tooltip = require('./tooltip');
 ui.popover = require('./popover');
 ui.progress = require('./progress');
+ui.select = require('./select');
 ui.tab = require('./tab');
 ui.modal = require('./modal');
 ui.ui = require('./ui');

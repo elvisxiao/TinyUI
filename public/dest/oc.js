@@ -137,11 +137,6 @@ module.exports = (function(){
 				panel.addClass('active');
 			}
 		})
-		
-		$('body').on('click', '.zSlc', function(e){
-			e.preventDefault();
-			return false;
-		})
 	})
 	
 })();
@@ -486,6 +481,113 @@ ZDate.weekPicker = function(ipt){
 
 module.exports = ZDate;
 },{}],4:[function(require,module,exports){
+module.exports = {
+    show: function(target, title, content, defaultDirect) {
+        var target = $(target);
+        if(target.data('zTarget')){
+            return;
+        }
+        var elePop = $('<div class="zDropdown"><div class="zDropdownBd"></div></div>');
+        
+        elePop.find('.zDropdownBd').append(content);
+        if(title){
+            var hd = $('<div class="zDropdownHd"></div>').append(title);
+            elePop.prepend(hd);
+        }
+
+        elePop.appendTo('body');
+        this._setPosition(target, elePop, title, defaultDirect);
+        elePop.data('zTarget', target);
+        target.data('zTarget', elePop);
+    },
+
+    remove: function(ele){
+        if(!ele){
+            ele = $('.zDropdown');
+        }
+        else{
+            ele = $(ele);
+            if(!ele.hasClass('zDropdown')){
+                ele = ele.data('zTarget');
+            }
+        }
+
+        if(ele && ele.each){
+            ele.each(function(){
+                var one = $(this);
+                var target = one.data('zTarget');
+                one.remove();
+                one.data('zTarget', null);
+                target && target.data('zTarget', null);
+            })
+        }
+    },
+
+    _setPosition: function(target, elePop, hasTitle, defaultDirect){
+        var position = target.offset();
+        var left = position.left;
+        var top = position.top;
+        var win = $(window);
+
+        var origin = {
+            upTop: top - elePop.outerHeight() - 8,
+            downTop: top + target.outerHeight() + 8,
+            leftLeft: left,
+            rightLeft: left - elePop.outerWidth() + target.outerWidth()
+        }
+
+        //设置左边距离
+        var targetLeft = origin.leftLeft;
+
+        if(defaultDirect === "right" && origin.rightLeft > win.scrollLeft() ){
+            targetLeft = origin.rightLeft;
+            elePop.addClass('zDropdownRight');
+        }
+        else if( left + elePop.outerWidth() > win.scrollLeft() + win.width() ){
+            targetLeft = origin.rightLeft;
+            elePop.addClass('zDropdownRight');
+        }
+
+        //设置顶部距离
+        var targetTop = origin.downTop;
+        if(defaultDirect === "up" && origin.upTop > win.scrollTop()){
+            targetTop = origin.upTop;
+            elePop.addClass('zDropdownUp');
+        }
+        else if((targetTop + elePop.height() > win.outerHeight() + win.scrollTop()) ){ //下面位置不够放时，尝试放到上面去
+            targetTop = origin.upTop;
+            //判断上面位置是否足够放置，如果不行，去上或下高度比较大的一个
+            if(targetTop < win.scrollTop() ){
+                var alignTop = top - win.scrollTop();
+                var alignBottom = win.outerHeight() - alignTop - target.outerHeight();
+                var maxHeight = alignTop > alignBottom? alignTop : alignBottom;
+                elePop.css('height', maxHeight);
+                if(hasTitle){
+                    elePop.find('.zDropdownBd').css('height', maxHeight - 40);
+                }
+                if(alignBottom > alignTop){
+                    targetTop = origin.downTop;
+                }
+                else{//下面的位置比上面高度小，放上去
+                    targetTop = top - elePop.outerHeight() - 8;
+                    elePop.addClass('zDropdownUp');
+                }
+            }
+            else{ //上面位置够，放上去
+                elePop.addClass('zDropdownUp');
+            }
+        }
+        
+
+        elePop.css({
+            left: targetLeft,
+            top: targetTop,
+            "min-width": target.outerWidth()
+        })
+    }
+}
+
+},{}],5:[function(require,module,exports){
 var ui = {};
 
 ui.collapse = require('./collapse');
@@ -493,6 +595,7 @@ ui.scrollSpy = require('./scrollSpy');
 ui.tooltip = require('./tooltip');
 ui.popover = require('./popover');
 ui.progress = require('./progress');
+ui.select = require('./select');
 ui.tab = require('./tab');
 ui.modal = require('./modal');
 ui.ui = require('./ui');
@@ -506,7 +609,7 @@ if(module && module.exports){
     module.exports = ui;
 }
 
-},{"./ajax":1,"./collapse":2,"./date":3,"./modal":5,"./popover":6,"./progress":7,"./scrollSpy":8,"./tab":9,"./tooltip":10,"./ui":11,"./weekpicker":12}],5:[function(require,module,exports){
+},{"./ajax":1,"./collapse":2,"./date":3,"./modal":6,"./popover":7,"./progress":8,"./scrollSpy":9,"./select":10,"./tab":11,"./tooltip":12,"./ui":13,"./weekpicker":14}],6:[function(require,module,exports){
 module.exports = {
 	modalTemplate: '<div class="zModalCover"><div class="zModal"><div class="zModalHd"><i class="zModalClose">×</i></div><div class="zModalBd"></div></div></div>',
 
@@ -652,57 +755,27 @@ module.exports = {
     })()
 }
 
-},{}],6:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
+var dropdown = require('./dropdown');
+
 var instance = function(ele, title, content, direct){
 	var ele = $(ele);
 	if(arguments.length == 2){
 		content = arguments[1];
 		title = '';
 	}
-
+    
     if(!content){
         return;
     }
     if(ele.data('zTarget')){
         return;
     }
-    _setPopEle(ele, title, content, direct);
+    content = $('<div class="popoverWrap"></div>').append(content);
+    dropdown.show(ele, title, content, 'up');
     ele.on('blur', function(){
-        _removePopEle(this);
+        dropdown.remove(this);
     })
-}
-
-var _removePopEle = function(target){
-	var ele = $(target);
-	ele.data('zTarget') && ele.data('zTarget').remove && ele.data('zTarget').remove();
-	ele.data('zTarget', null);
-}
-
-var _setPopEle = function(target, title, content, direct){
-	var ele = $(target);
-	var elePop = $('<div class="zPopoverWrap"><div class="zPopoverContent">' + content + '</div></div>');
-	if(title){
-		elePop.prepend('<div class="zPopoverTitle">' + title + '</div>');
-	}
-	elePop.appendTo('body');
-	var position = ele.offset();
-	var left = position.left;
-	var top = position.top;
-	// left = left + ele.outerWidth() / 2 - elePop.outerWidth() / 2;
-	top = top - elePop.outerHeight() - 8;
-	if(top < $(document).scrollTop() || direct === 'down'){
-		elePop.removeClass('zPopoverWrap').addClass('zPopoverWrapBottom');
-		top = ele.offset().top + ele.outerHeight() + 8;
-	}
-	if(left + elePop.outerWidth() > $(document).scrollLeft() + $('body').width()){
-		left = left - elePop.outerWidth() + ele.outerWidth();
-		elePop.removeClass('zPopoverWrap').addClass('zPopoverWrapRight');
-	}
-	elePop.css({
-		left: left,
-		top: top
-	})
-	ele.data('zTarget', elePop);
 }
 
 var initEvent = function(){
@@ -714,16 +787,15 @@ var initEvent = function(){
             title = ele.attr('data-title');
             content = ele.attr('data-content');
 
-        	console.log(content);
             if(!content){
                 return;
             }
 
-            _setPopEle(ele, title, content);
+            instance(ele, title, content, 'up');
         })
-        .off('blur', 'zPopover')
+        .off('blur', '.zPopover')
         .on('blur', '.zPopover', function(){
-            _removePopEle(this);
+            dropdown.remove(this);
         })
     })  
 }
@@ -732,7 +804,7 @@ initEvent();
 
 module.exports = instance;
 
-},{}],7:[function(require,module,exports){
+},{"./dropdown":4}],8:[function(require,module,exports){
 var instance = {}
 instance.start = function(){
 	var progress = $('body>.zProgressTop');
@@ -749,7 +821,7 @@ instance.done = function(){
 
 module.exports = instance;
 
-},{}],8:[function(require,module,exports){
+},{}],9:[function(require,module,exports){
 var ui = require('./ui');
 
 var instance = function(ele, animateClass){
@@ -828,7 +900,132 @@ initEvent();
 
 module.exports = instance;
 
-},{"./ui":11}],9:[function(require,module,exports){
+},{"./ui":13}],10:[function(require,module,exports){
+var dropdown = require('./dropdown');
+
+var instance = function(ele){
+    initSelect(ele);
+}
+
+var initSelect = function(ele){
+    if(!ele){
+        ele = $('.zSlc');
+    }
+
+    $('.zSlc').each(function(){
+        var slc = $(this);
+        var divSlc = $('<div class="zSlcWrap"></div>');
+        var ipt = $('<input class="zIpt" readonly/>').appendTo(divSlc);
+        var position = slc.position();
+        divSlc.css({
+            position: 'relative',
+            display: slc.css('display'),
+            width: slc.outerWidth(),
+            height: slc.outerHeight()
+        })
+        slc.after(divSlc);
+        var initVal = slc.val();
+        if(initVal.join){
+            initVal = initVal.join(', ');
+        }
+        ipt.val(initVal || "");
+        slc.hide();
+    });
+}
+
+
+var initEvent = function(){
+    $(function(){
+        initSelect();
+        
+        $('body')
+        .on('click', function(){
+            dropdown.remove($('.zSlcBd').parents('.zDropdown'));
+        })
+        .off('click', '.zSlcWrap>input.zIpt')
+        .on('click', '.zSlcWrap>input.zIpt', function(e){
+        	e.stopPropagation();
+            var ele = $(this);
+            if(ele.data('zTarget') && ele.data('zTarget').length > 0){
+                dropdown.remove();
+            	return;
+            }
+
+            dropdown.remove();
+
+            var slcWrap = ele.parent();
+            var slc = slcWrap.prev('.zSlc');
+            var content = $('<div class="zSlcBd"></div>');
+
+            slc.find('option, optgroup').each(function(){
+            	var item = $(this);
+                var p = $('<p data-val="' + item.val() + '">' + item.html() + '</p>').appendTo(content);
+                if(this.nodeName === "OPTGROUP"){
+                    p.removeAttr('data-val').attr('disabled', 'disabled').attr('slcGroup', 'true').html(item.attr('label'));
+                }
+            	else{
+                    if(item.attr('disabled')){
+                        p.attr('disabled', item.attr('disabled'));
+                    }
+                    if(item.attr('selected')){
+                        p.attr('selected', item.attr('selected'));
+                    }
+                }
+            });
+
+            dropdown.show(ele, '', content[0].outerHTML);
+        })
+        .off('click', '.zSlcBd>p')    
+        .on('click', '.zSlcBd>p', function(e){
+        	e.stopPropagation();
+        	var p = $(this);
+        	if(p.attr('disabled')){
+        		return;
+        	}
+
+        	var ipt = $(this).parents('.zDropdown').data('zTarget');
+        	var slc = ipt.parent().prev('.zSlc');
+        	
+        	var slcVal = p.val();
+        	var slcOption = slc.find('option[value="' + slcVal + '"]');
+        	if(!slcVal){
+        		slcVal = p.html();
+        		slcOption = slc.find('option:contains("' + slcVal + '")').filter(function(){
+        			return this.innerHTML == slcVal;
+        		});
+        	}
+        	
+        	if(!slc.attr('multiple')){
+                ipt.val(slcVal);
+                slc.find('option').attr('selected', false);
+                slcOption.attr('selected', true);
+				dropdown.remove(ipt);
+        	}
+        	else{
+        		if(p.attr('selected')){
+        			p.removeAttr('selected');
+        			slcOption[0].selected = false;
+                    slcOption.attr('selected', false);
+        		}
+        		else{
+        			p.attr('selected', 'selected');
+        			slcOption.attr('selected', true);
+        		}
+                var vals = slc.val();
+                if(vals){
+                    vals = vals.join(', ');
+                }
+                ipt.val(vals || '')
+        	}
+        })
+    })  
+}
+
+initEvent();
+
+module.exports = instance;
+
+},{"./dropdown":4}],11:[function(require,module,exports){
 var instance = function(){
 
 }
@@ -865,8 +1062,10 @@ initEvent();
 
 module.exports = instance;
 
-},{}],10:[function(require,module,exports){
-var Tooltip = function(ele, content){
+},{}],12:[function(require,module,exports){
+var dropdown = require('./dropdown');
+
+var Tooltip = function(ele, content, theme){
     var ele = $(ele);
     if(!content){
         return;
@@ -874,36 +1073,14 @@ var Tooltip = function(ele, content){
     if(ele.data('zTarget')){
         return;
     }
-    _setPopEle(ele, content);
-    ele.on('blur', function(){
-        _removePopEle(this);
-    })
-}
-
-var _removePopEle = function(target){
-    var ele = $(target);
-    ele.data('zTarget') && ele.data('zTarget').remove && ele.data('zTarget').remove();
-    ele.data('zTarget', null);
-}
-
-var _setPopEle = function(target, content){
-    var ele = $(target);
-    var elePop = $('<div class="zTooltipTitle">' + content + '</div>').appendTo('body');
-    var position = ele.offset();
-    var left = position.left;
-    var top = position.top;
-    left = left + ele.outerWidth() / 2 - elePop.outerWidth() / 2;
-    top = top - elePop.outerHeight() - 8;
-    if(top < $(document).scrollTop()){
-        elePop.removeClass('zTooltipTitle').addClass('zTooltipTitleBottom');
-        top = ele.offset().top + ele.outerHeight() + 8;
+    var content = $('<div class="zTooltipWrap"></div>').append(content);
+    if(theme){
+        content.addClass(theme);
     }
-    elePop.css({
-        left: left,
-        top: top
+    dropdown.show(ele, '', content, 'up');
+    ele.on('blur', function(){
+        dropdown.remove(this);
     })
-    ele.data('zTarget', elePop);
-    elePop.data('zTarget', ele);
 }
 
 var initEvent = function(){
@@ -912,7 +1089,6 @@ var initEvent = function(){
         .off('mouseenter', '.zTooltip')
         .off('mouseout', '.zTooltip')
         .on('mouseenter', '.zTooltip', function(e){
-            console.log('init popover');
             e.preventDefault();
             var ele = $(this);
             var title = ele.attr('title');
@@ -927,11 +1103,10 @@ var initEvent = function(){
             if(!title){
                 return;
             }   
-
-            _setPopEle(ele, title);
+            Tooltip(ele, title);
         })
         .on('mouseout', '.zTooltip', function(){
-            _removePopEle(this);
+            dropdown.remove(this);
         })
     })  
 }
@@ -940,7 +1115,7 @@ initEvent();
 
 module.exports = Tooltip;
 
-},{}],11:[function(require,module,exports){
+},{"./dropdown":4}],13:[function(require,module,exports){
 /**
 * @file 基本的、单个UI元素
 * @author Elvis
@@ -1360,7 +1535,7 @@ UI.popOverRemove = function(btn){
 }
 
 module.exports = UI;
-},{}],12:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 var ZDate = require('./date');
 
 var instance = function(ele, theme){
@@ -1553,4 +1728,4 @@ var Weekpicker = function(target, theme) {
 
 module.exports = instance;
 
-},{"./date":3}]},{},[4]);
+},{"./date":3}]},{},[5]);

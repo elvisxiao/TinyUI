@@ -14,11 +14,7 @@
     box-sizing border-box 
     *
         box-sizing border-box 
-.zBtnGroupVertical
-    display inline-block
-    >button 
-        display block
-        
+
 .zBtnGroup
     position relative
     display inline-block
@@ -42,8 +38,85 @@
     .zIconRight
         border-left-color #fff
     
-
-.borderBottom
-    border-bottom 1px solid #ddd
+    .zDropdown
+        animation-duration .15s
+        display none
+        background-color #fff
+        border 1px solid #ddd
+        font-size 12px
+        color #555
+        padding 5px 0
+        &:after
+            display block
+            position absolute
+            left 30px
+            margin-left -5px
+            top -5px
+            content ''
+            border-left 5px solid transparent
+            border-right 5px solid transparent
+            border-bottom 5px solid #fff
             
+        li
+            list-style-type none
+            a 
+                color inherit
+                padding 0 15px 
+                line-height 30px 
+                display block
+                text-decoration none
+                text-align left
+                transition background .15s
+            a:not(.active)
+                &:hover 
+                    background-color #eee
+            a.active
+                background-color #0e90d2
+                color #fff
     
+    .zIconUp + .zDropdown
+        top auto
+        bottom 100%
+        margin-bottom 10px
+        animation-name fadeInDown
+        &:after
+            display none
+        &:before
+            border-top 5px solid #fff
+            border-bottom 0
+            top 100%
+            bottom -7px
+
+    .zIconDown + .zDropdown
+        top 100%
+        margin-top 10px
+        animation-name fadeInUp
+        &:before, &:after
+            top -5px 
+            border-top 0
+            border-bottom 5px solid #fff 
+        &:before
+            top -6px
+            border-top 0
+            border-bottom 6px solid #ccc
+
+    .zIconRight + .zDropdown
+        left 100%
+        top -12px
+        margin-left 10px
+        animation-name fadeInRight
+        &:before, &:after
+            top 20px 
+            left 0
+            border-left 0
+            border-right 6px solid #fff
+            border-top 6px solid transparent
+            border-bottom 6px solid transparent
+        &:before
+            border-right 6px solid #ccc
+            
+.zBtnGroupVertical
+    display inline-block
+    >button 
+        display block
+        

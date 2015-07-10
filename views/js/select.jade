@@ -5,115 +5,74 @@ block content
 
     .zWrap.pt30
         .zCol3
-            include ../common/sidebar/css
+            include ../common/sidebar/js
         .zCol9.pl20
-            h3(data-active="表单") Form 
+            h3(data-active="下拉选框") Select 
 
             h4 1. 单选框
-            p 在外层label上加上 <font class="tRed">.zRadio*</font> ，文本写在一个span里面即可
-
             .zExample.mt20
                 p.mt20
-                    input.zIpt.zSlc.w200(type="text", data-options="anker.com; apple.com; jd.com; mi.com", data-sp=";")
-                    
+                    select.zIpt.zSlc.w200
+                        option(disabled) anker.com
+                        option(selected) apple.com
+                        option mi.com
+                        option google.com
                 .zCode
                     code.language-jade.
-                        input.zIpt.zSlc.w200(type="text", data-options="anker.com; apple.com; jd.com; mi.com", data-sp=";")
+                        select.zIpt.zSlc.w200(multiple)
+                            option(disabled) anker.com
+                            option(selected) apple.com
+                            option mi.com
+                            option google.com
 
-            h4 2. 复选框
-            p 在外层label上加上 <font class="tRed">.zCbx*</font> ，文本写在一个span里面即可
-            
-            .zExample.mt20
-                p.mt20 你喜欢干的事情：
-                p.pl20
-                    label.zCheckbox.mr30
-                        input(type="checkbox", name="zCbxTest", checked) 
-                        span 做梦
-                    label.zCheckbox.mr30
-                        input(type="checkbox", name="zCbxTest") 
-                        span 赚钱
-                    label.zCheckbox
-                        input(type="checkbox", name="zCbxTest") 
-                        span 没有了
-                p.pl20
-                    label.zCheckboxWarning.mr30
-                        input(type="checkbox", name="zCbxTest2") 
-                        span 做梦
-                    label.zCheckboxWarning.mr30
-                        input(type="checkbox", name="zCbxTest2", checked) 
-                        span 赚钱
-                    label.zCheckboxWarning
-                        input(type="checkbox", name="zCbxTest2") 
-                        span 没有了
-                p.pl20
-                    label.zCheckboxDanger.mr30
-                        input(type="checkbox", name="zCbxTest3") 
-                        span 做梦
-                    label.zCheckboxDanger.mr30
-                        input(type="checkbox", name="zCbxTest3") 
-                        span 赚钱
-                    label.zCheckboxDanger
-                        input(type="checkbox", name="zCbxTest3", checked) 
-                        span 没有了
-                .zCode
-                    code.language-jade.
-                        p.mt20 你喜欢干的事情：
-                        p
-                            label.zCheckbox.mr30
-                                input(type="checkbox", name="zCbxTest", checked) 
-                                span 做梦
-                            ...
-                        p
-                            label.zCheckboxWarning.mr30
-                                input(type="checkbox", name="zCbxTest2") 
-                                span 做梦
-                            ...
-                        p
-                            label.zCheckboxDanger.mr30
-                                input(type="checkbox", name="zCbxTest3") 
-                                span 做梦
-                            ...
-
-            
-            h4 3. Toggle
-            p 在外层label上加上 <font class="tRed">.zCbx*</font> ，文本写在一个span里面即可
+            h4 2. 多选框
             .zExample.mt20
                 p.mt20
-                    .zToggle
-                        input(type="checkbox", checked)
-                        span 打开了
+                    select.zIpt.zSlc.w200(multiple)
+                        option(selected) anker.com
+                        option(selected) apple.com
+                        option mi.com 
+                        option google.com
                 .zCode
                     code.language-jade.
-                        .zToggle
-                            input(type="checkbox", checked)
-                            span 打开了
+                        select.zIpt.zSlc.w200(multiple)
+                            option(disabled) anker.com
+                            option(selected) apple.com
+                            option mi.com 
+                            option google.com
 
-            h4 4. 输入框
-            p 在表单元素上加上class <font class="tRed">.zIpt</font> 即可
+            h4 3. 分组多选下拉框
             .zExample.mt20
-                form.mt20.pl10 注册
-                    input.zIpt.w.mt20(type="text", placeholder="Email")
-                    br
-                    input.zIpt.w.mt20(type="password", placeholder="Password")
-                    br
-                    select.zIpt.w200.mt20
-                        option 中国
-                        option 美国
-                        option 日本
-                    br
-                    button.mt20.zBtnPrimary(type="button") 提 交
-                .zCode.mt20
+                p.mt20
+                    select.zIpt.zSlc.w200(multiple)
+                        optgroup(label="Sites")
+                            option(selected) anker.com
+                            option(selected) apple.com
+                            option mi.com 
+                            option google.com
+                        optgroup(label="Fruit")
+                            option Pear
+                            option Bananer
+                            option Apple
+                        
+                .zCode
                     code.language-jade.
-                        form.mt20 注册
-                            input.zIpt.w.mt20(type="text", placeholder="Email")
-                            br
-                            input.zIpt.w.mt20(type="password", placeholder="Password")
-                            br
-                            select.zIpt.w200.mt20
-                                option 中国
-                                option 美国
-                                option 日本
-                            br
-                            button.mt20.zBtnPrimary(type="button") 提 交
+                        select.zIpt.zSlc.w200(multiple)
+                            optgroup(label="Sites")
+                                option(selected) anker.com
+                                option(selected) apple.com
+                                option mi.com 
+                                option google.com
+                            optgroup(label="Fruit")
+                                option Pear
+                                option Bananer
+                                option Apple
+
+
 
             .cb.h50
+
+    //- script.
+    //-     $('button').on('click', function(){
+    //-         console.log($('.zSlc').val());
+    //-     });

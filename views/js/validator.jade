@@ -1,0 +1,55 @@
+extends ../layout
+
+block content
+    include ../common/banner/main
+
+    .zWrap.pt30
+        .zCol3
+            include ../common/sidebar/js
+
+        .zCol9.pl20
+            h3(data-active="表单验证") Validator
+            
+            h4 1. HTML5 原生表单验证
+            p HTML5 原生表单需要与Form元素一起使用，需要Ajax提交时，请在$form.submit() 函数中return false。
+            .zExample.mt20
+                form#form1.mt20
+                    input.zIpt.mt10.w(type="text", placeholder="用户名", required)
+                    input.zIpt.mt10.w(type="email", placeholder="输入邮箱", required)
+                    input.zIpt.mt10.w(type="url", placeholder="输入网址", required)
+                    input.zIpt.mt10.w(type="number", placeholder="年龄", min="16", max="200", required)
+                    button.mt20.zBtnPrimary(type="submit") 提交
+
+                script.
+                    $('#form1').submit(function(){
+                        return false;
+                    })
+
+                .zCode.mt20
+                    code.language-jade.
+                        form.mt20
+                            input.zIpt.ml10.w(type="text", placeholder="用户名", required)
+                            input.zIpt.ml10.w(type="email", placeholder="输入邮箱", required)
+                            input.zIpt.ml10.w(type="url", placeholder="输入网址", required)
+                            input.zIpt.ml10.w(type="number", placeholder="年龄", min="16", max="200", required)
+            h4 2. JS API
+            .zExample.mt20
+                p.mt20
+                    input#ipt.zIpt(type="text")
+                script.
+                    oc.weekpicker('#ipt', 'warning');
+                    $('#ipt').on('change', function(){
+                        console.log(this.value);
+                    })
+                .zCode.mt20
+                    code.language-jade.
+                        p.mt20
+                            input#ipt.zIpt(type="text")
+                        script.
+                            oc.weekpicker('#ipt');
+                            $('#ipt').on('change', function(){
+                                console.log(this.value);
+                            })
+            
+        
+            .cb.h50

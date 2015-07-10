@@ -15,11 +15,6 @@ module.exports = (function(){
 				panel.addClass('active');
 			}
 		})
-		
-		$('body').on('click', '.zSlc', function(e){
-			e.preventDefault();
-			return false;
-		})
 	})
 	
 })();

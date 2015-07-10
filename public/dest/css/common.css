@@ -128,3 +128,8 @@ a {
   margin-right: -10px;
   border: 0;
 }
+
+/* line 73 : /Users/elvis/bitbucket/tinyUI/public/css/common.styl */
+.borderBottom {
+  border-bottom: 1px solid #ddd;
+}
