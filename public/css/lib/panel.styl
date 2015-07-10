@@ -1,4 +1,6 @@
-.zPanel, .zPanelPrimary, .zPanelInfo, .zPanelSuccess, .zPanelWarning, .zPanelDanger
+@import 'params'
+
+.zPanel
 	border 1px solid #ddd
 	box-sizing border-box
 	*
@@ -16,27 +18,27 @@
 		padding 15px
 		border-top 1px solid #ddd
 
-.zPanelPrimary
+.zPanel.primary
 	border 1px solid #10a0ea
 	.zPanelHd
 		background-color #0e90d2
 		color #fff
-.zPanelInfo
-	border 1px solid #46b8da
+.zPanel.info
+	border 1px solid #4FC1E9
 	.zPanelHd
-		background-color #5bc0de
+		background-color #4FC1E9
 		color #fff
-.zPanelSuccess
+.zPanel.success
 	border 1px solid #c9e7c9
 	.zPanelHd
 		background-color rgba(94,185,94,.2)
 		color #5eb95e
-.zPanelWarning
+.zPanel.warning
 	border 1px solid #fbd0ae
 	.zPanelHd
 		background-color rgba(243,123,29,.2)
 		color #f37b1d
-.zPanelDanger
+.zPanel.danger
 	border 1px solid #f5cecd
 	.zPanelHd
 		background-color rgba(221,81,76, .2)

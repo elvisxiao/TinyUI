@@ -160,7 +160,7 @@
 .zWeekpickerWrap[data-theme="danger"] .zWeekpickerHd,
 .zWeekpickerWrapBottom[data-theme="danger"] .zWeekpickerHd,
 .zWeekpickerWrapRight[data-theme="danger"] .zWeekpickerHd {
-  background-color: #dd514c;
+  background-color: #ed5666;
 }
 .zWeekpickerWrap[data-theme="danger"] .zWeekpickerBd >span.active,
 .zWeekpickerWrapBottom[data-theme="danger"] .zWeekpickerBd >span.active,
@@ -178,12 +178,12 @@
   color: #f59490;
 }
 .zWeekpickerWrapBottom[data-theme="danger"]:before {
-  border-bottom-color: #dd514c;
+  border-bottom-color: #ed5666;
 }
 .zWeekpickerWrap[data-theme="success"] .zWeekpickerHd,
 .zWeekpickerWrapBottom[data-theme="success"] .zWeekpickerHd,
 .zWeekpickerWrapRight[data-theme="success"] .zWeekpickerHd {
-  background-color: #5eb95e;
+  background-color: #a0d468;
 }
 .zWeekpickerWrap[data-theme="success"] .zWeekpickerBd >span.active,
 .zWeekpickerWrapBottom[data-theme="success"] .zWeekpickerBd >span.active,
@@ -201,12 +201,12 @@
   color: #94df94;
 }
 .zWeekpickerWrapBottom[data-theme="success"]:before {
-  border-bottom-color: #5eb95e;
+  border-bottom-color: #a0d468;
 }
 .zWeekpickerWrap[data-theme="warning"] .zWeekpickerHd,
 .zWeekpickerWrapBottom[data-theme="warning"] .zWeekpickerHd,
 .zWeekpickerWrapRight[data-theme="warning"] .zWeekpickerHd {
-  background-color: #f37b1d;
+  background-color: #ffce54;
 }
 .zWeekpickerWrap[data-theme="warning"] .zWeekpickerBd >span.active,
 .zWeekpickerWrapBottom[data-theme="warning"] .zWeekpickerBd >span.active,
@@ -224,5 +224,5 @@
   color: #ffad6d;
 }
 .zWeekpickerWrapBottom[data-theme="warning"]:before {
-  border-bottom-color: #f37b1d;
+  border-bottom-color: #ffce54;
 }

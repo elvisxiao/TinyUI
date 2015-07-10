@@ -1,26 +1,11 @@
-.zPanel,
-.zPanelPrimary,
-.zPanelInfo,
-.zPanelSuccess,
-.zPanelWarning,
-.zPanelDanger {
+.zPanel {
   border: 1px solid #ddd;
   box-sizing: border-box;
 }
-.zPanel *,
-.zPanelPrimary *,
-.zPanelInfo *,
-.zPanelSuccess *,
-.zPanelWarning *,
-.zPanelDanger * {
+.zPanel * {
   box-sizing: border-box;
 }
-.zPanel .zPanelHd,
-.zPanelPrimary .zPanelHd,
-.zPanelInfo .zPanelHd,
-.zPanelSuccess .zPanelHd,
-.zPanelWarning .zPanelHd,
-.zPanelDanger .zPanelHd {
+.zPanel .zPanelHd {
   background-color: #f5f5f5;
   line-height: 40px;
   padding-left: 15px;
@@ -30,47 +15,42 @@
   margin: 0;
   display: block;
 }
-.zPanel .zPanelBd,
-.zPanelPrimary .zPanelBd,
-.zPanelInfo .zPanelBd,
-.zPanelSuccess .zPanelBd,
-.zPanelWarning .zPanelBd,
-.zPanelDanger .zPanelBd {
+.zPanel .zPanelBd {
   padding: 15px;
   border-top: 1px solid #ddd;
 }
-.zPanelPrimary {
+.zPanel.primary {
   border: 1px solid #10a0ea;
 }
-.zPanelPrimary .zPanelHd {
+.zPanel.primary .zPanelHd {
   background-color: #0e90d2;
   color: #fff;
 }
-.zPanelInfo {
-  border: 1px solid #46b8da;
+.zPanel.info {
+  border: 1px solid #4fc1e9;
 }
-.zPanelInfo .zPanelHd {
-  background-color: #5bc0de;
+.zPanel.info .zPanelHd {
+  background-color: #4fc1e9;
   color: #fff;
 }
-.zPanelSuccess {
+.zPanel.success {
   border: 1px solid #c9e7c9;
 }
-.zPanelSuccess .zPanelHd {
+.zPanel.success .zPanelHd {
   background-color: rgba(94,185,94,0.2);
   color: #5eb95e;
 }
-.zPanelWarning {
+.zPanel.warning {
   border: 1px solid #fbd0ae;
 }
-.zPanelWarning .zPanelHd {
+.zPanel.warning .zPanelHd {
   background-color: rgba(243,123,29,0.2);
   color: #f37b1d;
 }
-.zPanelDanger {
+.zPanel.danger {
   border: 1px solid #f5cecd;
 }
-.zPanelDanger .zPanelHd {
+.zPanel.danger .zPanelHd {
   background-color: rgba(221,81,76,0.2);
   color: #dd514c;
 }

@@ -174,7 +174,7 @@
 }
 select.zIpt {
   appearance: none;
-  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAECAYAAABREWWJAAAAO0lEQVQIW2N0cnJKYGJims+ABfz//3/h3r17E7DJgcQYQQQ2AwhphGtGN4AYjSiaYQYwMjI64HMqshcAmTccBfwoZTYAAAAASUVORK5CYII=") 100% center no-repeat;
+  background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAECAYAAABREWWJAAAAO0lEQVQIW2N0cnJKYGJims+ABfz//3/h3r17E7DJgcQYQQQ2AwhphGtGN4AYjSiaYQYwMjI64HMqshcAmTccBfwoZTYAAAAASUVORK5CYII=") 100% center no-repeat #fff;
   padding-right: 20px;
   background-size: 16px;
 }
