@@ -5,16 +5,17 @@ module.exports = function(grunt) {
         distName: 'oc-1.0',
         //js 合并
         concat : {
-            // options : {
-            //     separator : ''
-            // },
             js : {
                 src  : ['public/js/**/**.js'],
                 dest : 'public/<%= distName %>/oc.js'
             },
             css: {
-                src  : ['public/<%= distName %>/tmp/**/**.css'],
+                src  : ['public/<%= distName %>/tmp/css/lib/**/**.css'],
                 dest : 'public/<%= distName %>/oc.css'
+            },
+            pagecss: {
+                src  : ['public/<%= distName %>/tmp/css/**.css'],
+                dest : 'public/<%= distName %>/site.css'
             }
         },
 
@@ -48,8 +49,15 @@ module.exports = function(grunt) {
                     {
                         expand: true,
                         cwd: 'public',
-                        src: ['css/**/**.styl'],
-                        dest: 'public/<%= distName %>/tmp',
+                        src: ['css/lib/**/**.styl'],
+                        dest: 'public/<%= distName %>/tmp/',
+                        ext: '.css'
+                    },
+                    {
+                        expand: true,
+                        cwd: 'public',
+                        src: ['css/**.styl'],
+                        dest: 'public/<%= distName %>/tmp/',
                         ext: '.css'
                     }
                 ]
@@ -91,7 +99,7 @@ module.exports = function(grunt) {
                 src: [ 'public/dest' ]
             },
             stylesheets: {
-                src: [ 'public/<%= distName %>/tmp']
+                src: [ 'public/<%= distName %>/tmp/css']
             },
             scripts: {
                 src: [ 'public/<%= distName %>/**/*.js', 'public/doc/*']
@@ -102,7 +110,7 @@ module.exports = function(grunt) {
         watch: {
             css: {
                 files: 'public/css/**/**.styl',
-                tasks: ['clean:stylesheets', 'stylus', 'concat:css', 'autoprefixer', 'cssmin'],
+                tasks: ['clean:stylesheets', 'stylus', 'concat:css', 'concat:pagecss', 'autoprefixer', 'cssmin'],
                 options: {
                     livereload: '<%= pkg.name %>1',
                 }
