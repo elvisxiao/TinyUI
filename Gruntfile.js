@@ -10,7 +10,7 @@ module.exports = function(grunt) {
             },
             domop : {
                 src  : ['public/js/**/**.js'],
-                dest : 'public/dest/main.js'
+                dest : 'public/dest/oc-1.0.js'
             }
         },
 
@@ -18,7 +18,7 @@ module.exports = function(grunt) {
         browserify: {
             js: {
                 src: 'public/js/lib/index.js',
-                dest: 'public/dest/oc.js'
+                dest: 'public/dest/oc-1.0.js'
             }
         },
 
@@ -28,8 +28,8 @@ module.exports = function(grunt) {
                 banner : '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
             },
             build : {
-                src : 'public/dest/oc.js',
-                dest : 'public/dest/oc.min.js'
+                src : 'public/dest/oc-1.0.js',
+                dest : 'public/dest/oc-1.0.min.js'
             }
         },
 
@@ -56,7 +56,7 @@ module.exports = function(grunt) {
         cssmin: {
             build: {
                 files: {
-                    'public/dest/oc.css': [ 'public/dest/**/*.css' ]
+                    'public/dest/oc-1.0.css': [ 'public/dest/**/*.css' ]
                 }
             }
         },
@@ -75,7 +75,7 @@ module.exports = function(grunt) {
                     ext: '.html'
                 }]
             }
-        },
+        },  
 
         //清理不需要的文件
         clean: {
@@ -86,7 +86,6 @@ module.exports = function(grunt) {
                 src: [ 'public/dest/**/*.css']
             },
             scripts: {
-
                 src: [ 'public/dest/**/*.js', 'public/dest/doc/*']
             },
         },
@@ -102,10 +101,11 @@ module.exports = function(grunt) {
             },
             js: {
                 files: 'public/js/lib/**/**.js',
-                tasks: ['clean:scripts', 'browserify', 'uglify', 'jsdoc'],
+                tasks: ['clean:scripts', 'browserify', 'uglify'],
+                // tasks: ['clean:scripts', 'browserify', 'uglify', 'jsdoc'],
             }
         },
-
+        
         //js文档
         jsdoc : {
             dist : {
