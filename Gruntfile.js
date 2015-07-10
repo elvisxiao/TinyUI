@@ -2,7 +2,7 @@ module.exports = function(grunt) {
     // 构建任务配置
     grunt.initConfig({
         pkg : grunt.file.readJSON('package.json'),
-        
+        distName: 'oc-1.0',
         //js 合并
         concat : {
             // options : {
@@ -10,11 +10,11 @@ module.exports = function(grunt) {
             // },
             js : {
                 src  : ['public/js/**/**.js'],
-                dest : 'public/dest/oc-1.0.js'
+                dest : 'public/<%= distName %>/oc.js'
             },
             css: {
-                src  : ['public/dest/css/**/**.css'],
-                dest : 'public/dest/oc-1.0.css'
+                src  : ['public/<%= distName %>/tmp/**/**.css'],
+                dest : 'public/<%= distName %>/oc.css'
             }
         },
 
@@ -22,7 +22,7 @@ module.exports = function(grunt) {
         browserify: {
             js: {
                 src: 'public/js/lib/index.js',
-                dest: 'public/dest/oc-1.0.js'
+                dest: 'public/<%= distName %>/oc.js'
             }
         },
 
@@ -32,8 +32,8 @@ module.exports = function(grunt) {
                 banner : '/*! <%= pkg.name %> <%= grunt.template.today("yyyy-mm-dd") %> */\n'
             },
             build : {
-                src : 'public/dest/oc-1.0.js',
-                dest : 'public/dest/oc-1.0.min.js'
+                src : 'public/<%= distName %>/oc.js',
+                dest : 'public/<%= distName %>/oc.min.js'
             }
         },
 
@@ -49,7 +49,7 @@ module.exports = function(grunt) {
                         expand: true,
                         cwd: 'public',
                         src: ['css/**/**.styl'],
-                        dest: 'public/dest',
+                        dest: 'public/<%= distName %>/tmp',
                         ext: '.css'
                     }
                 ]
@@ -58,16 +58,14 @@ module.exports = function(grunt) {
 
         autoprefixer : {
            dist : {
-                files : { 'public/dest/oc-1.0.css' : 'public/dest/oc-1.0.css' } 
+                files : { 'public/<%= distName %>/oc.css' : 'public/<%= distName %>/oc.css' } 
             } 
         },
 
         //合并压缩css
         cssmin: {
             build: {
-                files: {
-                    'public/dest/oc-1.0.css': [ 'public/dest/**/*.css' ]
-                }
+                files: {'public/<%= distName %>/oc.css': 'public/<%= distName %>/oc.css'}
             }
         },
 
@@ -81,7 +79,7 @@ module.exports = function(grunt) {
                     expand: true,
                     cwd: 'views',
                     src: ['**/**.jade'],
-                    dest: 'public/dest/html',
+                    dest: 'public/html',
                     ext: '.html'
                 }]
             }
@@ -93,18 +91,18 @@ module.exports = function(grunt) {
                 src: [ 'public/dest' ]
             },
             stylesheets: {
-                src: [ 'public/dest/**/*.css']
+                src: [ 'public/<%= distName %>/tmp']
             },
             scripts: {
-                src: [ 'public/dest/**/*.js', 'public/dest/doc/*']
+                src: [ 'public/<%= distName %>/**/*.js', 'public/doc/*']
             },
         },
-
+        
         //自动处理
         watch: {
             css: {
                 files: 'public/css/**/**.styl',
-                tasks: ['clean:stylesheets', 'stylus', 'concat:css', 'autoprefixer'],
+                tasks: ['clean:stylesheets', 'stylus', 'concat:css', 'autoprefixer', 'cssmin'],
                 options: {
                     livereload: '<%= pkg.name %>1',
                 }
@@ -121,7 +119,7 @@ module.exports = function(grunt) {
             dist : {
                 src: ['public/js/lib/**/**.js'], 
                 options: {
-                    destination: 'public/dest/doc'
+                    destination: 'public/doc'
                 }
             }
         }
