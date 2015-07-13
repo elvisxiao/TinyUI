@@ -46,30 +46,6 @@ a {
 .bgGray {
   background-color: #babfcd;
 }
-.primary {
-  background-color: rgba(51,122,180,0.35);
-  color: #0b76ac;
-}
-.info {
-  background-color: #d9edf7;
-  color: #31708f;
-}
-.success {
-  color: #5eb95e;
-  background-color: rgba(94,185,94,0.115);
-}
-.warning {
-  color: #f37b1d;
-  background-color: rgba(243,123,29,0.115);
-}
-.danger {
-  color: #dd514c;
-  background-color: #f2dede;
-}
-.gray {
-  background-color: #babfcd;
-  color: #fff;
-}
 .zExample {
   border: 1px solid #dfdfdf;
   padding: 3px 10px 0 10px;

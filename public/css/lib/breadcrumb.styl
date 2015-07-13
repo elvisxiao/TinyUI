@@ -8,6 +8,7 @@
 	li
 		display inline-block
 		float left
+		white-space nowrap
 		&:before
 			content '>'
 			color #888
@@ -17,12 +18,12 @@
 			margin-right 3px
 		a 
 			text-decoration none
+			color inherit
 	li:first-child
 		&:before 
 			content ''
 	li.active
-		a 
-			color #888
+		color #888
 	*
 		box-sizing border-box	
 .zBreadcrumbSlash

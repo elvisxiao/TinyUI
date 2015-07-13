@@ -206,7 +206,7 @@
 .zWeekpickerWrap[data-theme="warning"] .zWeekpickerHd,
 .zWeekpickerWrapBottom[data-theme="warning"] .zWeekpickerHd,
 .zWeekpickerWrapRight[data-theme="warning"] .zWeekpickerHd {
-  background-color: #ffce54;
+  background-color: #f2ca4c;
 }
 .zWeekpickerWrap[data-theme="warning"] .zWeekpickerBd >span.active,
 .zWeekpickerWrapBottom[data-theme="warning"] .zWeekpickerBd >span.active,
@@ -224,5 +224,5 @@
   color: #ffad6d;
 }
 .zWeekpickerWrapBottom[data-theme="warning"]:before {
-  border-bottom-color: #ffce54;
+  border-bottom-color: #f2ca4c;
 }

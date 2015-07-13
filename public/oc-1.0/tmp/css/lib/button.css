@@ -64,15 +64,8 @@
   color: #fff;
 }
 .zBtn {
-  background-color: #e1e4e9;
-  border-color: #d3d7dc;
-  color: #555;
-}
-.zBtn:hover {
-  color: #555;
-}
-.zBtn:active {
-  color: #555;
+  background-color: #bec3c7;
+  border-color: #bec3c7;
 }
 .zBtnPrimary {
   background-color: #4fc1e9;
@@ -80,14 +73,14 @@
 }
 .zBtnInfo {
   background-color: #3bb4f2;
-  border-color: #80b448;
+  border-color: #3bb4f2;
 }
 .zBtnSuccess {
   background-color: #a0d468;
   border-color: #80b448;
 }
 .zBtnWarning {
-  background-color: #ffce54;
+  background-color: #f2ca4c;
   border-color: #f6bb42;
 }
 .zBtnDanger {
@@ -166,7 +159,7 @@
   background-color: #a0d468;
 }
 .zBadgeWarning {
-  background-color: #ffce54;
+  background-color: #f2ca4c;
 }
 .zBadgeDanger {
   background-color: #ed5666;

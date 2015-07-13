@@ -11,6 +11,7 @@
 .zBreadcrumbSlash li {
   display: inline-block;
   float: left;
+  white-space: nowrap;
 }
 .zBreadcrumb li:before,
 .zBreadcrumbSlash li:before {
@@ -24,13 +25,14 @@
 .zBreadcrumb li a,
 .zBreadcrumbSlash li a {
   text-decoration: none;
+  color: inherit;
 }
 .zBreadcrumb li:first-child:before,
 .zBreadcrumbSlash li:first-child:before {
   content: '';
 }
-.zBreadcrumb li.active a,
-.zBreadcrumbSlash li.active a {
+.zBreadcrumb li.active,
+.zBreadcrumbSlash li.active {
   color: #888;
 }
 .zBreadcrumb *,
