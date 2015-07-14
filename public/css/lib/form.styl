@@ -18,7 +18,7 @@
             top 6px
             width 4px
             height 4px 
-            background-color #3B99FC
+            background-color $primary
             border-radius 200px
         &:after
             content ''
@@ -33,28 +33,28 @@
     input[type='radio']:checked + :before
         display block
     input[type='radio']:checked + :after
-        border 3px solid #3B99FC
+        border 3px solid $primary
     
     input[type='radio']:checked + *
-        color #3B99FC
+        color $primary
 
 .zRadioWarning
     span
         &:before  
-            background-color #f37b1d
+            background-color $warning1
     input[type='radio']:checked + :after
-        border 3px solid #f37b1d
+        border 3px solid $warning1
     input[type='radio']:checked + *
-        color #f37b1d
+        color $warning1
 
 .zRadioDanger
     span
         &:before  
-            background-color #dd514c
+            background-color $danger1
     input[type='radio']:checked + :after
-        border 3px solid #dd514c
+        border 3px solid $danger1
     input[type='radio']:checked + *
-        color #dd514c
+        color $danger1
         
 
 .zCheckbox, .zCheckboxWarning, .zCheckboxDanger
@@ -86,23 +86,23 @@
     
     input[type='checkbox']:checked 
         + *:before
-            background-color #3B99FC
+            background-color $primary
         + *:after
             display block
         + *
-            color #3B99FC
+            color $primary
 .zCheckboxWarning
     input[type='checkbox']:checked 
         + *:before
-            background-color #f37b1d
+            background-color $warning1
         + *
-            color #f37b1d
+            color $warning1
 .zCheckboxDanger
     input[type='checkbox']:checked 
         + *:before
-            background-color #dd514c
+            background-color $danger1
         + *
-            color #dd514c
+            color $danger1
 
 .zIpt
     border 1px solid #ddd

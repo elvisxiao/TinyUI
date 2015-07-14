@@ -1,3 +1,5 @@
+@import 'params'
+
 .zIptGroup
 	padding 0
 	position relative
@@ -5,12 +7,9 @@
 	*
 		box-sizing border-box
 	.zIptPrefix
-		position absolute
 		vertical-align middle
 		display inline-block
-		left 0 
-		top 0
-		height 100%
+		height 34px
 		border 1px solid #ddd
 		border-right 0
 		min-width 45px
@@ -18,14 +17,11 @@
 		text-align center
 		padding-top 0
 		padding-bottom 0
+		position relative
 	.zIptPrefix:not(.zBtnPrimary):not(.zBtn):not(.zBtnInfo):not(.zBtnSuccess):not(.zBtnWarning):not(.zBtnDanger)
 		background #eee
 		color #666
-		line-height 2.4em
-	.zIptPrefix + input
-		margin-left 45px
+		line-height 34px
 	input + .zIptPrefix
-		left auto
-		rigth 0
 		border-right 1px solid #ddd;
 		border-left 0

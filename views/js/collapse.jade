@@ -57,12 +57,12 @@ block content
             h4 3. 不同颜色
             p 颜色取决于panel上的class <font class="tRed">zPanel*</font> 。
             .zExample.mt20
-                div.zPanelInfo.zCollapse.mt10(data-group="collapse1")
+                div.zPanel.info.zCollapse.mt10(data-group="collapse1")
                     h4.zPanelHd 面板标题
                     div.zPanelBd 面板使用很简单，内容卸载 .zPanelBd 中，标题写在 .zPanelHd 中即可，事件是绑定在document上的。
                         p css中起高度作用的应该就是height以及line-height了吧！如果一个标签没有定义height属性(包括百分比高度)，那么其最终表现的高度一定是由line-height起作用，即使是IE6下11像素左右默认高度bug也是如此。待我慢慢叙来。
                         p 这是个看上去很简单的问题，是理解line-height非常重要的一个问题。可能有人会跟认为是：文字撑开的！文字占据空间，自然将div撑开。我一开始也是这样理解的，但是事实上，深入理解inline模型后，我发现，根本不是文字撑开了div的高度，而是line-height！要证明很简单(如下测试代码)： 
-                div.zPanelDanger.zCollapse.active.mt10(data-group="collapse1")
+                div.zPanel.danger.zCollapse.active.mt10(data-group="collapse1")
                     h4.zPanelHd 面板标题2
                     div.zPanelBd 面板使用很简单，内容卸载 .zPanelBd 中，标题写在 .zPanelHd 中即可，事件是绑定在document上的。
                         p css中起高度作用的应该就是height以及line-height了吧！如果一个标签没有定义height属性(包括百分比高度)，那么其最终表现的高度一定是由line-height起作用，即使是IE6下11像素左右默认高度bug也是如此。待我慢慢叙来。

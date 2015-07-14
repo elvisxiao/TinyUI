@@ -9,13 +9,13 @@
 .zTable th {
   padding-left: 10px;
   text-align: left;
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #eee;
 }
 .zTable th {
-  border-bottom: 2px solid #ddd;
+  border-bottom: 2px solid #eee;
 }
 .zTable thead {
-  background: #4fc1e9;
+  background: #0099d8;
   color: #fff;
   box-shadow: 0 2px 3px rgba(100,100,100,0.2);
 }
@@ -32,5 +32,5 @@
   background: #babfcd;
 }
 .zTableStrip tbody tr:nth-child(2n) {
-  background: #f3f3f3;
+  background: #f9f9f9;
 }

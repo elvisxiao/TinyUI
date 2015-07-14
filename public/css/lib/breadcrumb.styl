@@ -1,3 +1,5 @@
+@import 'params'
+
 .zBreadcrumb, .zBreadcrumbSlash
 	list-style-type none
 	overflow hidden
@@ -14,16 +16,22 @@
 			color #888
 			font-size 12px
 			vertical-align middle
-			margin-left 3px 
-			margin-right 3px
+			padding-left 8px 
+			padding-right 3px
 		a 
 			text-decoration none
 			color inherit
+	li:not(.active):hover a
+		color $primary1
 	li:first-child
 		&:before 
 			content ''
+			padding-left 0
+			padding-right 0
 	li.active
 		color #888
+		a
+			cursor default
 	*
 		box-sizing border-box	
 .zBreadcrumbSlash

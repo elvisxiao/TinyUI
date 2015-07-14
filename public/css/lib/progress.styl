@@ -1,3 +1,4 @@
+@import 'params'
 .zProgress, .zProgressInfo, .zProgressSuccess, .zProgressWarning, .zProgressDanger
 	padding 0
 	height 24px
@@ -24,13 +25,13 @@
 		background-size inherit
 
 .zProgressInfo .zProgressInner
-	background-color #5bc0de
+	background-color $info
 .zProgressSuccess .zProgressInner
-	background-color #5eb95e
+	background-color $success
 .zProgressWarning .zProgressInner
-	background-color #f37b1d
+	background-color $warning
 .zProgressDanger .zProgressInner
-	background-color #dd514c
+	background-color $danger
 .zProgressSm
 	height 14px
 	line-height 14px

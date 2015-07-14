@@ -38,16 +38,16 @@
   background-size: inherit;
 }
 .zProgressInfo .zProgressInner {
-  background-color: #5bc0de;
+  background-color: #1abc9c;
 }
 .zProgressSuccess .zProgressInner {
-  background-color: #5eb95e;
+  background-color: #aad06b;
 }
 .zProgressWarning .zProgressInner {
-  background-color: #f37b1d;
+  background-color: #fac747;
 }
 .zProgressDanger .zProgressInner {
-  background-color: #dd514c;
+  background-color: #ff6e72;
 }
 .zProgressSm {
   height: 14px;

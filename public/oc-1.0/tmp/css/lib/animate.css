@@ -371,7 +371,7 @@
     transform: rotate(0deg);
   }
   50% {
-    color: #0c80ba;
+    color: $primaray1;
   }
   100% {
     transform: rotate(360deg);
@@ -382,7 +382,7 @@
     transform: rotate(0deg);
   }
   50% {
-    color: #0c80ba;
+    color: $primaray1;
   }
   100% {
     transform: rotate(360deg);
@@ -393,7 +393,7 @@
     transform: rotate(0deg);
   }
   50% {
-    color: #0c80ba;
+    color: $primaray1;
   }
   100% {
     transform: rotate(360deg);
@@ -404,7 +404,7 @@
     transform: rotate(0deg);
   }
   50% {
-    color: #0c80ba;
+    color: $primaray1;
   }
   100% {
     transform: rotate(360deg);
@@ -415,7 +415,7 @@
     transform: rotate(0deg);
   }
   50% {
-    color: #46b8da;
+    color: #00aea2;
   }
   100% {
     transform: rotate(360deg);
@@ -426,7 +426,7 @@
     transform: rotate(0deg);
   }
   50% {
-    color: #46b8da;
+    color: #00aea2;
   }
   100% {
     transform: rotate(360deg);
@@ -437,7 +437,7 @@
     transform: rotate(0deg);
   }
   50% {
-    color: #46b8da;
+    color: #00aea2;
   }
   100% {
     transform: rotate(360deg);
@@ -448,7 +448,7 @@
     transform: rotate(0deg);
   }
   50% {
-    color: #46b8da;
+    color: #00aea2;
   }
   100% {
     transform: rotate(360deg);
@@ -459,7 +459,7 @@
     transform: rotate(0deg);
   }
   50% {
-    color: #4db14d;
+    color: #93bd5c;
   }
   100% {
     transform: rotate(360deg);
@@ -470,7 +470,7 @@
     transform: rotate(0deg);
   }
   50% {
-    color: #4db14d;
+    color: #93bd5c;
   }
   100% {
     transform: rotate(360deg);
@@ -481,7 +481,7 @@
     transform: rotate(0deg);
   }
   50% {
-    color: #4db14d;
+    color: #93bd5c;
   }
   100% {
     transform: rotate(360deg);
@@ -492,7 +492,7 @@
     transform: rotate(0deg);
   }
   50% {
-    color: #4db14d;
+    color: #93bd5c;
   }
   100% {
     transform: rotate(360deg);
@@ -503,7 +503,7 @@
     transform: rotate(0deg);
   }
   50% {
-    color: #d93c37;
+    color: #fcb322;
   }
   100% {
     transform: rotate(360deg);
@@ -514,7 +514,7 @@
     transform: rotate(0deg);
   }
   50% {
-    color: #d93c37;
+    color: #fcb322;
   }
   100% {
     transform: rotate(360deg);
@@ -525,7 +525,7 @@
     transform: rotate(0deg);
   }
   50% {
-    color: #d93c37;
+    color: #fcb322;
   }
   100% {
     transform: rotate(360deg);
@@ -536,7 +536,7 @@
     transform: rotate(0deg);
   }
   50% {
-    color: #d93c37;
+    color: #fcb322;
   }
   100% {
     transform: rotate(360deg);
@@ -547,7 +547,7 @@
     transform: rotate(0deg);
   }
   50% {
-    color: #d93c37;
+    color: #e95255;
   }
   100% {
     transform: rotate(360deg);
@@ -558,7 +558,7 @@
     transform: rotate(0deg);
   }
   50% {
-    color: #d93c37;
+    color: #e95255;
   }
   100% {
     transform: rotate(360deg);
@@ -569,7 +569,7 @@
     transform: rotate(0deg);
   }
   50% {
-    color: #d93c37;
+    color: #e95255;
   }
   100% {
     transform: rotate(360deg);
@@ -580,7 +580,7 @@
     transform: rotate(0deg);
   }
   50% {
-    color: #d93c37;
+    color: #e95255;
   }
   100% {
     transform: rotate(360deg);

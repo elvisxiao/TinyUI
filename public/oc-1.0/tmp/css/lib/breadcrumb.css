@@ -19,21 +19,31 @@
   color: #888;
   font-size: 12px;
   vertical-align: middle;
-  margin-left: 3px;
-  margin-right: 3px;
+  padding-left: 8px;
+  padding-right: 3px;
 }
 .zBreadcrumb li a,
 .zBreadcrumbSlash li a {
   text-decoration: none;
   color: inherit;
 }
+.zBreadcrumb li:not(.active):hover a,
+.zBreadcrumbSlash li:not(.active):hover a {
+  color: #0083c0;
+}
 .zBreadcrumb li:first-child:before,
 .zBreadcrumbSlash li:first-child:before {
   content: '';
+  padding-left: 0;
+  padding-right: 0;
 }
 .zBreadcrumb li.active,
 .zBreadcrumbSlash li.active {
   color: #888;
+}
+.zBreadcrumb li.active a,
+.zBreadcrumbSlash li.active a {
+  cursor: default;
 }
 .zBreadcrumb *,
 .zBreadcrumbSlash * {

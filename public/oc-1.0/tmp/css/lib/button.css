@@ -68,24 +68,24 @@
   border-color: #bec3c7;
 }
 .zBtnPrimary {
-  background-color: #4fc1e9;
-  border-color: #3bafda;
+  background-color: #0099d8;
+  border-color: #0083c0;
 }
 .zBtnInfo {
-  background-color: #3bb4f2;
-  border-color: #3bb4f2;
+  background-color: #1abc9c;
+  border-color: #00aea2;
 }
 .zBtnSuccess {
-  background-color: #a0d468;
-  border-color: #80b448;
+  background-color: #aad06b;
+  border-color: #93bd5c;
 }
 .zBtnWarning {
-  background-color: #f2ca4c;
-  border-color: #f6bb42;
+  background-color: #fac747;
+  border-color: #fcb322;
 }
 .zBtnDanger {
-  background-color: #ed5666;
-  border-color: #ec4859;
+  background-color: #ff6e72;
+  border-color: #e95255;
 }
 .zBtnGray {
   background-color: #434a54;
@@ -150,19 +150,19 @@
   padding: 0 4px;
 }
 .zBadgePrimary {
-  background-color: #4fc1e9;
+  background-color: #0099d8;
 }
 .zBadgeInfo {
-  background-color: #3bb4f2;
+  background-color: #1abc9c;
 }
 .zBadgeSuccess {
-  background-color: #a0d468;
+  background-color: #aad06b;
 }
 .zBadgeWarning {
-  background-color: #f2ca4c;
+  background-color: #fac747;
 }
 .zBadgeDanger {
-  background-color: #ed5666;
+  background-color: #ff6e72;
 }
 .xs {
   font-size: 12px;
