@@ -46,5 +46,36 @@ block content
             p.pl30 jsResource: 此项目下有依赖关系的JS集合
 
         img(src="/img/tmp/app.png")
-    
+
+        span#testDrag(draggable="true", data-type="100", class="zBtn xs")
+            i.icon-folder-open.mr5 wbseLabel
+        div#dragContainer.h500(draggable="true", style="border: 1px solid red")
+            
+    script.
+        //- alert(navigator.userAgent.toLowerCase());
+
+        $('#testDrag').on('dragstart', function(e){
+            console.log('drag start');
+            e.stopPropagation();
+            console.log(e);
+            e.originalEvent.dataTransfer.setData("dragEle", e.target.id);
+            $(this).css('color', 'red');
+        })
+        var container = $('#dragContainer');
+        container.on('dragenter', function(e){
+            console.dir('dragenter');
+            //- e.stopPropagation();
+            e.preventDefault();
+            return true;
+        })
+        .on('dragover', function(e){
+            console.log('dragover');
+            e.preventDefault();
+            return true;
+        })
+        .on('drop',  function(e){
+            console.log('drop');
+            $('#testDrag').append($(this));
+        })
+        
     

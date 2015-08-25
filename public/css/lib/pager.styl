@@ -2,7 +2,7 @@
 	box-sizing border-box
 	*
 		box-sizing border-box
-	>a
+	a
 		display inline-block
 		border 1px solid #ddd
 		color #0e90d2
@@ -13,15 +13,24 @@
 		padding-left 15px 
 		padding-right 15px
 		margin-right 5px
-	>a:not(.disabled):not(.active)
+	a:not(.disabled):not(.active)
 		&:hover 
 			background-color #eee
-	>a.active
+	a.active
 		background-color #0e90d2
 		color #fff
 		border-color #0e90d2
-	>a.disabled
+	a.disabled
 		color #aaa
 		cursor not-allowed
+
+.zPager.sm 
+	padding 0
+	a 
+		height 28px 
+		line-height 28px 
+		min-width 30px 
+		padding-left 10px 
+		padding-right 10px
 		
 	

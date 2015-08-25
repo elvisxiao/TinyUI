@@ -65,29 +65,35 @@
 }
 .zBtn {
   background-color: #bec3c7;
-  border-color: #bec3c7;
+  border-color: #bbb;
 }
-.zBtnPrimary {
+.zBtnPrimary,
+.zBtn.primary {
   background-color: #0099d8;
   border-color: #0083c0;
 }
-.zBtnInfo {
+.zBtnInfo,
+.zBtn.info {
   background-color: #1abc9c;
   border-color: #00aea2;
 }
-.zBtnSuccess {
-  background-color: #aad06b;
-  border-color: #93bd5c;
+.zBtnSuccess,
+.zBtn.success {
+  background-color: #72ba00;
+  border-color: #80b30f;
 }
-.zBtnWarning {
-  background-color: #fac747;
+.zBtnWarning,
+.zBtn.warning {
+  background-color: #e9c311;
   border-color: #fcb322;
 }
-.zBtnDanger {
+.zBtnDanger,
+.zBtn.danger {
   background-color: #ff6e72;
   border-color: #e95255;
 }
-.zBtnGray {
+.zBtnGray,
+.zBtn.gray {
   background-color: #434a54;
   border-color: #333;
 }
@@ -149,19 +155,24 @@
   vertical-align: middle;
   padding: 0 4px;
 }
-.zBadgePrimary {
+.zBadgePrimary,
+.zBadge.primary {
   background-color: #0099d8;
 }
-.zBadgeInfo {
+.zBadgeInfo,
+.zBadge.info {
   background-color: #1abc9c;
 }
-.zBadgeSuccess {
-  background-color: #aad06b;
+.zBadgeSuccess,
+.zBadge.success {
+  background-color: #72ba00;
 }
-.zBadgeWarning {
-  background-color: #fac747;
+.zBadgeWarning,
+.zBadge.warning {
+  background-color: #e9c311;
 }
-.zBadgeDanger {
+.zBadgeDanger,
+.zBadge.danger {
   background-color: #ff6e72;
 }
 .xs {

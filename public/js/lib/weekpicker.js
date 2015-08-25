@@ -13,7 +13,7 @@ var initEvent = function(){
         $('body')
         .off('click', '.zWeekpicker')
         .on('click', '.zWeekpicker', function(e){
-            new Weekpicker(this, this.getAttribute('data-theme'));
+            new Weekpicker(this, this.getAttribute('data-theme') || '');
             e.stopPropagation();
         })
         .on('click', function(){
@@ -46,14 +46,14 @@ var Weekpicker = function(target, theme) {
 		var eleTop = top + self.target.outerHeight() + 8;
 		var win = $(window);
 
-		self.ele.addClass('zWeekpickerWrapBottom').removeClass('zWeekpickerWrap').removeClass('zWeekpickerWrapRight');
+		self.ele.addClass('bottom').removeClass('right');
 		if( eleTop + self.ele.height() > win.outerHeight() + win.scrollTop() ){
-			self.ele.removeClass('zWeekpickerWrapBottom').addClass('zWeekpickerWrap');
+			self.ele.removeClass('bottom');
 			eleTop = top - self.ele.outerHeight() - 8;
 		}
 		if( left + self.ele.outerWidth() > win.scrollLeft() + win.width() ){
 			left = left - self.ele.outerWidth() + self.target.outerWidth();
-			self.ele.removeClass('zWeekpickerWrap').addClass('zWeekpickerWrapRight');
+			self.ele.addClass('right');
 		}
 		this.ele.css({
 			left: left,
@@ -167,7 +167,7 @@ var Weekpicker = function(target, theme) {
 
 		self.ele = $('.zWeekpickerHd').parent();
 		if(self.ele.length === 0){
-			self.ele = $('<div class="zWeekpickerWrapBottom"><div class="zWeekpickerHd"><i class="iPrev">&lt;</i><span class="zWeekpickerHdContent"></span><i class="iNext">&gt;</i></div><div class="zWeekpickerBd"></div></div>').appendTo('body');
+			self.ele = $('<div class="zWeekpickerWrap bottom"><div class="zWeekpickerHd"><i class="iPrev">&lt;</i><span class="zWeekpickerHdContent"></span><i class="iNext">&gt;</i></div><div class="zWeekpickerBd"></div></div>').appendTo('body');
 		}
 		
 		self.ele.attr('data-theme', theme || '')

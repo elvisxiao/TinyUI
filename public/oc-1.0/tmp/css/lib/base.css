@@ -140,9 +140,11 @@ body {
 .zoom {
   zoom: 1;
 }
+*.hidden,
 .hidden {
   visibility: hidden;
 }
+*.none,
 .none {
   display: none;
 }

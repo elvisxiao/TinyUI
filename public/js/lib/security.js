@@ -1,0 +1,23 @@
+var Security = {};
+
+Security.removeXss = function(model){
+	for(var key in model){
+		var val = model[key];
+		if(typeof val === 'string'){
+			model[key] = val.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+		}
+		else if(typeof val === 'object' && val.length){
+			for(var i = 0; i < val.length; i++){
+				var one = val[i];
+				Security.removeXss(one);
+			}
+		}
+		else if(typeof val === 'object'){
+			Security.removeXss(one);
+		}
+	}
+
+	return model;
+}
+
+module.exports = Security;

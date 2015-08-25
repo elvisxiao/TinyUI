@@ -1,31 +1,74 @@
 @import 'params'
 
 .zTable
-	border-spacing 0
-	tr 
-		height 35px
-	td, th 
-		padding-left 10px 
-		text-align left
-		border-bottom 1px solid #eee
-	th 
-		border-bottom 2px solid #eee
-	thead 
-		background $primary
-		color #fff
-		box-shadow 0 2px 3px rgba(100, 100, 100, .2)
-	tbody tr:last-child td 
-		border-bottom 0
-	box-sizing border-box
-	*
-		box-sizing border-box
+    border-spacing 0
+    tr 
+        height 35px
+    td, th 
+        padding-left 10px 
+        text-align left
+        border-bottom 1px solid #eee
+    td.tc, th.tc
+        text-align center
+    th 
+        border-bottom 2px solid #eee
+    thead 
+        background $primary
+        color #fff
+        box-shadow 0 2px 3px rgba(100, 100, 100, .2)
+    tbody tr:last-child td 
+        border-bottom 0
+    
+    box-sizing border-box
+    *
+        box-sizing border-box
+    
+    tfoot td 
+        border-bottom 0
+        border-top 1px solid #eee
+    th[data-sort]
+        position relative
+        padding-right 18px
+        &:before,&:after 
+            content ""
+            border-left 4px solid transparent
+            border-right 4px solid transparent
+            border-top 4px solid transparent
+            border-bottom 6px solid #ddd
+            position absolute
+            right 5px
+            top 50%
+            margin-top -10px
+
+        &:after 
+            border-top 6px solid #ddd
+            border-bottom 4px solid transparent
+            margin-top 1px
+
+    th.sortUp:after 
+        display none
+
+    th.sortUp:before 
+        border-bottom 6px solid #fff
+    
+    th.sortDown:before 
+        display none
+    th.sortDown:after 
+        border-top 6px solid #fff
+    caption
+        text-align left
+        .searchBox
+            width 300px
+            
+
 .zTableHover
-	tbody tr:hover 
-		background #f0f0f0
-	tr.gray:hover 
-		background #BABFCD
-		
+    tbody tr:hover 
+        background #f0f0f0
+    tr.gray:hover 
+        background #BABFCD
+        
 .zTableStrip
-	tbody 
-		tr:nth-child(2n)
-			background #f9f9f9
+    tbody 
+        tr:nth-child(2n)
+            background #f9f9f9
+    

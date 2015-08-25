@@ -1,6 +1,6 @@
 @import '../params'
 
-.zWeekpickerWrap
+.zDatepickerWrap
     box-shadow 0 5px 10px rgba(0,0,0,.2)
     position absolute
     top 0
@@ -13,7 +13,6 @@
     padding 0
     border-color #ddd
     min-width 200px
-    max-width 360px
     *
         box-sizing border-box
     
@@ -28,7 +27,7 @@
         border-right 6px solid transparent
         border-top 6px solid transparent
         border-top-color #fff
-    .zWeekpickerHd
+    .zDatepickerHd
         background-color #3bb4f2
         color #fff
         margin 0
@@ -39,6 +38,7 @@
         padding 5px 50px
         font-size 16px
         i 
+            user-select none
             font-weight 700
             display inline-block
             width 36px 
@@ -56,7 +56,8 @@
         i.iNext
             left auto
             right 0
-        .zWeekpickerHdContent
+        .zDatepickerHdContent
+            user-select none
             display block
             text-align center
             cursor pointer
@@ -65,8 +66,8 @@
             &:hover 
                 background-color rgba(250, 250, 250, .15)
                 color rgba(0, 0, 0, .5)
-    .zWeekpickerBd
-        width 360px
+    .zDatepickerBd
+        width auto
         white-space normal
         padding-bottom 6px
         position relative
@@ -89,74 +90,116 @@
             color #89d7ff
             position absolute
             right 12px
-            bottom 9px
+            bottom 4px
             i 
                 color inherit
                 font-size 12px 
                 margin-right 4px
 
-    .zWeekpickerBd.zWeekViewYear  
-        >span
-            width 120px 
-            height 40px
+    .zDatepickerView
+        display none
+        position relative
+        width 240px
+        p 
+            margin 0
+        span 
+            display inline-block
+            width 80px
+            height 40px 
             line-height 40px 
-             
+            text-align center
+            &:hover
+                background-color #f0f0f0
+                cursor pointer
+    .viewWeek, .viewDay, .viewMinute, .viewSecond
+        width 360px
+        span
+            width 45px 
+            height 30px
+            line-height 30px
+    .viewDay
+        width 316px 
+        p span
+            color #0c80ba
+            &:hover 
+                background-color transparent !important
+                cursor default
             
-
-.zWeekpickerWrap.bottom
+    .viewHour
+        width 280px   
+        span
+            width 70px   
+            height 35px 
+            line-height 35px 
+    .active
+        background-color #f0f0f0
+        color #0c80ba
+    .old, .new
+        color #89d7ff
+    .disable 
+        color #999
+    .zDatepickerInfo
+        color #aaa 
+        position absolute
+        right 20px 
+        bottom 0px
+        &:hover
+            cursor default !important
+            background-color transparent !important
+.zDatepickerWrap.bottom
     &:before
         bottom auto
         top -6px
         border-top 0
         border-bottom 6px solid transparent
         border-bottom-color #3bb4f2
-.zWeekpickerWrap.right
+.zDatepickerWrap.right
     &:before
         left auto
         right 15px
 
 //红色主题
-.zWeekpickerWrap[data-theme="danger"]
-    .zWeekpickerHd
+.zDatepickerWrap[data-theme="danger"]
+    .zDatepickerHd
         background-color $danger 
-    .zWeekpickerBd
+    .zDatepickerBd
         >span.active
             color #c10802 
         >span.weekOld
             color #f59490
         >.timeInfo
             color #f59490
-.zWeekpickerWrap.bottom[data-theme="danger"]
+.zDatepickerWrap.bottom[data-theme="danger"]
     &:before
         border-bottom-color $danger 
 
 //绿色主题
-.zWeekpickerWrap[data-theme="success"]
-    .zWeekpickerHd
+.zDatepickerWrap[data-theme="success"]
+    .zDatepickerHd
         background-color $success 
-    .zWeekpickerBd
+    .zDatepickerBd
         >span.active
             color #1b961b 
         >span.weekOld
             color #94df94
         >.timeInfo
             color #94df94
-.zWeekpickerWrap.bottom[data-theme="success"]
+.zDatepickerWrap.bottom[data-theme="success"]
     &:before
         border-bottom-color $success 
 
 
 //橙色主题
-.zWeekpickerWrap[data-theme="warning"]
-    .zWeekpickerHd
+.zDatepickerWrap[data-theme="warning"]
+    .zDatepickerHd
         background-color $warning 
-    .zWeekpickerBd
+    .zDatepickerBd
         >span.active
             color #aa4b00 
         >span.weekOld
             color #ffad6d
         >.timeInfo
             color #ffad6d
-.zWeekpickerWrap.bottom[data-theme="warning"]
+.zDatepickerWrap.bottom[data-theme="warning"]
     &:before
         border-bottom-color $warning 

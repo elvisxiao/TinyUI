@@ -24,14 +24,18 @@
 		background-image inherit
 		background-size inherit
 
-.zProgressInfo .zProgressInner
-	background-color $info
-.zProgressSuccess .zProgressInner
-	background-color $success
-.zProgressWarning .zProgressInner
-	background-color $warning
-.zProgressDanger .zProgressInner
-	background-color $danger
+.zProgressInfo, .zProgress.info 
+	.zProgressInner
+		background-color $info
+.zProgressSuccess, .zProgress.success 
+	.zProgressInner
+		background-color $success
+.zProgressWarning, .zProgress.warning
+	.zProgressInner
+		background-color $warning
+.zProgressDanger, .zProgress.danger
+	.zProgressInner
+		background-color $danger
 .zProgressSm
 	height 14px
 	line-height 14px

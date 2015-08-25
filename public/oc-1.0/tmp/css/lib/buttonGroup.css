@@ -24,6 +24,10 @@
 .zBtnGroup {
   position: relative;
   display: inline-block;
+  font-size: 0;
+  letter-spacing: -4px;
+  word-spacing: -4px;
+  white-space: nowrap;
 }
 .zBtnGroup .zBtnDrop {
   position: absolute;

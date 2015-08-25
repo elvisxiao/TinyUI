@@ -1,4 +1,4 @@
-@import url("style.css");
+@import 'style.css';
 .zAlertDanger,
 .zAlertInfo,
 .zAlertPrimary,
@@ -12,6 +12,7 @@
   border: 1px solid #dfdfdf;
   padding: 10px 15px;
   box-sizing: border-box;
+  -webkit-font-smoothing: auto;
 }
 .zAlertDanger .icon-close,
 .zAlertInfo .icon-close,
@@ -38,23 +39,28 @@
 .zAlert {
   background-color: #eee;
 }
-.zAlertWarning {
-  background-color: #f37b1d;
-  border-color: #e56c0c;
+.zAlertWarning,
+.zAlert.warning {
+  background-color: #e9c311;
+  border-color: #fcb322;
 }
-.zAlertPrimary {
-  background-color: #0e90d2;
-  border-color: #0c7cb5;
+.zAlertPrimary,
+.zAlert.primary {
+  background-color: #0099d8;
+  border-color: #0083c0;
 }
-.zAlertInfo {
-  background-color: #f37b1d;
-  border-color: #e56c0c;
+.zAlertInfo,
+.zAlert.info {
+  background-color: #1abc9c;
+  border-color: #00aea2;
 }
-.zAlertDanger {
-  background-color: #f37b1d;
-  border-color: #e56c0c;
+.zAlertDanger,
+.zAlert.danger {
+  background-color: #ff6e72;
+  border-color: #e95255;
 }
-.zAlertSuccess {
-  background-color: #dd514c;
-  border-color: #d83832;
+.zAlertSuccess,
+.zAlert.success {
+  background-color: #72ba00;
+  border-color: #80b30f;
 }

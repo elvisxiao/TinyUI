@@ -1,7 +1,7 @@
 doctype html
 html(lang="zh-CN")
     head
-        title Test
+        title OC UI
         meta(name="baidu-site-verification", content="aWbSNyTHCL")
         meta(name="renderer", content="webkit")
         meta(http-equiv="Cache-Control", content="no-siteapp")
@@ -17,6 +17,17 @@ html(lang="zh-CN")
             if(location.href.indexOf('debug') > -1){
                 $('<link href="/bootstrap-3.3.5-dist/css/bootstrap.min.css" rel="stylesheet">').appendTo(document.head);
             }
+
+            $(function(){
+                var headUl = $('.zHeader ul');
+                if(location.pathname.indexOf('/css') === 0){
+                    headUl.find('li:eq(1)').addClass('active');
+                }
+                else if(location.pathname.indexOf('/js') === 0){
+                    headUl.find('li:eq(2)').addClass('active');
+                }
+            })
+            
     body
         //if lte IE 9
             div.zAlertDanger 你的浏览器太古董了，
@@ -28,14 +39,15 @@ html(lang="zh-CN")
                 h1 OCUI
                 ul
                     li
-                        a(href="/css/") 开始使用
-                    li.active
-                        a(href="/css/") CSS
+                        a(href="/") 开始使用
+                    li
+                        a(href="/css/button") CSS
                     li 
-                        a(href="/js/") JS 插件
+                        a(href="/js/popover") JS 插件
                     li 
-                        a(href="/component/") Web 组件
+                        a(href="#") Web 组件
 
         block content
+
 
 

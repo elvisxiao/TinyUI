@@ -37,16 +37,20 @@
   background-image: inherit;
   background-size: inherit;
 }
-.zProgressInfo .zProgressInner {
+.zProgressInfo .zProgressInner,
+.zProgress.info .zProgressInner {
   background-color: #1abc9c;
 }
-.zProgressSuccess .zProgressInner {
-  background-color: #aad06b;
+.zProgressSuccess .zProgressInner,
+.zProgress.success .zProgressInner {
+  background-color: #72ba00;
 }
-.zProgressWarning .zProgressInner {
-  background-color: #fac747;
+.zProgressWarning .zProgressInner,
+.zProgress.warning .zProgressInner {
+  background-color: #e9c311;
 }
-.zProgressDanger .zProgressInner {
+.zProgressDanger .zProgressInner,
+.zProgress.danger .zProgressInner {
   background-color: #ff6e72;
 }
 .zProgressSm {

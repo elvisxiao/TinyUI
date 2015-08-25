@@ -11,6 +11,8 @@
     overflow-y auto
     transition opacity .15s linear
     background-color rgba(0, 0, 0, .4)
+    animation-name fadeIn
+    animation-duration .3s
 .zModal
     position relative
     background #F8F8F8
@@ -19,6 +21,10 @@
     display none
     min-width 300px
     text-align left
+    margin-left auto
+    margin-right auto
+    animation-name zoomIn
+    animation-duration .3s
     .zModalHd
         border-bottom 1px solid #ddd
         line-height 40px 
@@ -44,6 +50,22 @@
         position relative
         padding 15px
         background-color inherit
+    .zModalTips.zModalBd, .zModalError.zModalBd
+        padding-left 50px
+        &:before
+            content "\e62b"
+            font-family icomoon
+            font-size 25px
+            color #e9c311
+            position absolute
+            left 15px 
+            top 50%
+            margin-top -13px
+    .zModalError.zModalBd
+        &:before
+            color #ff6e72
+            
+            
     .zModalFt
         border-top 1px solid #ddd 
         text-align center

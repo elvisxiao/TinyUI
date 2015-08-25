@@ -11,7 +11,12 @@ ui.modal = require('./modal');
 ui.ui = require('./ui');
 ui.ajax = require('./ajax');
 ui.date = require('./date');
-ui.weekpicker= require('./weekpicker');
+ui.weekpicker = require('./weekpicker');
+ui.datepicker = require('./datepicker');
+ui.table = require('./table');
+ui.dropdown = require('./dropdown');
+ui.at = require('./@.js');
+ui.security = require('./security.js');
 
 window && (window.oc = ui);
 

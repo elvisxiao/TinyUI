@@ -16,8 +16,10 @@ module.exports = {
         this._setPosition(target, elePop, title, defaultDirect);
         elePop.data('zTarget', target);
         target.data('zTarget', elePop);
-    },
 
+        return elePop;
+    },
+    
     remove: function(ele){
         if(!ele){
             ele = $('.zDropdown');
@@ -45,7 +47,7 @@ module.exports = {
         var left = position.left;
         var top = position.top;
         var win = $(window);
-
+        
         var origin = {
             upTop: top - elePop.outerHeight() - 8,
             downTop: top + target.outerHeight() + 8,
@@ -78,7 +80,7 @@ module.exports = {
                 var alignTop = top - win.scrollTop();
                 var alignBottom = win.outerHeight() - alignTop - target.outerHeight();
                 var maxHeight = alignTop > alignBottom? alignTop : alignBottom;
-                elePop.css('height', maxHeight);
+                elePop.css('height', maxHeight - 20);
                 if(hasTitle){
                     elePop.find('.zDropdownBd').css('height', maxHeight - 40);
                 }

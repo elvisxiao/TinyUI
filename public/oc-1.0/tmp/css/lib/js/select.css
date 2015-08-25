@@ -35,6 +35,15 @@
   border-right: 5px solid transparent;
   border-bottom: 5px solid #fff;
 }
+.zSlcBd >.zFilter {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #fff;
+  z-index: 3;
+  padding: 5px;
+}
 .zSlcBd >p {
   margin: 0;
   line-height: 28px;
@@ -74,6 +83,9 @@
 }
 .zSlcBd >p[slcGroup] {
   border-bottom: 1px solid #ddd;
+}
+.zSlcBd.zSlcHasFilter {
+  padding-top: 40px;
 }
 .zDropdownUp .zSlcBd:before,
 .zDropdownUp .zSlcBd:after {

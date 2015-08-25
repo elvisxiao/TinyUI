@@ -21,8 +21,8 @@ UI.isOnScreen = function(ele){
         top: win.scrollTop(),
         left: win.scrollLeft()
     }
-    viewport.right = viewport.left + win.width();
-    viewport.bottom = viewport.top + win.height();
+    viewport.right = viewport.left + document.body.clientWidth;
+    viewport.bottom = viewport.top + document.body.clientHeight;
 
     var ele = $(ele);
 

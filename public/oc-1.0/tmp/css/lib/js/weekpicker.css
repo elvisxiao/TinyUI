@@ -1,6 +1,4 @@
-.zWeekpickerWrap,
-.zWeekpickerWrapBottom,
-.zWeekpickerWrapRight {
+.zWeekpickerWrap {
   box-shadow: 0 5px 10px rgba(0,0,0,0.2);
   position: absolute;
   top: 0;
@@ -15,14 +13,10 @@
   min-width: 200px;
   max-width: 360px;
 }
-.zWeekpickerWrap *,
-.zWeekpickerWrapBottom *,
-.zWeekpickerWrapRight * {
+.zWeekpickerWrap * {
   box-sizing: border-box;
 }
-.zWeekpickerWrap:before,
-.zWeekpickerWrapBottom:before,
-.zWeekpickerWrapRight:before {
+.zWeekpickerWrap:before {
   display: block;
   position: absolute;
   left: 15px;
@@ -34,9 +28,7 @@
   border-top: 6px solid transparent;
   border-top-color: #fff;
 }
-.zWeekpickerWrap .zWeekpickerHd,
-.zWeekpickerWrapBottom .zWeekpickerHd,
-.zWeekpickerWrapRight .zWeekpickerHd {
+.zWeekpickerWrap .zWeekpickerHd {
   background-color: #3bb4f2;
   color: #fff;
   margin: 0;
@@ -47,9 +39,7 @@
   padding: 5px 50px;
   font-size: 16px;
 }
-.zWeekpickerWrap .zWeekpickerHd i,
-.zWeekpickerWrapBottom .zWeekpickerHd i,
-.zWeekpickerWrapRight .zWeekpickerHd i {
+.zWeekpickerWrap .zWeekpickerHd i {
   font-weight: 700;
   display: inline-block;
   width: 36px;
@@ -62,44 +52,32 @@
   cursor: pointer;
   transparent: all 0.3s;
 }
-.zWeekpickerWrap .zWeekpickerHd i:hover,
-.zWeekpickerWrapBottom .zWeekpickerHd i:hover,
-.zWeekpickerWrapRight .zWeekpickerHd i:hover {
+.zWeekpickerWrap .zWeekpickerHd i:hover {
   background-color: rgba(250,250,250,0.15);
   color: rgba(0,0,0,0.5);
 }
-.zWeekpickerWrap .zWeekpickerHd i.iNext,
-.zWeekpickerWrapBottom .zWeekpickerHd i.iNext,
-.zWeekpickerWrapRight .zWeekpickerHd i.iNext {
+.zWeekpickerWrap .zWeekpickerHd i.iNext {
   left: auto;
   right: 0;
 }
-.zWeekpickerWrap .zWeekpickerHd .zWeekpickerHdContent,
-.zWeekpickerWrapBottom .zWeekpickerHd .zWeekpickerHdContent,
-.zWeekpickerWrapRight .zWeekpickerHd .zWeekpickerHdContent {
+.zWeekpickerWrap .zWeekpickerHd .zWeekpickerHdContent {
   display: block;
   text-align: center;
   cursor: pointer;
   height: 32px;
   line-height: 32px;
 }
-.zWeekpickerWrap .zWeekpickerHd .zWeekpickerHdContent:hover,
-.zWeekpickerWrapBottom .zWeekpickerHd .zWeekpickerHdContent:hover,
-.zWeekpickerWrapRight .zWeekpickerHd .zWeekpickerHdContent:hover {
+.zWeekpickerWrap .zWeekpickerHd .zWeekpickerHdContent:hover {
   background-color: rgba(250,250,250,0.15);
   color: rgba(0,0,0,0.5);
 }
-.zWeekpickerWrap .zWeekpickerBd,
-.zWeekpickerWrapBottom .zWeekpickerBd,
-.zWeekpickerWrapRight .zWeekpickerBd {
+.zWeekpickerWrap .zWeekpickerBd {
   width: 360px;
   white-space: normal;
   padding-bottom: 6px;
   position: relative;
 }
-.zWeekpickerWrap .zWeekpickerBd >span,
-.zWeekpickerWrapBottom .zWeekpickerBd >span,
-.zWeekpickerWrapRight .zWeekpickerBd >span {
+.zWeekpickerWrap .zWeekpickerBd >span {
   display: inline-block;
   width: 45px;
   height: 30px;
@@ -107,122 +85,86 @@
   text-align: center;
   cursor: pointer;
 }
-.zWeekpickerWrap .zWeekpickerBd >span:hover,
-.zWeekpickerWrapBottom .zWeekpickerBd >span:hover,
-.zWeekpickerWrapRight .zWeekpickerBd >span:hover {
+.zWeekpickerWrap .zWeekpickerBd >span:hover {
   background-color: #f0f0f0;
 }
-.zWeekpickerWrap .zWeekpickerBd >span.active,
-.zWeekpickerWrapBottom .zWeekpickerBd >span.active,
-.zWeekpickerWrapRight .zWeekpickerBd >span.active {
+.zWeekpickerWrap .zWeekpickerBd >span.active {
   background-color: #f0f0f0;
   color: #0084c7;
   font-weight: 500;
 }
-.zWeekpickerWrap .zWeekpickerBd >span.weekOld,
-.zWeekpickerWrapBottom .zWeekpickerBd >span.weekOld,
-.zWeekpickerWrapRight .zWeekpickerBd >span.weekOld {
+.zWeekpickerWrap .zWeekpickerBd >span.weekOld {
   color: #89d7ff;
 }
-.zWeekpickerWrap .zWeekpickerBd .timeInfo,
-.zWeekpickerWrapBottom .zWeekpickerBd .timeInfo,
-.zWeekpickerWrapRight .zWeekpickerBd .timeInfo {
+.zWeekpickerWrap .zWeekpickerBd .timeInfo {
   color: #89d7ff;
   position: absolute;
   right: 12px;
   bottom: 9px;
 }
-.zWeekpickerWrap .zWeekpickerBd .timeInfo i,
-.zWeekpickerWrapBottom .zWeekpickerBd .timeInfo i,
-.zWeekpickerWrapRight .zWeekpickerBd .timeInfo i {
+.zWeekpickerWrap .zWeekpickerBd .timeInfo i {
   color: inherit;
   font-size: 12px;
   margin-right: 4px;
 }
-.zWeekpickerWrap .zWeekpickerBd.zWeekViewYear >span,
-.zWeekpickerWrapBottom .zWeekpickerBd.zWeekViewYear >span,
-.zWeekpickerWrapRight .zWeekpickerBd.zWeekViewYear >span {
+.zWeekpickerWrap .zWeekpickerBd.zWeekViewYear >span {
   width: 120px;
   height: 40px;
   line-height: 40px;
 }
-.zWeekpickerWrapBottom:before {
+.zWeekpickerWrap.bottom:before {
   bottom: auto;
   top: -6px;
   border-top: 0;
   border-bottom: 6px solid transparent;
   border-bottom-color: #3bb4f2;
 }
-.zWeekpickerWrapRight:before {
+.zWeekpickerWrap.right:before {
   left: auto;
   right: 15px;
 }
-.zWeekpickerWrap[data-theme="danger"] .zWeekpickerHd,
-.zWeekpickerWrapBottom[data-theme="danger"] .zWeekpickerHd,
-.zWeekpickerWrapRight[data-theme="danger"] .zWeekpickerHd {
+.zWeekpickerWrap[data-theme="danger"] .zWeekpickerHd {
   background-color: #ff6e72;
 }
-.zWeekpickerWrap[data-theme="danger"] .zWeekpickerBd >span.active,
-.zWeekpickerWrapBottom[data-theme="danger"] .zWeekpickerBd >span.active,
-.zWeekpickerWrapRight[data-theme="danger"] .zWeekpickerBd >span.active {
+.zWeekpickerWrap[data-theme="danger"] .zWeekpickerBd >span.active {
   color: #c10802;
 }
-.zWeekpickerWrap[data-theme="danger"] .zWeekpickerBd >span.weekOld,
-.zWeekpickerWrapBottom[data-theme="danger"] .zWeekpickerBd >span.weekOld,
-.zWeekpickerWrapRight[data-theme="danger"] .zWeekpickerBd >span.weekOld {
+.zWeekpickerWrap[data-theme="danger"] .zWeekpickerBd >span.weekOld {
   color: #f59490;
 }
-.zWeekpickerWrap[data-theme="danger"] .zWeekpickerBd >.timeInfo,
-.zWeekpickerWrapBottom[data-theme="danger"] .zWeekpickerBd >.timeInfo,
-.zWeekpickerWrapRight[data-theme="danger"] .zWeekpickerBd >.timeInfo {
+.zWeekpickerWrap[data-theme="danger"] .zWeekpickerBd >.timeInfo {
   color: #f59490;
 }
-.zWeekpickerWrapBottom[data-theme="danger"]:before {
+.zWeekpickerWrap.bottom[data-theme="danger"]:before {
   border-bottom-color: #ff6e72;
 }
-.zWeekpickerWrap[data-theme="success"] .zWeekpickerHd,
-.zWeekpickerWrapBottom[data-theme="success"] .zWeekpickerHd,
-.zWeekpickerWrapRight[data-theme="success"] .zWeekpickerHd {
-  background-color: #aad06b;
+.zWeekpickerWrap[data-theme="success"] .zWeekpickerHd {
+  background-color: #72ba00;
 }
-.zWeekpickerWrap[data-theme="success"] .zWeekpickerBd >span.active,
-.zWeekpickerWrapBottom[data-theme="success"] .zWeekpickerBd >span.active,
-.zWeekpickerWrapRight[data-theme="success"] .zWeekpickerBd >span.active {
+.zWeekpickerWrap[data-theme="success"] .zWeekpickerBd >span.active {
   color: #1b961b;
 }
-.zWeekpickerWrap[data-theme="success"] .zWeekpickerBd >span.weekOld,
-.zWeekpickerWrapBottom[data-theme="success"] .zWeekpickerBd >span.weekOld,
-.zWeekpickerWrapRight[data-theme="success"] .zWeekpickerBd >span.weekOld {
+.zWeekpickerWrap[data-theme="success"] .zWeekpickerBd >span.weekOld {
   color: #94df94;
 }
-.zWeekpickerWrap[data-theme="success"] .zWeekpickerBd >.timeInfo,
-.zWeekpickerWrapBottom[data-theme="success"] .zWeekpickerBd >.timeInfo,
-.zWeekpickerWrapRight[data-theme="success"] .zWeekpickerBd >.timeInfo {
+.zWeekpickerWrap[data-theme="success"] .zWeekpickerBd >.timeInfo {
   color: #94df94;
 }
-.zWeekpickerWrapBottom[data-theme="success"]:before {
-  border-bottom-color: #aad06b;
+.zWeekpickerWrap.bottom[data-theme="success"]:before {
+  border-bottom-color: #72ba00;
 }
-.zWeekpickerWrap[data-theme="warning"] .zWeekpickerHd,
-.zWeekpickerWrapBottom[data-theme="warning"] .zWeekpickerHd,
-.zWeekpickerWrapRight[data-theme="warning"] .zWeekpickerHd {
-  background-color: #fac747;
+.zWeekpickerWrap[data-theme="warning"] .zWeekpickerHd {
+  background-color: #e9c311;
 }
-.zWeekpickerWrap[data-theme="warning"] .zWeekpickerBd >span.active,
-.zWeekpickerWrapBottom[data-theme="warning"] .zWeekpickerBd >span.active,
-.zWeekpickerWrapRight[data-theme="warning"] .zWeekpickerBd >span.active {
+.zWeekpickerWrap[data-theme="warning"] .zWeekpickerBd >span.active {
   color: #aa4b00;
 }
-.zWeekpickerWrap[data-theme="warning"] .zWeekpickerBd >span.weekOld,
-.zWeekpickerWrapBottom[data-theme="warning"] .zWeekpickerBd >span.weekOld,
-.zWeekpickerWrapRight[data-theme="warning"] .zWeekpickerBd >span.weekOld {
+.zWeekpickerWrap[data-theme="warning"] .zWeekpickerBd >span.weekOld {
   color: #ffad6d;
 }
-.zWeekpickerWrap[data-theme="warning"] .zWeekpickerBd >.timeInfo,
-.zWeekpickerWrapBottom[data-theme="warning"] .zWeekpickerBd >.timeInfo,
-.zWeekpickerWrapRight[data-theme="warning"] .zWeekpickerBd >.timeInfo {
+.zWeekpickerWrap[data-theme="warning"] .zWeekpickerBd >.timeInfo {
   color: #ffad6d;
 }
-.zWeekpickerWrapBottom[data-theme="warning"]:before {
-  border-bottom-color: #fac747;
+.zWeekpickerWrap.bottom[data-theme="warning"]:before {
+  border-bottom-color: #e9c311;
 }

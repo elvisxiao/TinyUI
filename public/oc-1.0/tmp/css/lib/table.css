@@ -11,6 +11,10 @@
   text-align: left;
   border-bottom: 1px solid #eee;
 }
+.zTable td.tc,
+.zTable th.tc {
+  text-align: center;
+}
 .zTable th {
   border-bottom: 2px solid #eee;
 }
@@ -24,6 +28,49 @@
 }
 .zTable * {
   box-sizing: border-box;
+}
+.zTable tfoot td {
+  border-bottom: 0;
+  border-top: 1px solid #eee;
+}
+.zTable th[data-sort] {
+  position: relative;
+  padding-right: 18px;
+}
+.zTable th[data-sort]:before,
+.zTable th[data-sort]:after {
+  content: "";
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid transparent;
+  border-bottom: 6px solid #ddd;
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  margin-top: -10px;
+}
+.zTable th[data-sort]:after {
+  border-top: 6px solid #ddd;
+  border-bottom: 4px solid transparent;
+  margin-top: 1px;
+}
+.zTable th.sortUp:after {
+  display: none;
+}
+.zTable th.sortUp:before {
+  border-bottom: 6px solid #fff;
+}
+.zTable th.sortDown:before {
+  display: none;
+}
+.zTable th.sortDown:after {
+  border-top: 6px solid #fff;
+}
+.zTable caption {
+  text-align: left;
+}
+.zTable caption .searchBox {
+  width: 300px;
 }
 .zTableHover tbody tr:hover {
   background: #f0f0f0;

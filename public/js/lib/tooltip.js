@@ -1,6 +1,10 @@
 var dropdown = require('./dropdown');
 
 var Tooltip = function(ele, content, theme){
+    if(!ele){
+        initEvent();
+        return;
+    }
     var ele = $(ele);
     if(!content){
         return;

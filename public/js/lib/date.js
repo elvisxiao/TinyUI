@@ -25,7 +25,11 @@ var ZDate = {};
 * @returns {string} 格式化后的字符串
 */
 ZDate.format = function(date, format){
-    if(date.toString().indexOf('-') > 0){
+    if(!date){
+        return '';
+    }
+
+    if(date.length && date.length === 10){
         date = date.toString().replace(/-/g, '/');
     }
 
@@ -52,7 +56,8 @@ ZDate.format = function(date, format){
     }
 
     if(!format){
-        return model.year + '-' + model.month + '-' + model.date;
+        format = 'yyyy-mm-dd';
+        // return model.year + '-' + model.month + '-' + model.date;
     }
 
     for(var key in reg){

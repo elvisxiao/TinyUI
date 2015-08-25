@@ -28,7 +28,7 @@ var initEvent = function(){
             var ele = $(this);
             title = ele.attr('data-title');
             content = ele.attr('data-content');
-
+            
             if(!content){
                 return;
             }

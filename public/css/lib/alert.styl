@@ -1,4 +1,5 @@
-@import url('style.css')
+@import 'style.css'
+@import 'params'
 
 .zAlertDanger, .zAlertInfo, .zAlertPrimary, .zAlertWarning, .zAlert, .zAlertSuccess
 	box-sizing border-box
@@ -8,6 +9,7 @@
 	border 1px solid #dfdfdf
 	padding 10px 15px
 	box-sizing border-box
+	-webkit-font-smoothing auto
 	.icon-close
 		float right 
 		color #dfdfdf
@@ -21,18 +23,18 @@
 		
 .zAlert
 	background-color #eee
-.zAlertWarning
-	background-color #f37b1d
-	border-color #e56c0c
-.zAlertPrimary
-	background-color #0e90d2
-	border-color #0c7cb5
-.zAlertInfo
-	background-color #f37b1d
-	border-color #e56c0c
-.zAlertDanger
-	background-color #f37b1d
-	border-color #e56c0c
-.zAlertSuccess
-	background-color #dd514c
-	border-color #d83832
+.zAlertWarning, .zAlert.warning
+	background-color $warning
+	border-color $warning1
+.zAlertPrimary, .zAlert.primary
+	background-color $primary
+	border-color $primary1
+.zAlertInfo, .zAlert.info
+	background-color $info
+	border-color $info1
+.zAlertDanger, .zAlert.danger
+	background-color $danger
+	border-color $danger1
+.zAlertSuccess, .zAlert.success
+	background-color $success
+	border-color $success1

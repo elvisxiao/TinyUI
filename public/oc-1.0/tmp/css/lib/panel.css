@@ -37,20 +37,20 @@
   border: 1px solid #c9e7c9;
 }
 .zPanel.success .zPanelHd {
-  background-color: rgba(94,185,94,0.2);
+  background-color: #deefda;
   color: #5eb95e;
 }
 .zPanel.warning {
   border: 1px solid #fbd0ae;
 }
 .zPanel.warning .zPanelHd {
-  background-color: rgba(243,123,29,0.2);
+  background-color: #fff8e6;
   color: #f37b1d;
 }
 .zPanel.danger {
   border: 1px solid #f5cecd;
 }
 .zPanel.danger .zPanelHd {
-  background-color: rgba(221,81,76,0.2);
+  background-color: #f5dddf;
   color: #dd514c;
 }

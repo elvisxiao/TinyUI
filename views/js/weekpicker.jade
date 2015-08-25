@@ -14,35 +14,62 @@ block content
             p 在Input上添加class <font class="tRed">.zWeekpicker</font> 即可使用。可以使用data-theme属性定义主题。可选的主题为：warning、success、danger
             .zExample.mt20
                 p.mt20
-                    p 默认的配色
-                        input.zWeekpicker.zIpt.ml10(type="text")
-                    p 橙色的主题
-                        input.zWeekpicker.zIpt.ml10(type="text", data-theme="warning", readonly, value="201527")
-                    p 红色的主题
-                        input.zWeekpicker.zIpt.ml10(type="text", data-theme="danger")
-                    p 绿色的主题
-                        input.zWeekpicker.zIpt.ml10(type="text", data-theme="success")
-
+                    p 周选择组件
+                        input#zDatepicker0.zIpt.ml10(type="text")
+                    p 默认无配置
+                        input.zDatepicker.zIpt.ml10(type="text")
+                    p 选择到年份
+                        input#zDatepicker1.zIpt.ml10(type="text", readonly)
+                    p 选择到月份
+                        input#zDatepicker2.zIpt.ml10(type="text")
+                    p 选择小时数
+                        input#zDatepicker3.zIpt.ml10(type="text")
+                    p 选择分钟数
+                        input#zDatepicker4.zIpt.ml10(type="text")
+                    p 选择秒针数
+                        input#zDatepicker5.zIpt.ml10(type="text")
+                script.
+                    oc.datepicker('#zDatepicker0', {minView: 'Week'});
+                    oc.datepicker('#zDatepicker1', {minView: 'Year'});
+                    oc.datepicker('#zDatepicker2', {minView: 'Month'});
+                    oc.datepicker('#zDatepicker3', {minView: 'Hour'});
+                    oc.datepicker('#zDatepicker4', {minView: 'Minute'});
+                    oc.datepicker('#zDatepicker5', {minView: 'Second'});
                 .zCode.mt20
                     code.language-jade.
                         p.mt20
-                            p 默认的配色
-                                input.zWeekpicker.zIpt.ml10(type="text")
-                            p 橙色的主题
-                                input.zWeekpicker.zIpt.ml10(type="text", data-theme="warning")
-                            p 红色的主题
-                                input.zWeekpicker.zIpt.ml10(type="text", data-theme="danger")
-                            p 绿色的主题
-                                input.zWeekpicker.zIpt.ml10(type="text", data-theme="success")
-            h4 2. JS API
+                            p 默认无配置
+                                input.zDatepicker.zIpt.ml10(type="text")
+                            p 选择到年份
+                                input#zDatepicker1.zIpt.ml10(type="text", readonly)
+                            p 选择到月份
+                                input#zDatepicker2.zIpt.ml10(type="text")
+                            p 选择小时数
+                                input#zDatepicker3.zIpt.ml10(type="text")
+                            p 选择分钟数
+                                input#zDatepicker4.zIpt.ml10(type="text")
+                            p 选择秒针数
+                                input#zDatepicker5.zIpt.ml10(type="text")
+                        script.
+                            oc.datepicker('#zDatepicker1', {minView: 'Year'});
+                            oc.datepicker('#zDatepicker2', {minView: 'Month'});
+                            oc.datepicker('#zDatepicker3', {minView: 'Hour'});
+                            oc.datepicker('#zDatepicker4', {minView: 'Minute'});
+                            oc.datepicker('#zDatepicker5', {minView: 'Second'});
+
+            h4 2. 主题色彩
             .zExample.mt20
                 p.mt20
-                    input#ipt.zIpt(type="text")
+                    p 绿色
+                        input#zDatepicker11.zIpt.ml10(type="text")
+                    p 黄色
+                        input#zDatepicker12.zIpt.ml10(type="text")
+                    p 红色
+                        input#zDatepicker13.zIpt.ml10(type="text")
                 script.
-                    oc.weekpicker('#ipt', 'warning');
-                    $('#ipt').on('change', function(){
-                        console.log(this.value);
-                    })
+                    oc.datepicker('#zDatepicker11', {theme: 'success'});
+                    oc.datepicker('#zDatepicker12', {theme: 'warning'});
+                    oc.datepicker('#zDatepicker13', {theme: 'danger'});
                 .zCode.mt20
                     code.language-jade.
                         p.mt20

@@ -4,7 +4,7 @@
 .zPager * {
   box-sizing: border-box;
 }
-.zPager >a {
+.zPager a {
   display: inline-block;
   border: 1px solid #ddd;
   color: #0e90d2;
@@ -16,15 +16,25 @@
   padding-right: 15px;
   margin-right: 5px;
 }
-.zPager >a:not(.disabled):not(.active):hover {
+.zPager a:not(.disabled):not(.active):hover {
   background-color: #eee;
 }
-.zPager >a.active {
+.zPager a.active {
   background-color: #0e90d2;
   color: #fff;
   border-color: #0e90d2;
 }
-.zPager >a.disabled {
+.zPager a.disabled {
   color: #aaa;
   cursor: not-allowed;
+}
+.zPager.sm {
+  padding: 0;
+}
+.zPager.sm a {
+  height: 28px;
+  line-height: 28px;
+  min-width: 30px;
+  padding-left: 10px;
+  padding-right: 10px;
 }

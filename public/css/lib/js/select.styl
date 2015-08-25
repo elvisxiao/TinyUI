@@ -30,6 +30,14 @@
         border-left 5px solid transparent
         border-right 5px solid transparent
         border-bottom 5px solid #fff
+    >.zFilter
+        position absolute
+        top 0
+        left 0
+        right 0
+        background-color #fff
+        z-index 3
+        padding 5px
     >p
         margin 0
         line-height 28px
@@ -63,7 +71,9 @@
             display block
     >p[slcGroup]
         border-bottom 1px solid #ddd
-
+.zSlcBd.zSlcHasFilter
+    padding-top 40px
+    
 .zDropdownUp .zSlcBd
     &:before, &:after
         display none
