@@ -11,16 +11,21 @@ var initSelect = function(ele, showFilter){
 
     ele.each(function(){
         var slc = $(this);
-        var divSlc = $('<div class="zSlcWrap"></div>');
-        var ipt = $('<input class="zIpt" readonly/>').appendTo(divSlc).data('showFilter', true);
-        var position = slc.position();
-        divSlc.css({
-            position: 'relative',
-            display: slc.css('display'),
-            width: slc.outerWidth(),
-            height: slc.outerHeight()
-        })
-        slc.after(divSlc);
+        divSlc = slc.next('.zSlcWrap');
+        var ipt = divSlc.find('input');
+        if(divSlc.length === 0){
+            divSlc = $('<div class="zSlcWrap"></div>');
+            ipt = $('<input class="zIpt" type="text" readonly/>').appendTo(divSlc).data('showFilter', true);
+            var position = slc.position();
+            divSlc.css({
+                position: 'relative',
+                display: slc.css('display'),
+                width: slc.outerWidth(),
+                height: slc.outerHeight()
+            })
+            slc.after(divSlc);
+        }
+        
         var initVal = slc.val() || '';
         if(initVal.join){
             initVal = initVal.join(', ');
@@ -117,6 +122,7 @@ var initEvent = function(){
                 slc.find('option').attr('selected', false);
                 slcOption.attr('selected', true);
 				dropdown.remove(ipt);
+                ipt.change();
         	}
         	else{
         		if(p.attr('selected')){
@@ -132,7 +138,9 @@ var initEvent = function(){
                 if(vals){
                     vals = vals.join(', ');
                 }
-                ipt.val(vals || '')
+                ipt.val(vals || '');
+                ipt.change();
+                slc.change();
         	}
         })
     })  

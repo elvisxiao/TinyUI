@@ -17,6 +17,7 @@ ui.table = require('./table');
 ui.dropdown = require('./dropdown');
 ui.at = require('./@.js');
 ui.security = require('./security.js');
+ui.localStorage = require('./localStorage.js');
 
 window && (window.oc = ui);
 

@@ -4,7 +4,7 @@ Security.removeXss = function(model){
 	for(var key in model){
 		var val = model[key];
 		if(!val){
-			return true;
+			continue;
 		}
 		if(typeof val === 'string'){
 			model[key] = val.replace(/</g, '&lt;').replace(/>/g, '&gt;');

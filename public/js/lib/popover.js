@@ -14,7 +14,7 @@ var instance = function(ele, title, content, direct){
         return;
     }
     content = $('<div class="popoverWrap"></div>').append(content);
-    dropdown.show(ele, title, content, 'up');
+    dropdown.show(ele, title, content, direct);
     ele.on('blur', function(){
         dropdown.remove(this);
     })

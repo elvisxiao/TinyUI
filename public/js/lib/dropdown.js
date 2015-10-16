@@ -35,9 +35,9 @@ module.exports = {
             ele.each(function(){
                 var one = $(this);
                 var target = one.data('zTarget');
-                one.remove();
+                target && target.data('zTarget', null);                 
                 one.data('zTarget', null);
-                target && target.data('zTarget', null);
+                one.remove();
             })
         }
     },

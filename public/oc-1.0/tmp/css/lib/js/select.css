@@ -18,7 +18,7 @@
 .zSlcBd:after {
   display: block;
   position: absolute;
-  left: 30px;
+  left: 15px;
   margin-left: -6px;
   top: -6px;
   content: '';
@@ -27,7 +27,7 @@
   border-bottom: 6px solid #ddd;
 }
 .zSlcBd:after {
-  left: 30px;
+  left: 15px;
   margin-left: -5px;
   top: -5px;
   content: '';

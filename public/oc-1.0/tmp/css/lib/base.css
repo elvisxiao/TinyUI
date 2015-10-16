@@ -114,7 +114,9 @@ body {
 .clearfix:after {
   clear: both;
 }
-*
+.clearfix {
+  *zoom1: /*ie6,7*/;
+}
 .vm {
   vertical-align: middle;
 }

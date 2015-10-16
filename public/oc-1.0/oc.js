@@ -384,7 +384,7 @@ Ajax.error = function(res){
 module.exports = Ajax;
 
 
-},{"./modal":8,"./progress":10,"./security":12}],3:[function(require,module,exports){
+},{"./modal":9,"./progress":11,"./security":13}],3:[function(require,module,exports){
 module.exports = (function(){
 	$(function(){
 		$('body').on('click', '.zCollapse .zPanelHd', function(e){
@@ -1384,9 +1384,9 @@ module.exports = {
             ele.each(function(){
                 var one = $(this);
                 var target = one.data('zTarget');
-                one.remove();
+                target && target.data('zTarget', null);                 
                 one.data('zTarget', null);
-                target && target.data('zTarget', null);
+                one.remove();
             })
         }
     },
@@ -1475,6 +1475,7 @@ ui.table = require('./table');
 ui.dropdown = require('./dropdown');
 ui.at = require('./@.js');
 ui.security = require('./security.js');
+ui.localStorage = require('./localStorage.js');
 
 window && (window.oc = ui);
 
@@ -1482,7 +1483,87 @@ if(module && module.exports){
     module.exports = ui;
 }
 
-},{"./@.js":1,"./ajax":2,"./collapse":3,"./date":4,"./datepicker":5,"./dropdown":6,"./modal":8,"./popover":9,"./progress":10,"./scrollSpy":11,"./security.js":12,"./select":13,"./tab":14,"./table":15,"./tooltip":16,"./ui":17,"./weekpicker":18}],8:[function(require,module,exports){
+},{"./@.js":1,"./ajax":2,"./collapse":3,"./date":4,"./datepicker":5,"./dropdown":6,"./localStorage.js":8,"./modal":9,"./popover":10,"./progress":11,"./scrollSpy":12,"./security.js":13,"./select":14,"./tab":15,"./table":16,"./tooltip":17,"./ui":18,"./weekpicker":19}],8:[function(require,module,exports){
+/**
+* @file 用于操作浏览器的本地存储 - LocalStorage
+* @author Elvis Xiao
+* @version 0.1 
+*/
+
+/**
+* 用于操作浏览器的本地存储 - LocalStorage
+* @exports oc.localStorage
+
+* @example
+
+//设置一个键值对到本地存储中
+* oc.localStorage.set('user', {name: 'elvis xiao', email: 'ivesxiao@gmail.com'});
+
+//根据主键获取存储的值
+* oc.localStorage.get('user');
+
+//删除指定key
+* oc.localStorage.remove('user');
+
+//清除所有该域下本地存储
+* oc.localStorage.clear();
+*/
+var LocalStorage = {
+	/** @property {object} storage - 浏览器本身的localStorage对象 */
+	storage : window.localStorage
+}
+
+/**
+* 存储一个键值对到本地存储中
+* @param {string} key - 存储的key值
+* @param {object} value - 存储的对象，内部会转化为JSON字符串存储
+*/
+LocalStorage.set = function(key, value){
+	if(typeof(key) !== 'string'){
+		console.error("key mast to be a string");
+		return;
+	}
+
+	var strVal = JSON.stringify(value);
+	this.storage[key] = strVal;
+}
+
+/**
+根据key从已经存储的数据中取出对应的值
+* @param {string} key - 存储的key值
+* @return {object} value - 根据key值获取到的对象，如果没有则为null
+*/
+LocalStorage.get = function(key){
+	if(typeof(key) !== 'string'){
+		console.error("key mast to be a string");
+		return null;
+	} 
+
+	var strVal = this.storage[key] || null;
+	var jsonVal = JSON.parse(strVal);
+
+	return jsonVal;
+}
+
+/**
+* 根据key移除已经存储的对应值
+* @param {string} key - 有则移除，无则不做任何操作
+*/
+LocalStorage.remove = function(key){
+	this.storage.removeItem(key);
+}
+
+/**
+* 清除当前域名下所有的本地存储信息
+*/
+LocalStorage.clear = function(){
+	this.storage.clear();
+}
+
+module.exports = LocalStorage;
+
+
+},{}],9:[function(require,module,exports){
 var instance = {
 	modalTemplate: '<div class="zModalCover"><div class="zModal"><div class="zModalHd"><i class="zModalClose">×</i></div><div class="zModalBd"></div></div></div>',
 
@@ -1719,7 +1800,7 @@ instance.init();
 
 module.exports = instance;
 
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
 var dropdown = require('./dropdown');
 
 var instance = function(ele, title, content, direct){
@@ -1736,7 +1817,7 @@ var instance = function(ele, title, content, direct){
         return;
     }
     content = $('<div class="popoverWrap"></div>').append(content);
-    dropdown.show(ele, title, content, 'up');
+    dropdown.show(ele, title, content, direct);
     ele.on('blur', function(){
         dropdown.remove(this);
     })
@@ -1768,7 +1849,7 @@ initEvent();
 
 module.exports = instance;
 
-},{"./dropdown":6}],10:[function(require,module,exports){
+},{"./dropdown":6}],11:[function(require,module,exports){
 var instance = {}
 instance.start = function(){
 	var progress = $('body>.zProgressTop');
@@ -1785,7 +1866,7 @@ instance.done = function(){
 
 module.exports = instance;
 
-},{}],11:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 var ui = require('./ui');
 
 var instance = function(ele, animateClass){
@@ -1877,14 +1958,14 @@ initEvent();
 
 module.exports = instance;
 
-},{"./ui":17}],12:[function(require,module,exports){
+},{"./ui":18}],13:[function(require,module,exports){
 var Security = {};
 
 Security.removeXss = function(model){
 	for(var key in model){
 		var val = model[key];
 		if(!val){
-			return true;
+			continue;
 		}
 		if(typeof val === 'string'){
 			model[key] = val.replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -1904,7 +1985,7 @@ Security.removeXss = function(model){
 }
 
 module.exports = Security;
-},{}],13:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 var dropdown = require('./dropdown');
 
 var instance = function(ele, showFilter){
@@ -1918,16 +1999,21 @@ var initSelect = function(ele, showFilter){
 
     ele.each(function(){
         var slc = $(this);
-        var divSlc = $('<div class="zSlcWrap"></div>');
-        var ipt = $('<input class="zIpt" readonly/>').appendTo(divSlc).data('showFilter', true);
-        var position = slc.position();
-        divSlc.css({
-            position: 'relative',
-            display: slc.css('display'),
-            width: slc.outerWidth(),
-            height: slc.outerHeight()
-        })
-        slc.after(divSlc);
+        divSlc = slc.next('.zSlcWrap');
+        var ipt = divSlc.find('input');
+        if(divSlc.length === 0){
+            divSlc = $('<div class="zSlcWrap"></div>');
+            ipt = $('<input class="zIpt" type="text" readonly/>').appendTo(divSlc).data('showFilter', true);
+            var position = slc.position();
+            divSlc.css({
+                position: 'relative',
+                display: slc.css('display'),
+                width: slc.outerWidth(),
+                height: slc.outerHeight()
+            })
+            slc.after(divSlc);
+        }
+        
         var initVal = slc.val() || '';
         if(initVal.join){
             initVal = initVal.join(', ');
@@ -2024,6 +2110,7 @@ var initEvent = function(){
                 slc.find('option').attr('selected', false);
                 slcOption.attr('selected', true);
 				dropdown.remove(ipt);
+                ipt.change();
         	}
         	else{
         		if(p.attr('selected')){
@@ -2039,7 +2126,9 @@ var initEvent = function(){
                 if(vals){
                     vals = vals.join(', ');
                 }
-                ipt.val(vals || '')
+                ipt.val(vals || '');
+                ipt.change();
+                slc.change();
         	}
         })
     })  
@@ -2049,7 +2138,7 @@ initEvent();
 
 module.exports = instance;
 
-},{"./dropdown":6}],14:[function(require,module,exports){
+},{"./dropdown":6}],15:[function(require,module,exports){
 var instance = function(){
     this.init = function(){
         $(function(){
@@ -2086,7 +2175,7 @@ instance();
 
 module.exports = instance;
 
-},{}],15:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 var instance = {}
 
 var setThWidth = function(originTable){
@@ -2170,7 +2259,7 @@ instance.fixHead = function(eles){
 
 module.exports = instance;
 
-},{}],16:[function(require,module,exports){
+},{}],17:[function(require,module,exports){
 var dropdown = require('./dropdown');
 
 var Tooltip = function(ele, content, theme){
@@ -2227,7 +2316,7 @@ initEvent();
 
 module.exports = Tooltip;
 
-},{"./dropdown":6}],17:[function(require,module,exports){
+},{"./dropdown":6}],18:[function(require,module,exports){
 /**
 * @file 基本的、单个UI元素
 * @author Elvis
@@ -2647,7 +2736,7 @@ UI.popOverRemove = function(btn){
 }
 
 module.exports = UI;
-},{}],18:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
 var ZDate = require('./date');
 
 var instance = function(ele, theme){
