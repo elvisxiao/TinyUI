@@ -254,7 +254,7 @@ module.exports = instance;
 //     });
 // }
 
-},{"./dropdown":6}],2:[function(require,module,exports){
+},{"./dropdown":7}],2:[function(require,module,exports){
 var progress = require('./progress');
 var modal = require('./modal');
 var security = require('./security');
@@ -384,7 +384,7 @@ Ajax.error = function(res){
 module.exports = Ajax;
 
 
-},{"./modal":9,"./progress":11,"./security":13}],3:[function(require,module,exports){
+},{"./modal":11,"./progress":13,"./security":15}],3:[function(require,module,exports){
 module.exports = (function(){
 	$(function(){
 		$('body').on('click', '.zCollapse .zPanelHd', function(e){
@@ -407,6 +407,58 @@ module.exports = (function(){
 })();
 
 },{}],4:[function(require,module,exports){
+var Instance = {};
+
+Instance.processRow = function(row) {
+    var finalVal = '';
+    for (var j = 0; j < row.length; j++) {
+        var innerValue = row[j] === null ? '' : row[j].toString();
+        if (row[j] instanceof Date) {
+            innerValue = row[j].toLocaleString();
+        };
+        var result = innerValue.replace(/"/g, '""');
+        if (result.search(/("|,|\n)/g) >= 0)
+            result = '"' + result + '"';
+        if (j > 0)
+            finalVal += ',';
+        finalVal += result;
+    }
+
+    return finalVal + '\n';
+}
+
+Instance.getCsvString = function(rows) {
+    var csvFile = '';
+    for (var i = 0; i < rows.length; i++) {
+        csvFile += Instance.processRow(rows[i]);
+    }
+
+    return csvFile;
+}
+
+Instance.export = function(filename, rows) {
+    var csvString = Instance.getCsvString(rows);
+    
+    var blob = new Blob([csvString], { type: 'text/csv;charset=utf-8;' });
+    if (navigator.msSaveBlob) { // IE 10+
+        navigator.msSaveBlob(blob, filename);
+    } else {
+        var link = document.createElement("a");
+        if (link.download !== undefined) { // feature detection
+            // Browsers that support HTML5 download attribute
+            var url = URL.createObjectURL(blob);
+            link.setAttribute("href", url);
+            link.setAttribute("download", filename);
+            link.style.visibility = 'hidden';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+    }
+}
+
+module.exports = Instance;
+},{}],5:[function(require,module,exports){
  
 /**
 * @file 用于Javascript Date类型的扩展
@@ -750,7 +802,7 @@ ZDate.weekPicker = function(ipt){
 
 
 module.exports = ZDate;
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 var ZDate = require('./date');
 
 var instance = function(eles, options){
@@ -1346,7 +1398,7 @@ var Datepicker = function(target, options) {
 
 module.exports = instance;
 
-},{"./date":4}],6:[function(require,module,exports){
+},{"./date":5}],7:[function(require,module,exports){
 module.exports = {
     show: function(target, title, content, defaultDirect) {
         var target = $(target);
@@ -1455,7 +1507,7 @@ module.exports = {
     }
 }
 
-},{}],7:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
 var ui = {};
 
 ui.collapse = require('./collapse');
@@ -1476,6 +1528,11 @@ ui.dropdown = require('./dropdown');
 ui.at = require('./@.js');
 ui.security = require('./security.js');
 ui.localStorage = require('./localStorage.js');
+ui.location = require('./location');
+ui.tools = {
+	dojo: require('./toolsDojo'),
+	csv: require('./csvExport')
+}
 
 window && (window.oc = ui);
 
@@ -1483,7 +1540,7 @@ if(module && module.exports){
     module.exports = ui;
 }
 
-},{"./@.js":1,"./ajax":2,"./collapse":3,"./date":4,"./datepicker":5,"./dropdown":6,"./localStorage.js":8,"./modal":9,"./popover":10,"./progress":11,"./scrollSpy":12,"./security.js":13,"./select":14,"./tab":15,"./table":16,"./tooltip":17,"./ui":18,"./weekpicker":19}],8:[function(require,module,exports){
+},{"./@.js":1,"./ajax":2,"./collapse":3,"./csvExport":4,"./date":5,"./datepicker":6,"./dropdown":7,"./localStorage.js":9,"./location":10,"./modal":11,"./popover":12,"./progress":13,"./scrollSpy":14,"./security.js":15,"./select":16,"./tab":17,"./table":18,"./toolsDojo":19,"./tooltip":20,"./ui":21,"./weekpicker":22}],9:[function(require,module,exports){
 /**
 * @file 用于操作浏览器的本地存储 - LocalStorage
 * @author Elvis Xiao
@@ -1563,7 +1620,70 @@ LocalStorage.clear = function(){
 module.exports = LocalStorage;
 
 
-},{}],9:[function(require,module,exports){
+},{}],10:[function(require,module,exports){
+
+var Instance = {}
+
+Instance._generateString = function(params) {
+	if(typeof params === 'string') {
+		return params;
+	}
+	else if(typeof params === 'object') {
+		var arr = [];
+	    for(var key in params) {
+	    	arr.push(key + '=' + params[key]);
+	    }
+
+	    return arr.join('&');
+	}
+
+	return null;
+}
+
+Instance.setHash = function(hash, params) {
+    var searchStr = Instance._generateString(params);
+    var url = hash + (searchStr? '?' + searchStr : '');
+    var state = {
+	 	url : url
+	};
+
+	top.history.pushState(state, "", url);
+}
+
+Instance.setSearch = function(params) {
+	var searchStr = Instance._generateString(params);
+
+	if(searchStr) {
+		var url = '?' + searchStr;
+		var state = {
+		 	url : url
+		};
+
+		top.history.pushState(state, "", url);
+	}
+}
+
+Instance.setUrl = function(pathname, search, hash) {
+	var url = pathname;
+	var searchStr = Instance._generateString(search);
+	if(searchStr) {
+		url += '?' + searchStr;
+	}
+	if(hash) {
+		url += hash;
+	}
+	
+	var state = {
+	 	url : url
+	};
+
+	top.history.pushState(state, "", url);
+}
+
+module.exports = Instance;
+
+
+},{}],11:[function(require,module,exports){
 var instance = {
 	modalTemplate: '<div class="zModalCover"><div class="zModal"><div class="zModalHd"><i class="zModalClose">×</i></div><div class="zModalBd"></div></div></div>',
 
@@ -1800,7 +1920,7 @@ instance.init();
 
 module.exports = instance;
 
-},{}],10:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 var dropdown = require('./dropdown');
 
 var instance = function(ele, title, content, direct){
@@ -1849,7 +1969,7 @@ initEvent();
 
 module.exports = instance;
 
-},{"./dropdown":6}],11:[function(require,module,exports){
+},{"./dropdown":7}],13:[function(require,module,exports){
 var instance = {}
 instance.start = function(){
 	var progress = $('body>.zProgressTop');
@@ -1866,7 +1986,7 @@ instance.done = function(){
 
 module.exports = instance;
 
-},{}],12:[function(require,module,exports){
+},{}],14:[function(require,module,exports){
 var ui = require('./ui');
 
 var instance = function(ele, animateClass){
@@ -1958,7 +2078,7 @@ initEvent();
 
 module.exports = instance;
 
-},{"./ui":18}],13:[function(require,module,exports){
+},{"./ui":21}],15:[function(require,module,exports){
 var Security = {};
 
 Security.removeXss = function(model){
@@ -1977,7 +2097,7 @@ Security.removeXss = function(model){
 			}
 		}
 		else if(typeof val === 'object'){
-			Security.removeXss(one);
+			Security.removeXss(val);
 		}
 	}
 
@@ -1985,7 +2105,7 @@ Security.removeXss = function(model){
 }
 
 module.exports = Security;
-},{}],14:[function(require,module,exports){
+},{}],16:[function(require,module,exports){
 var dropdown = require('./dropdown');
 
 var instance = function(ele, showFilter){
@@ -2053,7 +2173,7 @@ var initEvent = function(){
 
             slc.find('option, optgroup').each(function(){
             	var item = $(this);
-                var p = $('<p data-val="' + item.val() + '">' + item.html() + '</p>').appendTo(content);
+                var p = $('<p data-val="' + item.attr('value') + '" class="' + item.attr('class') + '" style="' + item.attr('style') + '">' + item.html() + '</p>').appendTo(content);
                 if(this.nodeName === "OPTGROUP"){
                     p.removeAttr('data-val').attr('disabled', 'disabled').attr('slcGroup', 'true').html(item.attr('label'));
                 }
@@ -2061,8 +2181,8 @@ var initEvent = function(){
                     if(item.attr('disabled')){
                         p.attr('disabled', item.attr('disabled'));
                     }
-                    if(item.attr('selected')){
-                        p.attr('selected', item.attr('selected'));
+                    if(item[0].selected){
+                        p.attr('selected', item[0].selected? 'selected' : '');
                     }
                 }
             });
@@ -2096,19 +2216,19 @@ var initEvent = function(){
         	var ipt = $(this).parents('.zDropdown').data('zTarget');
         	var slc = ipt.parent().prev('.zSlc');
         	
-        	var slcVal = p.val();
+        	var slcVal = p.attr('data-val');
         	var slcOption = slc.find('option[value="' + slcVal + '"]');
-        	if(!slcVal){
-        		slcVal = p.html();
+        	if(!slcVal || !slcOption.length){
+        		slcVal = p.text();
         		slcOption = slc.find('option:contains("' + slcVal + '")').filter(function(){
-        			return this.innerHTML == slcVal;
+        			return this.innerText == slcVal;
         		});
         	}
         	
         	if(!slc.attr('multiple')){
                 ipt.val(slcVal);
                 slc.find('option').attr('selected', false);
-                slcOption.attr('selected', true);
+                slcOption.prop('selected', true);
 				dropdown.remove(ipt);
                 ipt.change();
         	}
@@ -2116,11 +2236,12 @@ var initEvent = function(){
         		if(p.attr('selected')){
         			p.removeAttr('selected');
         			slcOption[0].selected = false;
-                    slcOption.attr('selected', false);
+                    slcOption.prop('selected', false);
         		}
         		else{
         			p.attr('selected', 'selected');
-        			slcOption.attr('selected', true);
+                    slcOption[0].selected = true;
+        			slcOption.prop('selected', true);
         		}
                 var vals = slc.val();
                 if(vals){
@@ -2138,7 +2259,7 @@ initEvent();
 
 module.exports = instance;
 
-},{"./dropdown":6}],15:[function(require,module,exports){
+},{"./dropdown":7}],17:[function(require,module,exports){
 var instance = function(){
     this.init = function(){
         $(function(){
@@ -2175,7 +2296,7 @@ instance();
 
 module.exports = instance;
 
-},{}],16:[function(require,module,exports){
+},{}],18:[function(require,module,exports){
 var instance = {}
 
 var setThWidth = function(originTable){
@@ -2259,7 +2380,24 @@ instance.fixHead = function(eles){
 
 module.exports = instance;
 
-},{}],17:[function(require,module,exports){
+},{}],19:[function(require,module,exports){
+
+var Instance = {}
+
+Instance.destroyByNode = function(node) {
+    if(node.children && node.children.length) {
+        var widget = dojo.dijit.registry.byNode(node.children[0]);
+        if (widget) {
+            widget.destroyDescendants();
+            widget.destroyRecursive();
+        }
+    }
+}
+
+module.exports = Instance;
+
+
+},{}],20:[function(require,module,exports){
 var dropdown = require('./dropdown');
 
 var Tooltip = function(ele, content, theme){
@@ -2316,7 +2454,9 @@ initEvent();
 
 module.exports = Tooltip;
 
-},{"./dropdown":6}],18:[function(require,module,exports){
+},{"./dropdown":7}],21:[function(require,module,exports){
+var dropdown = require('./dropdown');
+
 /**
 * @file 基本的、单个UI元素
 * @author Elvis
@@ -2463,26 +2603,28 @@ UI.autoComplete = function(ele, array, cb, prefix){
         }
 
         if(e.keyCode === 13){
+
             var focusLi = ul.find('li.active');
-            if(focusLi.length > 0){
-                var slcVal = focusLi.html();
-                var text = ipt.val();
-                // val = val.replace(/.*;|.*,|.*\s/g, '');
-                if(prefix){
-                    var mathedArray = text.match(/(.|,|\s)*(;|,|\s)/);
-                    text = '';
-                    if(mathedArray && mathedArray.length > 0){
-                        text = mathedArray[0];
-                    }
-                    ipt.val(text + slcVal);
-                }
-                else{
-                    ipt.val(slcVal);
-                }
+            focusLi.trigger('click');
+            // if(focusLi.length > 0){
+            //     var slcVal = focusLi.html();
+            //     var text = ipt.val();
+            //     // val = val.replace(/.*;|.*,|.*\s/g, '');
+            //     if(prefix){
+            //         var mathedArray = text.match(/(.|,|\s)*(;|,|\s)/);
+            //         text = '';
+            //         if(mathedArray && mathedArray.length > 0){
+            //             text = mathedArray[0];
+            //         }
+            //         ipt.val(text + slcVal);
+            //     }
+            //     else{
+            //         ipt.val(slcVal);
+            //     }
                 
-                ul.remove();
-                cb && cb(slcVal, ipt);
-            }
+            //     ul.remove();
+            //     cb && cb(slcVal, ipt);
+            // }
             return;
         }
         
@@ -2531,7 +2673,6 @@ UI.autoComplete = function(ele, array, cb, prefix){
         var left = ipt.position().left;
         ul.css({top: top, left: left}).on('click', 'li', function(){
             var slc = $(this).html();
-            // ipt.val(slc);
             var text = ipt.val();
             if(prefix){
                 var mathedArray = text.match(/(.|,|\s)*(;|,|\s)/);
@@ -2539,13 +2680,14 @@ UI.autoComplete = function(ele, array, cb, prefix){
                 if(mathedArray && mathedArray.length > 0){
                     text = mathedArray[0];
                 }
-                // text = text.replace(text.replace(/.*;|.*,|.*\s/g, ''), '');
                 ipt.val(text + slc);
             }
             else{
                 ipt.val(slc);
             }
             $('.zAutoComplete').remove();
+            ipt.change();
+            console.log('change');
             cb && cb(slc, ipt);
         })
         .on('mouseenter', 'li', function(){
@@ -2736,7 +2878,7 @@ UI.popOverRemove = function(btn){
 }
 
 module.exports = UI;
-},{}],19:[function(require,module,exports){
+},{"./dropdown":7}],22:[function(require,module,exports){
 var ZDate = require('./date');
 
 var instance = function(ele, theme){
@@ -2929,4 +3071,4 @@ var Weekpicker = function(target, theme) {
 
 module.exports = instance;
 
-},{"./date":4}]},{},[7]);
+},{"./date":5}]},{},[8]);

@@ -1,3 +1,5 @@
+var dropdown = require('./dropdown');
+
 /**
 * @file 基本的、单个UI元素
 * @author Elvis
@@ -144,26 +146,28 @@ UI.autoComplete = function(ele, array, cb, prefix){
         }
 
         if(e.keyCode === 13){
+
             var focusLi = ul.find('li.active');
-            if(focusLi.length > 0){
-                var slcVal = focusLi.html();
-                var text = ipt.val();
-                // val = val.replace(/.*;|.*,|.*\s/g, '');
-                if(prefix){
-                    var mathedArray = text.match(/(.|,|\s)*(;|,|\s)/);
-                    text = '';
-                    if(mathedArray && mathedArray.length > 0){
-                        text = mathedArray[0];
-                    }
-                    ipt.val(text + slcVal);
-                }
-                else{
-                    ipt.val(slcVal);
-                }
+            focusLi.trigger('click');
+            // if(focusLi.length > 0){
+            //     var slcVal = focusLi.html();
+            //     var text = ipt.val();
+            //     // val = val.replace(/.*;|.*,|.*\s/g, '');
+            //     if(prefix){
+            //         var mathedArray = text.match(/(.|,|\s)*(;|,|\s)/);
+            //         text = '';
+            //         if(mathedArray && mathedArray.length > 0){
+            //             text = mathedArray[0];
+            //         }
+            //         ipt.val(text + slcVal);
+            //     }
+            //     else{
+            //         ipt.val(slcVal);
+            //     }
                 
-                ul.remove();
-                cb && cb(slcVal, ipt);
-            }
+            //     ul.remove();
+            //     cb && cb(slcVal, ipt);
+            // }
             return;
         }
         
@@ -212,7 +216,6 @@ UI.autoComplete = function(ele, array, cb, prefix){
         var left = ipt.position().left;
         ul.css({top: top, left: left}).on('click', 'li', function(){
             var slc = $(this).html();
-            // ipt.val(slc);
             var text = ipt.val();
             if(prefix){
                 var mathedArray = text.match(/(.|,|\s)*(;|,|\s)/);
@@ -220,13 +223,14 @@ UI.autoComplete = function(ele, array, cb, prefix){
                 if(mathedArray && mathedArray.length > 0){
                     text = mathedArray[0];
                 }
-                // text = text.replace(text.replace(/.*;|.*,|.*\s/g, ''), '');
                 ipt.val(text + slc);
             }
             else{
                 ipt.val(slc);
             }
             $('.zAutoComplete').remove();
+            ipt.change();
+            console.log('change');
             cb && cb(slc, ipt);
         })
         .on('mouseenter', 'li', function(){

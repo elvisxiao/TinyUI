@@ -18,6 +18,11 @@ ui.dropdown = require('./dropdown');
 ui.at = require('./@.js');
 ui.security = require('./security.js');
 ui.localStorage = require('./localStorage.js');
+ui.location = require('./location');
+ui.tools = {
+	dojo: require('./toolsDojo'),
+	csv: require('./csvExport')
+}
 
 window && (window.oc = ui);
 

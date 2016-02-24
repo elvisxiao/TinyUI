@@ -65,7 +65,7 @@ var initEvent = function(){
 
             slc.find('option, optgroup').each(function(){
             	var item = $(this);
-                var p = $('<p data-val="' + item.val() + '">' + item.html() + '</p>').appendTo(content);
+                var p = $('<p data-val="' + item.attr('value') + '" class="' + item.attr('class') + '" style="' + item.attr('style') + '">' + item.html() + '</p>').appendTo(content);
                 if(this.nodeName === "OPTGROUP"){
                     p.removeAttr('data-val').attr('disabled', 'disabled').attr('slcGroup', 'true').html(item.attr('label'));
                 }
@@ -73,8 +73,8 @@ var initEvent = function(){
                     if(item.attr('disabled')){
                         p.attr('disabled', item.attr('disabled'));
                     }
-                    if(item.attr('selected')){
-                        p.attr('selected', item.attr('selected'));
+                    if(item[0].selected){
+                        p.attr('selected', item[0].selected? 'selected' : '');
                     }
                 }
             });
@@ -108,19 +108,19 @@ var initEvent = function(){
         	var ipt = $(this).parents('.zDropdown').data('zTarget');
         	var slc = ipt.parent().prev('.zSlc');
         	
-        	var slcVal = p.val();
+        	var slcVal = p.attr('data-val');
         	var slcOption = slc.find('option[value="' + slcVal + '"]');
-        	if(!slcVal){
-        		slcVal = p.html();
+        	if(!slcVal || !slcOption.length){
+        		slcVal = p.text();
         		slcOption = slc.find('option:contains("' + slcVal + '")').filter(function(){
-        			return this.innerHTML == slcVal;
+        			return this.innerText == slcVal;
         		});
         	}
         	
         	if(!slc.attr('multiple')){
                 ipt.val(slcVal);
                 slc.find('option').attr('selected', false);
-                slcOption.attr('selected', true);
+                slcOption.prop('selected', true);
 				dropdown.remove(ipt);
                 ipt.change();
         	}
@@ -128,11 +128,12 @@ var initEvent = function(){
         		if(p.attr('selected')){
         			p.removeAttr('selected');
         			slcOption[0].selected = false;
-                    slcOption.attr('selected', false);
+                    slcOption.prop('selected', false);
         		}
         		else{
         			p.attr('selected', 'selected');
-        			slcOption.attr('selected', true);
+                    slcOption[0].selected = true;
+        			slcOption.prop('selected', true);
         		}
                 var vals = slc.val();
                 if(vals){

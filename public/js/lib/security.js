@@ -16,7 +16,7 @@ Security.removeXss = function(model){
 			}
 		}
 		else if(typeof val === 'object'){
-			Security.removeXss(one);
+			Security.removeXss(val);
 		}
 	}
 

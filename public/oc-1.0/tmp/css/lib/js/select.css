@@ -54,8 +54,10 @@
   color: #333;
 }
 .zSlcBd >p:after {
+  position: absolute;
+  right: 5px;
+  top: 0;
   content: 'へ';
-  float: right;
   transform: rotateX(180deg);
   font-weight: 700;
   font-size: 10px;
