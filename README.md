@@ -1,4 +1,3 @@
-#Anker erp开发中用到的组件
 API：http://ui.tinyp2p.com/dest/doc/index.html
 使用步骤：引入public/dest/oc.min.js和oc.css，图标依赖于public/icons/style.css文件
 
